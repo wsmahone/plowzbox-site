@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 356 64" role="img" aria-label="PlowzBox">
+  <!-- PlowzBox lockup v2, LIGHT version (for DARK backgrounds: green-950/900
+       heroes, footers). Mark body flips to paper so it needs no keyline;
+       the LED flips to green-500 so it still reads "lit" on the paper face.
+       Wordmark: "Plowz" paper, "Box" fresh-growth green-300. -->
+  <!-- mark -->
+  <g fill="#f2f7f3">
+    <rect x="7" y="37.5" width="50" height="20.5" rx="7.25"/>
+    <path d="M30.5 5.5 C33.7 14 36.1 25.5 35.8 42 L25.4 42 C25.4 25.5 27.6 14 30.5 5.5 Z"/>
+    <path d="M12.5 18.5 C17.8 24 21.8 31.5 23.1 42 L16.6 42 C16.2 33.5 14.8 25.5 12.5 18.5 Z"/>
+    <path d="M47.5 16.5 C43.4 22.5 40.3 30.5 39.6 42 L45.9 42 C46.4 33.5 47.3 24.5 47.5 16.5 Z"/>
+  </g>
+  <circle cx="45.5" cy="47.75" r="6.2" fill="#349966" opacity="0.30"/>
+  <circle cx="45.5" cy="47.75" r="3.8" fill="#349966"/>
+  <!-- wordmark -->
+  <g transform="translate(78,6.75) scale(0.925)" fill="none" stroke-width="10.5"
+     stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#f2f7f3">
+      <path d="M5.25 50 L5.25 9.25"/>
+      <path d="M5.25 9.25 L17 9.25 A9.4 9.4 0 0 1 17 28.05 L5.25 28.05"/>
+      <path d="M43.4 9.25 L43.4 50"/>
+      <path d="M60.25 33 A11.9 11.9 0 1 0 84.05 33 A11.9 11.9 0 1 0 60.25 33"/>
+      <path d="M100.9 21.25 L107.3 44.75 L114.5 26.75 L121.7 44.75 L128.1 21.25"/>
+      <path d="M145.7 21.25 L166.5 21.25 L145.7 44.75 L167.1 44.75"/>
+    </g>
+    <g stroke="#8fd4ae">
+      <path d="M187.1 50 L187.1 9.25"/>
+      <path d="M187.1 9.25 L197.35 9.25 A8.7 8.7 0 0 1 197.35 26.65 L187.1 26.65"/>
+      <path d="M197.35 26.65 L199.35 26.65 A11.65 11.65 0 0 1 199.35 50 L187.1 50"/>
+      <path d="M227.85 33 A11.9 11.9 0 1 0 251.65 33 A11.9 11.9 0 1 0 227.85 33"/>
+      <path d="M268.5 21.25 L289.5 44.75"/>
+      <path d="M289.5 21.25 L268.5 44.75"/>
+    </g>
+  </g>
+</svg>
