@@ -454,6 +454,19 @@ a:focus-visible, button:focus-visible {
   }
 }
 </style>
+<style>
+/* ============================================================
+   Imagery pass v2 (additive): photographic band under the hero,
+   pine/amber color grade, spot v2 placements. Owner: imagery.
+   ============================================================ */
+.art-band { position: relative; height: clamp(13rem, 30vw, 22rem); overflow: hidden; margin: 0; background: var(--chq-green-950); }
+.art-band img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.88) contrast(1.05) brightness(0.97); }
+.art-band::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(155deg, rgba(18,51,36,0.6) 0%, rgba(11,36,26,0.22) 45%, rgba(201,123,63,0.3) 100%); mix-blend-mode: soft-light; pointer-events: none; }
+.art-band::after { content: ""; position: absolute; inset: 0; z-index: 1; background: radial-gradient(120% 90% at 50% 42%, transparent 55%, rgba(4,12,9,0.4) 100%); pointer-events: none; }
+.art-band figcaption { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 0.6rem clamp(1.25rem, 4vw, 2.5rem); font-size: var(--chq-text-xs); color: rgba(242,247,243,0.92); background: linear-gradient(180deg, transparent 0%, rgba(4,12,9,0.42) 35%, rgba(4,12,9,0.78) 100%); text-shadow: 0 1px 2px rgba(4,12,9,0.8); }
+.art-spot { width: clamp(4.5rem, 7vw, 6rem); height: auto; float: right; margin: 0 0 0.5rem 1rem; border-radius: var(--chq-radius-lg); box-shadow: var(--chq-shadow-md); }
+@media (max-width: 40rem) { .art-spot { width: 4rem; } }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -496,10 +509,17 @@ a:focus-visible, button:focus-visible {
     </div>
   </section>
 
+
+  <figure class="art-band">
+    <img src="../assets/img/photo/photo-dusk-street.jpg" alt="A residential street at dusk, lawns going dark, one window lit" width="1200" height="570" loading="lazy">
+    <figcaption>The hour the best calls arrive is the hour nobody can answer them.</figcaption>
+  </figure>
+
   <section class="section" id="how" aria-labelledby="how-h">
     <div class="wrap">
       <div class="section-head">
         <p class="kicker">Missed-call rescue</p>
+        <img class="art-spot" src="../assets/img/spot-missed-call.svg" alt="" width="120" height="120" loading="lazy">
         <h2 class="h2" id="how-h">From ring-out to reply, without you touching a thing.</h2>
         <p class="lede">Three things happen the moment a call goes unanswered. Only the
         last one waits for you.</p>
@@ -553,6 +573,7 @@ a:focus-visible, button:focus-visible {
         <div>
           <div class="section-head" style="margin-bottom: var(--chq-space-5);">
             <p class="kicker">After-hours coverage</p>
+        <img class="art-spot" src="../assets/img/spot-approve-coffee.svg" alt="" width="120" height="120" loading="lazy">
             <h2 class="h2" id="afterhours-h">Nights and weekends stop leaking jobs.</h2>
             <p class="lede">The text-back goes out at 9 PM on a Saturday exactly like it
             does at 9 AM on a Tuesday. The caller hears from your business in seconds,

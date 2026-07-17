@@ -173,6 +173,14 @@ tr:last-child td { border-bottom: none; }
 .footer-legal p { margin: 0; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
+<style>
+/* Imagery pass v2 (additive): editorial photo band under the hero. */
+.art-band { position: relative; height: clamp(10rem, 26vw, 17rem); overflow: hidden; margin: 0; background: var(--chq-green-950); }
+.art-band img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.88) contrast(1.05) brightness(0.97); }
+.art-band::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(155deg, rgba(18,51,36,0.6) 0%, rgba(11,36,26,0.22) 45%, rgba(201,123,63,0.3) 100%); mix-blend-mode: soft-light; pointer-events: none; }
+.art-band::after { content: ""; position: absolute; inset: 0; z-index: 1; background: radial-gradient(120% 90% at 50% 42%, transparent 55%, rgba(4,12,9,0.4) 100%); pointer-events: none; }
+.art-band figcaption { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 0.5rem clamp(1.25rem, 4vw, 2.5rem); font-size: var(--chq-text-xs); color: rgba(242,247,243,0.92); background: linear-gradient(180deg, transparent 0%, rgba(4,12,9,0.42) 35%, rgba(4,12,9,0.78) 100%); text-shadow: 0 1px 2px rgba(4,12,9,0.8); }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -204,6 +212,12 @@ tr:last-child td { border-bottom: none; }
       <p class="hero-sub">You cannot answer a phone from the seat of a mower, and your best leads call while your hands are full. This guide puts real numbers on what that costs, walks the response-time ladder, shows what a text-back has to say to actually save the job, and compares the three honest fixes without pretending any of them is free.</p>
     </div>
   </section>
+
+  <figure class="art-band">
+    <img src="../../assets/img/photo/photo-dusk-homes.jpg" alt="A suburban street at dusk under a clean gradient sky, houses going quiet" width="1200" height="570" loading="lazy">
+    <figcaption>Every dusk street is full of calls that rang out. This guide puts numbers on them.</figcaption>
+  </figure>
+
 
   <article class="wrap article">
 

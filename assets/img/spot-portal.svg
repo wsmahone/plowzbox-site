@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="The customer booking page: pick a service, pick a real time, confirm">
+  <defs>
+    <radialGradient id="sppt-f" cx="0.5" cy="0.42" r="0.8">
+      <stop offset="0" stop-color="#123324"/><stop offset="1" stop-color="#0b241a"/>
+    </radialGradient>
+    <radialGradient id="sppt-g" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7df0b4" stop-opacity="0.55"/><stop offset="1" stop-color="#7df0b4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="url(#sppt-f)"/>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="none" stroke="#2a4a39" stroke-width="1.5"/>
+  <!-- browser card -->
+  <g>
+    <rect x="22" y="24" width="76" height="72" rx="10" fill="#06140e" opacity="0.6" transform="translate(2.5,3)"/>
+    <rect x="22" y="24" width="76" height="72" rx="10" fill="#f1f0ea"/>
+    <path d="M22 34 a10 10 0 0 1 10 -10 h56 a10 10 0 0 1 10 10 v6 h-76 Z" fill="#1e5e3f"/>
+    <circle cx="31" cy="32" r="2.6" fill="#8fd4ae"/>
+    <circle cx="39" cy="32" r="2.6" fill="#c2e8d3"/>
+    <rect x="48" y="29" width="42" height="6" rx="3" fill="#17422e"/>
+  </g>
+  <!-- service rows -->
+  <g>
+    <rect x="30" y="48" width="38" height="10" rx="5" fill="#c2e8d3"/>
+    <rect x="30" y="63" width="30" height="10" rx="5" fill="#c2e8d3"/>
+  </g>
+  <!-- time chips -->
+  <rect x="74" y="48" width="16" height="10" rx="5" fill="#27754f"/>
+  <rect x="74" y="63" width="16" height="10" rx="5" fill="#17422e"/>
+  <!-- the confirm button, glowing -->
+  <circle cx="60" cy="86" r="22" fill="url(#sppt-g)"/>
+  <g>
+    <rect x="36" y="79" width="48" height="14" rx="7" fill="#06140e" opacity="0.55" transform="translate(2,2.5)"/>
+    <rect x="36" y="79" width="48" height="14" rx="7" fill="#8fd4ae"/>
+    <path d="M54 86 l3.4 3.6 6.2 -7.2" fill="none" stroke="#123324" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

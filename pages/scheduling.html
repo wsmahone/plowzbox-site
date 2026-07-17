@@ -454,6 +454,19 @@ a:focus-visible, button:focus-visible {
   }
 }
 </style>
+<style>
+/* ============================================================
+   Imagery pass v2 (additive): photographic band under the hero,
+   pine/amber color grade, spot v2 placements. Owner: imagery.
+   ============================================================ */
+.art-band { position: relative; height: clamp(13rem, 30vw, 22rem); overflow: hidden; margin: 0; background: var(--chq-green-950); }
+.art-band img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.88) contrast(1.05) brightness(0.97); }
+.art-band::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(155deg, rgba(18,51,36,0.6) 0%, rgba(11,36,26,0.22) 45%, rgba(201,123,63,0.3) 100%); mix-blend-mode: soft-light; pointer-events: none; }
+.art-band::after { content: ""; position: absolute; inset: 0; z-index: 1; background: radial-gradient(120% 90% at 50% 42%, transparent 55%, rgba(4,12,9,0.4) 100%); pointer-events: none; }
+.art-band figcaption { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 0.6rem clamp(1.25rem, 4vw, 2.5rem); font-size: var(--chq-text-xs); color: rgba(242,247,243,0.92); background: linear-gradient(180deg, transparent 0%, rgba(4,12,9,0.42) 35%, rgba(4,12,9,0.78) 100%); text-shadow: 0 1px 2px rgba(4,12,9,0.8); }
+.art-spot { width: clamp(4.5rem, 7vw, 6rem); height: auto; float: right; margin: 0 0 0.5rem 1rem; border-radius: var(--chq-radius-lg); box-shadow: var(--chq-shadow-md); }
+@media (max-width: 40rem) { .art-spot { width: 4rem; } }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -496,10 +509,17 @@ a:focus-visible, button:focus-visible {
     </div>
   </section>
 
+
+  <figure class="art-band">
+    <img src="../assets/img/photo/photo-mow-path.jpg" alt="Looking down a freshly cut mower path across an overgrown yard toward the street" width="1200" height="570" loading="lazy">
+    <figcaption>The day plans itself one cut path at a time. The calendar on the box is the one true schedule.</figcaption>
+  </figure>
+
   <section class="section" id="how" aria-labelledby="booking-h">
     <div class="wrap">
       <div class="section-head">
         <p class="kicker">Online booking</p>
+        <img class="art-spot" src="../assets/img/spot-portal.svg" alt="" width="120" height="120" loading="lazy">
         <h2 class="h2" id="booking-h">Real openings, not a &ldquo;we'll get back to you&rdquo; form.</h2>
         <p class="lede">Your booking page shows actual open slots from your jobs calendar.
         Customers pick one and it lands on the schedule, done.</p>
@@ -541,6 +561,7 @@ a:focus-visible, button:focus-visible {
         <div>
           <div class="section-head" style="margin-bottom: var(--chq-space-5);">
             <p class="kicker">Crew run-sheets</p>
+        <img class="art-spot" src="../assets/img/spot-crew-phone.svg" alt="" width="120" height="120" loading="lazy">
             <h2 class="h2" id="crew-h">The crew's whole day, in one text.</h2>
             <p class="lede">No app for the crew to install, no logins to forget. If a
             phone can receive a text, it can receive the day.</p>
@@ -575,6 +596,7 @@ a:focus-visible, button:focus-visible {
     <div class="wrap">
       <div class="section-head">
         <p class="kicker">Routes &amp; weather</p>
+        <img class="art-spot" src="../assets/img/spot-rain-reflow.svg" alt="" width="120" height="120" loading="lazy">
         <h2 class="h2" id="route-h">Less windshield time. Fewer scrambled rain days.</h2>
         <p class="lede">Two jobs the box does with the schedule once it exists: put the
         stops in a sensible order, and re-plan the day before the weather does.</p>

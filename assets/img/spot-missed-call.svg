@@ -1,32 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="A missed call answered by text">
-  <!-- Spot set: 120 grid, ink #123324 strokes 4.5/3.5 round, fills green-100,
-       one green accent per piece. Missed call -> the text-back goes out. -->
-  <!-- phone, at rest -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="A missed call rescued by a text reply">
+  <!-- Spot set v2: night-shift paper-cut. Deep pine tile, layered cut
+       shapes with offset shadows, ONE green glow per piece. -->
+  <defs>
+    <radialGradient id="spmc-f" cx="0.5" cy="0.42" r="0.8">
+      <stop offset="0" stop-color="#123324"/><stop offset="1" stop-color="#0b241a"/>
+    </radialGradient>
+    <radialGradient id="spmc-g" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7df0b4" stop-opacity="0.55"/><stop offset="1" stop-color="#7df0b4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="url(#spmc-f)"/>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="none" stroke="#2a4a39" stroke-width="1.5"/>
+  <!-- phone, cut from paper -->
   <g>
-    <rect x="18" y="34" width="44" height="74" rx="10" fill="#e1f3e8" stroke="#123324" stroke-width="4.5"/>
-    <path d="M33 42 h14" stroke="#123324" stroke-width="4" stroke-linecap="round"/>
+    <rect x="24" y="28" width="40" height="68" rx="9" fill="#06140e" opacity="0.6" transform="translate(2.5,3)"/>
+    <rect x="24" y="28" width="40" height="68" rx="9" fill="#f1f0ea"/>
+    <rect x="29" y="36" width="30" height="52" rx="5" fill="#17422e"/>
     <!-- missed call row -->
-    <g>
-      <circle cx="32" cy="60" r="6.5" fill="none" stroke="#123324" stroke-width="3.5"/>
-      <path d="M27.5 55.5 l9 9" stroke="#123324" stroke-width="3.5" stroke-linecap="round"/>
-      <path d="M45 60 h9" stroke="#9aa19c" stroke-width="3.5" stroke-linecap="round"/>
-    </g>
-    <!-- text-back row, done -->
-    <g>
-      <circle cx="32" cy="80" r="6.5" fill="#8fd4ae"/>
-      <path d="M29.2 80 l2.2 2.4 3.8 -4.6" fill="none" stroke="#123324" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M45 80 h9" stroke="#9aa19c" stroke-width="3.5" stroke-linecap="round"/>
-    </g>
+    <circle cx="37" cy="46" r="4.5" fill="#e06a55"/>
+    <rect x="45" y="43.5" width="10" height="5" rx="2.5" fill="#27754f"/>
+    <!-- answered row -->
+    <circle cx="37" cy="60" r="4.5" fill="#8fd4ae"/>
+    <rect x="45" y="57.5" width="10" height="5" rx="2.5" fill="#27754f"/>
+    <rect x="34" y="72" width="20" height="5" rx="2.5" fill="#1e5e3f"/>
   </g>
-  <!-- the reply bubble going out -->
+  <!-- the text-back, glowing out -->
+  <circle cx="84" cy="46" r="24" fill="url(#spmc-g)"/>
   <g>
-    <path d="M62 26 h32 a8 8 0 0 1 8 8 v16 a8 8 0 0 1 -8 8 h-18 l-9 9 v-9 h-5 a8 8 0 0 1 -8 -8 v-16 a8 8 0 0 1 8 -8 Z" fill="#1e5e3f"/>
-    <g stroke="#c2e8d3" stroke-width="3.5" stroke-linecap="round">
-      <path d="M65 38 h34"/>
-      <path d="M65 47 h22"/>
-    </g>
+    <path d="M70 34 h26 a7 7 0 0 1 7 7 v12 a7 7 0 0 1 -7 7 h-14 l-8 8 v-8 h-4 a7 7 0 0 1 -7 -7 v-12 a7 7 0 0 1 7 -7 Z" fill="#06140e" opacity="0.55" transform="translate(2.5,3)"/>
+    <path d="M70 34 h26 a7 7 0 0 1 7 7 v12 a7 7 0 0 1 -7 7 h-14 l-8 8 v-8 h-4 a7 7 0 0 1 -7 -7 v-12 a7 7 0 0 1 7 -7 Z" fill="#8fd4ae"/>
+    <rect x="72" y="41" width="24" height="4.4" rx="2.2" fill="#123324"/>
+    <rect x="72" y="49" width="16" height="4.4" rx="2.2" fill="#1e5e3f"/>
   </g>
   <!-- sent tick -->
-  <circle cx="94" cy="84" r="12" fill="#8fd4ae"/>
-  <path d="M88.5 84 l4 4.2 7 -8.4" fill="none" stroke="#123324" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="88" cy="86" r="11" fill="#06140e" opacity="0.55" transform="translate(2,2.5)"/>
+  <circle cx="88" cy="86" r="11" fill="#c2e8d3"/>
+  <path d="M83 86 l3.6 3.8 6.4 -7.6" fill="none" stroke="#123324" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

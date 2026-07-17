@@ -829,63 +829,108 @@ section[id], [data-clock] { scroll-margin-top: 5.5rem; }
                  recommended hero usage) so the status LED can breathe.
                  If the designer revs the render, re-paste it here. -->
             <svg class="v-nuc" xmlns="http://www.w3.org/2000/svg" viewBox="195 330 745 480" role="img" aria-label="PlowzBox appliance, a matte-black mini PC with a green status light">
+              <!-- PlowzBox hero product render v3 (imagery pass 2). Self-contained: all
+                   ids prefixed pbxn- to survive inlining. Designed for dark hero
+                   backgrounds; works on light. Lid branding derives from brand mark v2
+                   ("the box that grows the lawn", assets/brand/logo-mark.svg) per
+                   LOGO-V2.md. Class hooks .v-led / .v-led-echo are consumed by
+                   vision.css when this file is inlined in the homepage hero. -->
               <defs>
+                <!-- floor -->
                 <radialGradient id="pbxn-shadow" cx="0.5" cy="0.5" r="0.5">
                   <stop offset="0" stop-color="#000000" stop-opacity="0.52"/>
                   <stop offset="0.55" stop-color="#000000" stop-opacity="0.30"/>
                   <stop offset="1" stop-color="#000000" stop-opacity="0"/>
                 </radialGradient>
                 <radialGradient id="pbxn-shadow-core" cx="0.5" cy="0.5" r="0.5">
-                  <stop offset="0" stop-color="#000000" stop-opacity="0.55"/>
+                  <stop offset="0" stop-color="#000000" stop-opacity="0.6"/>
                   <stop offset="1" stop-color="#000000" stop-opacity="0"/>
                 </radialGradient>
+                <!-- faces -->
                 <linearGradient id="pbxn-top" x1="290" y1="430" x2="840" y2="368" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stop-color="#3d423e"/>
-                  <stop offset="0.45" stop-color="#232725"/>
-                  <stop offset="1" stop-color="#141715"/>
+                  <stop offset="0" stop-color="#414641"/>
+                  <stop offset="0.45" stop-color="#242826"/>
+                  <stop offset="1" stop-color="#131614"/>
                 </linearGradient>
                 <linearGradient id="pbxn-top-sheen" x1="330" y1="360" x2="620" y2="520" gradientUnits="userSpaceOnUse">
                   <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
-                  <stop offset="0.42" stop-color="#ffffff" stop-opacity="0.09"/>
+                  <stop offset="0.42" stop-color="#ffffff" stop-opacity="0.10"/>
                   <stop offset="0.60" stop-color="#ffffff" stop-opacity="0.02"/>
                   <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
                 </linearGradient>
+                <!-- anisotropic brushed banding across the lid grain -->
+                <linearGradient id="pbxn-brush" x1="0" y1="0" x2="0" y2="180" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#ffffff" stop-opacity="0.015"/>
+                  <stop offset="0.09" stop-color="#000000" stop-opacity="0.045"/>
+                  <stop offset="0.18" stop-color="#ffffff" stop-opacity="0.03"/>
+                  <stop offset="0.27" stop-color="#000000" stop-opacity="0.02"/>
+                  <stop offset="0.36" stop-color="#ffffff" stop-opacity="0.045"/>
+                  <stop offset="0.46" stop-color="#000000" stop-opacity="0.05"/>
+                  <stop offset="0.55" stop-color="#ffffff" stop-opacity="0.02"/>
+                  <stop offset="0.66" stop-color="#000000" stop-opacity="0.035"/>
+                  <stop offset="0.76" stop-color="#ffffff" stop-opacity="0.04"/>
+                  <stop offset="0.87" stop-color="#000000" stop-opacity="0.05"/>
+                  <stop offset="1" stop-color="#ffffff" stop-opacity="0.02"/>
+                </linearGradient>
+                <!-- key-light specular pool on the lid, back-left -->
+                <radialGradient id="pbxn-spec" cx="0.5" cy="0.5" r="0.5">
+                  <stop offset="0" stop-color="#ffffff" stop-opacity="0.11"/>
+                  <stop offset="0.6" stop-color="#ffffff" stop-opacity="0.04"/>
+                  <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+                </radialGradient>
                 <linearGradient id="pbxn-front" x1="320" y1="415" x2="560" y2="650" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stop-color="#262a27"/>
+                  <stop offset="0" stop-color="#272b28"/>
                   <stop offset="0.5" stop-color="#171a18"/>
-                  <stop offset="1" stop-color="#0b0d0c"/>
+                  <stop offset="1" stop-color="#0a0c0b"/>
                 </linearGradient>
                 <linearGradient id="pbxn-side" x1="705" y1="480" x2="885" y2="560" gradientUnits="userSpaceOnUse">
                   <stop offset="0" stop-color="#191c1a"/>
                   <stop offset="0.6" stop-color="#0e100f"/>
                   <stop offset="1" stop-color="#090b0a"/>
                 </linearGradient>
+                <!-- green environment bounce on the far right of the side face -->
                 <linearGradient id="pbxn-side-bounce" x1="760" y1="500" x2="872" y2="500" gradientUnits="userSpaceOnUse">
                   <stop offset="0" stop-color="#349966" stop-opacity="0"/>
-                  <stop offset="1" stop-color="#349966" stop-opacity="0.10"/>
+                  <stop offset="1" stop-color="#349966" stop-opacity="0.12"/>
                 </linearGradient>
+                <!-- ambient occlusion: under the lid lip and into the floor contact -->
+                <linearGradient id="pbxn-ao-lip" x1="0" y1="0" x2="0" y2="16" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#000000" stop-opacity="0.34"/>
+                  <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="pbxn-ao-foot" x1="0" y1="168" x2="0" y2="200" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+                  <stop offset="1" stop-color="#000000" stop-opacity="0.4"/>
+                </linearGradient>
+                <!-- edge highlights -->
                 <linearGradient id="pbxn-edge-topfront" x1="255" y1="410" x2="700" y2="440" gradientUnits="userSpaceOnUse">
                   <stop offset="0" stop-color="#ffffff" stop-opacity="0.05"/>
-                  <stop offset="0.45" stop-color="#ffffff" stop-opacity="0.38"/>
-                  <stop offset="1" stop-color="#ffffff" stop-opacity="0.14"/>
+                  <stop offset="0.45" stop-color="#ffffff" stop-opacity="0.42"/>
+                  <stop offset="1" stop-color="#ffffff" stop-opacity="0.16"/>
                 </linearGradient>
                 <linearGradient id="pbxn-edge-topright" x1="700" y1="440" x2="870" y2="380" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stop-color="#ffffff" stop-opacity="0.26"/>
-                  <stop offset="1" stop-color="#ffffff" stop-opacity="0.04"/>
+                  <stop offset="0" stop-color="#ffffff" stop-opacity="0.28"/>
+                  <stop offset="1" stop-color="#ffffff" stop-opacity="0.05"/>
                 </linearGradient>
                 <linearGradient id="pbxn-edge-rim" x1="425" y1="350" x2="870" y2="380" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stop-color="#cfe8d8" stop-opacity="0.04"/>
-                  <stop offset="0.7" stop-color="#cfe8d8" stop-opacity="0.20"/>
-                  <stop offset="1" stop-color="#cfe8d8" stop-opacity="0.10"/>
+                  <stop offset="0" stop-color="#cfe8d8" stop-opacity="0.05"/>
+                  <stop offset="0.7" stop-color="#cfe8d8" stop-opacity="0.22"/>
+                  <stop offset="1" stop-color="#cfe8d8" stop-opacity="0.11"/>
                 </linearGradient>
                 <linearGradient id="pbxn-edge-near" x1="691" y1="0" x2="709" y2="0" gradientUnits="userSpaceOnUse">
                   <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
-                  <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.10"/>
+                  <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.11"/>
                   <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
                 </linearGradient>
+                <!-- LED -->
+                <radialGradient id="pbxn-led-bloom" cx="0.5" cy="0.5" r="0.5">
+                  <stop offset="0" stop-color="#5ef0a4" stop-opacity="0.20"/>
+                  <stop offset="0.5" stop-color="#43d187" stop-opacity="0.07"/>
+                  <stop offset="1" stop-color="#349966" stop-opacity="0"/>
+                </radialGradient>
                 <radialGradient id="pbxn-led-glow" cx="0.5" cy="0.5" r="0.5">
-                  <stop offset="0" stop-color="#5ef0a4" stop-opacity="0.55"/>
-                  <stop offset="0.4" stop-color="#43d187" stop-opacity="0.22"/>
+                  <stop offset="0" stop-color="#5ef0a4" stop-opacity="0.6"/>
+                  <stop offset="0.4" stop-color="#43d187" stop-opacity="0.24"/>
                   <stop offset="1" stop-color="#349966" stop-opacity="0"/>
                 </radialGradient>
                 <radialGradient id="pbxn-led-core" cx="0.5" cy="0.42" r="0.6">
@@ -893,6 +938,11 @@ section[id], [data-clock] { scroll-margin-top: 5.5rem; }
                   <stop offset="0.45" stop-color="#7df0b4"/>
                   <stop offset="1" stop-color="#1e5e3f"/>
                 </radialGradient>
+                <radialGradient id="pbxn-led-flare" cx="0.5" cy="0.5" r="0.5">
+                  <stop offset="0" stop-color="#7df0b4" stop-opacity="0.30"/>
+                  <stop offset="1" stop-color="#7df0b4" stop-opacity="0"/>
+                </radialGradient>
+                <!-- reflection fades -->
                 <linearGradient id="pbxn-refl-front" x1="0" y1="625" x2="0" y2="782" gradientUnits="userSpaceOnUse">
                   <stop offset="0" stop-color="#171a18" stop-opacity="0.42"/>
                   <stop offset="0.55" stop-color="#121413" stop-opacity="0.12"/>
@@ -910,20 +960,47 @@ section[id], [data-clock] { scroll-margin-top: 5.5rem; }
                   <stop offset="0" stop-color="#4be08f" stop-opacity="0.30"/>
                   <stop offset="1" stop-color="#4be08f" stop-opacity="0"/>
                 </radialGradient>
+                <!-- AI cues: etched neural traces (visible only where the key light
+                     grazes the lid) and a thinking aura pooling at the base -->
+                <linearGradient id="pbxn-trace" x1="20" y1="30" x2="360" y2="140" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#dff5e8" stop-opacity="0.14"/>
+                  <stop offset="0.45" stop-color="#dff5e8" stop-opacity="0.05"/>
+                  <stop offset="1" stop-color="#dff5e8" stop-opacity="0"/>
+                </linearGradient>
+                <radialGradient id="pbxn-aura" cx="0.5" cy="0.5" r="0.5">
+                  <stop offset="0" stop-color="#43d187" stop-opacity="0.13"/>
+                  <stop offset="0.6" stop-color="#349966" stop-opacity="0.05"/>
+                  <stop offset="1" stop-color="#349966" stop-opacity="0"/>
+                </radialGradient>
               </defs>
+
+              <!-- ======================= floor: contact shadow ======================= -->
               <ellipse cx="562" cy="632" rx="345" ry="52" fill="url(#pbxn-shadow)"/>
+              <!-- thinking aura: green light pooling at the base, felt not noticed -->
+              <ellipse class="v-aura" cx="565" cy="628" rx="320" ry="34" fill="url(#pbxn-aura)"/>
               <ellipse cx="565" cy="626" rx="250" ry="30" fill="url(#pbxn-shadow-core)"/>
+              <ellipse cx="560" cy="622" rx="180" ry="16" fill="url(#pbxn-shadow-core)"/>
+
+              <!-- ======================= floor: faint reflection ===================== -->
               <g>
                 <polygon points="255,612 700,642 700,782 255,752" fill="url(#pbxn-refl-front)"/>
                 <polygon points="700,642 870,582 870,712 700,782" fill="url(#pbxn-refl-side)"/>
                 <rect x="693" y="642" width="14" height="100" fill="url(#pbxn-refl-edge)"/>
                 <ellipse class="v-led-echo" cx="663" cy="680" rx="9" ry="26" fill="url(#pbxn-refl-led)"/>
               </g>
+
+              <!-- ======================= chassis ======================= -->
+              <!-- base silhouette (guarantees no gaps behind rounded faces) -->
               <path d="M255,610 L700,640 L870,580 L870,380 L425,350 L255,410 Z"
                     fill="#0d0f0e" stroke="#0d0f0e" stroke-width="3" stroke-linejoin="round"/>
+
+              <!-- right side face (local 180x200 plane) -->
               <g transform="matrix(0.9444,-0.3333,0,1,700,440)">
                 <rect x="0" y="0" width="180" height="200" fill="url(#pbxn-side)"/>
                 <rect x="0" y="0" width="180" height="200" fill="url(#pbxn-side-bounce)"/>
+                <rect x="0" y="0" width="180" height="16" fill="url(#pbxn-ao-lip)"/>
+                <rect x="0" y="0" width="180" height="200" fill="url(#pbxn-ao-foot)"/>
+                <!-- vent slots -->
                 <g fill="#060808">
                   <rect x="26" y="42" width="4.5" height="112" rx="2.2"/>
                   <rect x="36" y="44" width="4.5" height="112" rx="2.2"/>
@@ -934,16 +1011,30 @@ section[id], [data-clock] { scroll-margin-top: 5.5rem; }
                   <rect x="86" y="54" width="4.5" height="112" rx="2.2"/>
                   <rect x="96" y="56" width="4.5" height="112" rx="2.2"/>
                 </g>
+                <!-- warm interior hint behind the deepest vents -->
+                <g fill="#123024" opacity="0.5">
+                  <rect x="27.2" y="70" width="2" height="56" rx="1"/>
+                  <rect x="37.2" y="72" width="2" height="56" rx="1"/>
+                </g>
+                <!-- ethernet hint -->
                 <g>
                   <rect x="126" y="118" width="30" height="26" rx="2" fill="#060707" stroke="#232624" stroke-width="1"/>
                   <rect x="133" y="138" width="16" height="6" fill="#0d0f0e"/>
+                  <circle cx="131" cy="122" r="1.6" fill="#43d187" opacity="0.6"/>
                 </g>
+                <!-- chassis parting seam -->
                 <line x1="4" y1="172" x2="176" y2="172" stroke="#000000" stroke-opacity="0.45" stroke-width="1.2"/>
               </g>
+
+              <!-- front face (local 445x200 plane) -->
               <g transform="matrix(1,0.0674,0,1,255,410)">
                 <rect x="0" y="0" width="445" height="200" fill="url(#pbxn-front)"/>
+                <rect x="0" y="0" width="445" height="16" fill="url(#pbxn-ao-lip)"/>
+                <rect x="0" y="0" width="445" height="200" fill="url(#pbxn-ao-foot)"/>
+                <!-- chassis parting seam -->
                 <line x1="10" y1="170" x2="436" y2="170" stroke="#000000" stroke-opacity="0.5" stroke-width="1.2"/>
                 <line x1="10" y1="171.4" x2="436" y2="171.4" stroke="#3a3f3b" stroke-opacity="0.22" stroke-width="0.8"/>
+                <!-- ports: 2x USB-A + USB-C -->
                 <g>
                   <rect x="150" y="136" width="34" height="13" rx="2" fill="#040505" stroke="#2c302d" stroke-opacity="0.55" stroke-width="0.9"/>
                   <rect x="154" y="141" width="26" height="4.2" rx="1" fill="#1b1f1c"/>
@@ -951,31 +1042,69 @@ section[id], [data-clock] { scroll-margin-top: 5.5rem; }
                   <rect x="200" y="141" width="26" height="4.2" rx="1" fill="#1b1f1c"/>
                   <rect x="244" y="138" width="26" height="9" rx="4.5" fill="#040505" stroke="#2c302d" stroke-opacity="0.55" stroke-width="0.9"/>
                 </g>
+                <!-- status LED (drawn later in global space for glow) -->
               </g>
+
+              <!-- top face (rounded lid, local 445x180 plane, origin at back-left) -->
               <g transform="matrix(1,0.0674,-0.9444,0.3333,425,350)">
                 <rect x="2" y="2" width="441" height="176" rx="16" fill="url(#pbxn-top)"/>
+                <!-- brushed-metal banding + machining lines along the lid grain -->
+                <rect x="2" y="2" width="441" height="176" rx="16" fill="url(#pbxn-brush)"/>
                 <g stroke-width="1">
-                  <path d="M16 22 H429 M16 46 H429 M16 70 H429 M16 94 H429 M16 118 H429 M16 142 H429 M16 164 H429" stroke="#ffffff" stroke-opacity="0.022"/>
+                  <path d="M16 22 H429 M16 46 H429 M16 70 H429 M16 94 H429 M16 118 H429 M16 142 H429 M16 164 H429" stroke="#ffffff" stroke-opacity="0.024"/>
                   <path d="M16 34 H429 M16 58 H429 M16 82 H429 M16 106 H429 M16 130 H429 M16 154 H429" stroke="#000000" stroke-opacity="0.05"/>
+                  <path d="M16 28 H429 M16 76 H429 M16 124 H429" stroke="#ffffff" stroke-opacity="0.012"/>
                 </g>
                 <rect x="2" y="2" width="441" height="176" rx="16" fill="url(#pbxn-top-sheen)"/>
-                <rect x="14" y="13" width="417" height="154" rx="11" fill="none" stroke="#000000" stroke-opacity="0.30" stroke-width="1.1"/>
+                <ellipse cx="120" cy="52" rx="150" ry="70" fill="url(#pbxn-spec)"/>
+                <!-- etched neural traces, catching the key light near the back-left
+                     corner and fading to nothing across the lid -->
+                <g fill="none" stroke="url(#pbxn-trace)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M30 36 h44 l16 14 h34"/>
+                  <path d="M30 58 h26 l12 -10 h30 l14 12"/>
+                  <path d="M38 92 h30 l18 -16"/>
+                  <path d="M30 118 h48 l14 12 h26"/>
+                  <path d="M52 142 h34 l12 -10"/>
+                  <path d="M254 40 h34 l12 10"/>
+                  <path d="M262 132 h28 l16 -12"/>
+                </g>
+                <g fill="#dff5e8">
+                  <circle cx="124" cy="50" r="1.7" fill-opacity="0.16"/>
+                  <circle cx="112" cy="60" r="1.7" fill-opacity="0.13"/>
+                  <circle cx="86" cy="76" r="1.5" fill-opacity="0.12"/>
+                  <circle cx="118" cy="130" r="1.5" fill-opacity="0.08"/>
+                  <circle cx="98" cy="132" r="1.4" fill-opacity="0.09"/>
+                  <circle cx="300" cy="50" r="1.4" fill-opacity="0.04"/>
+                  <circle cx="306" cy="120" r="1.4" fill-opacity="0.04"/>
+                </g>
+                <!-- lid inset seam, with a lit lower lip -->
+                <rect x="14" y="13" width="417" height="154" rx="11" fill="none" stroke="#000000" stroke-opacity="0.32" stroke-width="1.1"/>
+                <rect x="14" y="14.2" width="417" height="154" rx="11" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="0.8"/>
+                <!-- power button, front-right corner of lid -->
                 <circle cx="398" cy="142" r="9.5" fill="#171a18" stroke="#000000" stroke-opacity="0.4" stroke-width="1"/>
                 <circle cx="398" cy="142" r="9.5" fill="none" stroke="#4a504b" stroke-opacity="0.35" stroke-width="0.8"/>
-                <g transform="translate(96,60)">
-                  <g fill="#46a878">
-                    <rect x="3" y="41" width="45.5" height="7.4" rx="3.7"/>
-                    <path d="M25.7 0.6 C28.6 11.2 30.6 25 30.4 43.7 L20.9 43.7 C20.7 25 22.8 11.2 25.7 0.6 Z"/>
-                    <path d="M-4.4 13.2 C3.4 20.4 8.6 30.4 9.7 43.7 L1.2 43.7 C0.1 32.2 -1.9 22 -4.4 13.2 Z"/>
-                    <path d="M55.8 13.2 C48 20.4 42.8 30.4 41.7 43.7 L50.2 43.7 C51.3 32.2 53.3 22 55.8 13.2 Z"/>
+                <circle cx="398" cy="142" r="3.2" fill="none" stroke="#5b625c" stroke-opacity="0.4" stroke-width="1"/>
+                <!-- brand v2: "the box that grows the lawn" mark + outlined PlowzBox
+                     wordmark (paths only, from assets/brand/logo.svg; no <text>).
+                     Monoline strokes read as etched print on the lid. -->
+                <g transform="translate(92,54)">
+                  <g transform="scale(0.84)">
+                    <g fill="#46a878">
+                      <rect x="7" y="37.5" width="50" height="20.5" rx="7.25"/>
+                      <path d="M30.5 5.5 C33.7 14 36.1 25.5 35.8 42 L25.4 42 C25.4 25.5 27.6 14 30.5 5.5 Z"/>
+                      <path d="M12.5 18.5 C17.8 24 21.8 31.5 23.1 42 L16.6 42 C16.2 33.5 14.8 25.5 12.5 18.5 Z"/>
+                      <path d="M47.5 16.5 C43.4 22.5 40.3 30.5 39.6 42 L45.9 42 C46.4 33.5 47.3 24.5 47.5 16.5 Z"/>
+                    </g>
+                    <circle cx="45.5" cy="47.75" r="6.2" fill="#8fd4ae" opacity="0.25"/>
+                    <circle cx="45.5" cy="47.75" r="3.8" fill="#8fd4ae"/>
                   </g>
-                  <g transform="translate(70,12) scale(0.66)" fill="none" stroke-width="10.5"
+                  <g transform="translate(74,10) scale(0.66)" fill="none" stroke-width="10.5"
                      stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
                     <g stroke="#cdd4cf">
                       <path d="M5.25 50 L5.25 9.25"/>
                       <path d="M5.25 9.25 L17 9.25 A9.4 9.4 0 0 1 17 28.05 L5.25 28.05"/>
                       <path d="M43.4 9.25 L43.4 50"/>
-                      <path d="M60.4 33 A11.75 11.75 0 1 0 83.9 33 A11.75 11.75 0 1 0 60.4 33"/>
+                      <path d="M60.25 33 A11.9 11.9 0 1 0 84.05 33 A11.9 11.9 0 1 0 60.25 33"/>
                       <path d="M100.9 21.25 L107.3 44.75 L114.5 26.75 L121.7 44.75 L128.1 21.25"/>
                       <path d="M145.7 21.25 L166.5 21.25 L145.7 44.75 L167.1 44.75"/>
                     </g>
@@ -983,22 +1112,32 @@ section[id], [data-clock] { scroll-margin-top: 5.5rem; }
                       <path d="M187.1 50 L187.1 9.25"/>
                       <path d="M187.1 9.25 L197.35 9.25 A8.7 8.7 0 0 1 197.35 26.65 L187.1 26.65"/>
                       <path d="M197.35 26.65 L199.35 26.65 A11.65 11.65 0 0 1 199.35 50 L187.1 50"/>
-                      <path d="M228 33 A11.75 11.75 0 1 0 251.5 33 A11.75 11.75 0 1 0 228 33"/>
+                      <path d="M227.85 33 A11.9 11.9 0 1 0 251.65 33 A11.9 11.9 0 1 0 227.85 33"/>
                       <path d="M268.5 21.25 L289.5 44.75"/>
                       <path d="M289.5 21.25 L268.5 44.75"/>
                     </g>
                   </g>
                 </g>
               </g>
+
+              <!-- ======================= lighting: edges ======================= -->
               <path d="M255,410 L700,440" stroke="url(#pbxn-edge-topfront)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
               <path d="M700,440 L870,380" stroke="url(#pbxn-edge-topright)" stroke-width="2" stroke-linecap="round" fill="none"/>
               <path d="M425,350 L870,380" stroke="url(#pbxn-edge-rim)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
               <path d="M425,350 L255,410" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1.5" stroke-linecap="round" fill="none"/>
               <path d="M255,410 L255,610" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1.4" fill="none"/>
               <path d="M870,380 L870,580" stroke="#cfe8d8" stroke-opacity="0.07" stroke-width="1.4" fill="none"/>
+              <!-- occlusion crease where the chassis meets the floor -->
+              <path d="M255,610 L700,640 L870,580" stroke="#000000" stroke-opacity="0.5" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+              <!-- rounded near-corner catching light -->
               <rect x="691" y="442" width="18" height="196" fill="url(#pbxn-edge-near)"/>
+
+              <!-- ======================= status LED ======================= -->
+              <!-- front-face local (408,30) -> global -->
               <g class="v-led">
+                <circle cx="663" cy="468" r="52" fill="url(#pbxn-led-bloom)"/>
                 <circle cx="663" cy="468" r="26" fill="url(#pbxn-led-glow)"/>
+                <ellipse cx="663" cy="468" rx="44" ry="6" fill="url(#pbxn-led-flare)"/>
                 <circle cx="663" cy="468" r="4.6" fill="url(#pbxn-led-core)"/>
                 <circle cx="663" cy="468" r="6.2" fill="none" stroke="#5ee89e" stroke-opacity="0.35" stroke-width="1.4"/>
               </g>
@@ -1025,6 +1164,13 @@ section[id], [data-clock] { scroll-margin-top: 5.5rem; }
         <p class="kicker">The problem, at the hour it actually happens</p>
         <h2 class="h2" id="problem-h">Your best leads arrive while your hands are full.</h2>
       </div>
+
+      <figure class="v-sceneband v-sceneband--photo reveal">
+        <img src="assets/img/photo/photo-dusk-street.jpg"
+             alt="A quiet residential street at dusk: older homes with small front lawns under a fading pastel sky, one window already lit"
+             width="1200" height="570" loading="lazy">
+        <figcaption>6:40 PM. The mower is loaded, the street is going quiet, and the phone has been busy without you.</figcaption>
+      </figure>
 
       <div class="moment reveal">
         <div class="moment-clock" aria-hidden="true">6:40<small>PM &middot; Tuesday</small></div>
@@ -1089,6 +1235,14 @@ section[id], [data-clock] { scroll-margin-top: 5.5rem; }
         <p class="lede">There's no migration project and no software to babysit. The box
         earns its keep by learning how you already run things, then doing the typing.</p>
       </div>
+
+      <figure class="v-sceneband v-sceneband--photo reveal">
+        <img src="assets/img/photo/photo-shop-lamp.jpg"
+             alt="A workshop bench at night, lit by a single warm lamp over a wooden shelf of tools and jars"
+             width="1600" height="760" loading="lazy">
+        <figcaption>9:05 PM. The shop after close: one light, one shelf, and room for one more small machine.</figcaption>
+      </figure>
+
       <div class="v-how-grid">
         <ol class="steps steps-4">
           <li class="step reveal">
@@ -1144,6 +1298,13 @@ section[id], [data-clock] { scroll-margin-top: 5.5rem; }
         Every step below is a real, shipping capability, nothing aspirational. And when the
         story reaches something you can try, the page hands you the actual product.</p>
       </div>
+
+      <figure class="v-sceneband v-sceneband--photo reveal">
+        <img src="assets/img/photo/photo-dawn-dew.jpg"
+             alt="Dew-covered grass at sunrise, backlit gold, with rooftops silhouetted on the horizon"
+             width="1200" height="570" loading="lazy">
+        <figcaption>6:55 AM. First light on the lawns, and the front office is already answering.</figcaption>
+      </figure>
 
       <ol class="timeline">
         <li class="tl-item reveal">
@@ -1456,6 +1617,13 @@ section[id], [data-clock] { scroll-margin-top: 5.5rem; }
           <a class="card-more" href="pages/how-it-works.html">Learn more <span aria-hidden="true">&rarr;</span><span class="sr-only"> about the full feature set</span></a>
         </div>
       </div>
+
+      <figure class="v-capmap reveal">
+        <img src="assets/img/plowzbox-nuc-top.svg"
+             alt="The PlowzBox seen from above with eight labeled capability rays: texts and email, missed-call rescue, real bookings, quotes that follow up, invoices and reminders, crews and routes, local AI with no meter, and the keeper details like weather and Spanish and reviews"
+             width="1000" height="640" loading="lazy">
+        <figcaption>The same eight jobs, drawn from above. Every ray is a shipping capability, not a roadmap item.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -1594,6 +1762,129 @@ section[id], [data-clock] { scroll-margin-top: 5.5rem; }
         <p class="lede">The software industry settled on a deal: you rent access to your own
         front office, forever, and your customer list lives in their cloud. You don't rent
         your truck. Why rent your office?</p>
+      </div>
+
+      <figure class="v-sceneband reveal" role="img"
+              aria-label="The PlowzBox on its shelf at night with the whole operation in orbit around it: messages, calendar, invoices, phone, routes, crews, and reviews circling the box like moons, each tied back to its green light.">
+        <svg viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <radialGradient id="s5-field" cx="0.5" cy="0.5" r="0.72">
+              <stop offset="0" stop-color="#123324"/>
+              <stop offset="0.6" stop-color="#0b241a"/>
+              <stop offset="1" stop-color="#04110b"/>
+            </radialGradient>
+            <radialGradient id="s5-halo" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0" stop-color="#43d187" stop-opacity="0.28"/>
+              <stop offset="0.5" stop-color="#2a9a63" stop-opacity="0.1"/>
+              <stop offset="1" stop-color="#1e5e3f" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="s5-core" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0" stop-color="#eafff3" stop-opacity="0.95"/>
+              <stop offset="0.35" stop-color="#7df0b4" stop-opacity="0.75"/>
+              <stop offset="1" stop-color="#43d187" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="s5-box" x1="0" y1="0" x2="0.55" y2="1">
+              <stop offset="0" stop-color="#272c26"/>
+              <stop offset="0.55" stop-color="#131614"/>
+              <stop offset="1" stop-color="#080a09"/>
+            </linearGradient>
+            <linearGradient id="s5-plank" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#3b3325"/>
+              <stop offset="1" stop-color="#221c12"/>
+            </linearGradient>
+            <radialGradient id="s5-node" cx="0.5" cy="0.42" r="0.65">
+              <stop offset="0" stop-color="#1a4630"/>
+              <stop offset="1" stop-color="#0d2418"/>
+            </radialGradient>
+          </defs>
+
+          <g class="vsc-bg">
+            <rect x="-40" y="-40" width="1520" height="720" fill="url(#s5-field)"/>
+            <g fill="#8fd4ae">
+              <circle cx="150" cy="90" r="1.4" opacity="0.35"/><circle cx="360" cy="150" r="1.1" opacity="0.3"/>
+              <circle cx="1120" cy="80" r="1.5" opacity="0.4"/><circle cx="1300" cy="190" r="1.2" opacity="0.3"/>
+              <circle cx="950" cy="60" r="1" opacity="0.3"/><circle cx="80" cy="300" r="1.2" opacity="0.25"/>
+              <circle cx="1390" cy="380" r="1.3" opacity="0.3"/>
+            </g>
+            <g fill="none" stroke="#2a4a39" stroke-width="1.6">
+              <ellipse cx="720" cy="330" rx="580" ry="205" opacity="0.55"/>
+              <ellipse cx="720" cy="330" rx="420" ry="146" opacity="0.75" stroke-dasharray="3 7"/>
+            </g>
+          </g>
+
+          <g class="vsc-mid">
+            <ellipse cx="720" cy="330" rx="430" ry="290" fill="url(#s5-halo)" class="vsc-breathe"/>
+            <g stroke="#7df0b4" stroke-opacity="0.13" stroke-width="1.6">
+              <line x1="700" y1="330" x2="252" y2="196"/>
+              <line x1="720" y1="316" x2="530" y2="128"/>
+              <line x1="740" y1="316" x2="946" y2="130"/>
+              <line x1="748" y1="330" x2="1196" y2="188"/>
+              <line x1="748" y1="344" x2="1160" y2="470"/>
+              <line x1="700" y1="344" x2="288" y2="472"/>
+            </g>
+
+            <g>
+              <circle cx="252" cy="196" r="34" fill="url(#s5-node)" stroke="#349966" stroke-opacity="0.55" stroke-width="1.6"/>
+              <path d="M238 189 h28 a6 6 0 0 1 6 6 v8 a6 6 0 0 1 -6 6 h-14 l-7 7 v-7 h-7 a6 6 0 0 1 -6 -6 v-8 a6 6 0 0 1 6 -6 Z" fill="none" stroke="#c2e8d3" stroke-width="2.4" stroke-linejoin="round" transform="translate(2,-6)"/>
+            </g>
+            <g>
+              <circle cx="530" cy="128" r="30" fill="url(#s5-node)" stroke="#349966" stroke-opacity="0.55" stroke-width="1.6"/>
+              <g stroke="#c2e8d3" stroke-width="2.4" fill="none" stroke-linejoin="round">
+                <rect x="516" y="116" width="28" height="26" rx="4"/>
+                <line x1="516" y1="124" x2="544" y2="124"/>
+                <line x1="524" y1="112" x2="524" y2="120"/><line x1="536" y1="112" x2="536" y2="120"/>
+              </g>
+              <circle cx="538" cy="134" r="3" fill="#7df0b4"/>
+            </g>
+            <g>
+              <circle cx="946" cy="130" r="30" fill="url(#s5-node)" stroke="#349966" stroke-opacity="0.55" stroke-width="1.6"/>
+              <g stroke="#c2e8d3" stroke-width="2.4" fill="none" stroke-linejoin="round" stroke-linecap="round">
+                <path d="M936 116 h14 l6 6 v20 h-20 Z"/>
+                <path d="M950 116 v6 h6"/>
+                <path d="M941 132 h10 M941 137 h7"/>
+              </g>
+            </g>
+            <g>
+              <circle cx="1196" cy="188" r="34" fill="url(#s5-node)" stroke="#349966" stroke-opacity="0.55" stroke-width="1.6"/>
+              <path d="M1184 176 a5 5 0 0 1 5 -4 c3 0 5 2 6 4 c2 5 4 9 8 13 c4 4 8 6 13 8 c2 1 4 3 4 6 a5 5 0 0 1 -4 5 c-16 1 -33 -15 -32 -32 Z" fill="none" stroke="#c2e8d3" stroke-width="2.4" stroke-linejoin="round" transform="rotate(8 1196 188)"/>
+            </g>
+            <g>
+              <circle cx="1160" cy="470" r="30" fill="url(#s5-node)" stroke="#349966" stroke-opacity="0.55" stroke-width="1.6"/>
+              <path d="M1160 456 l4.6 9.4 10.4 1.5 -7.5 7.3 1.8 10.3 -9.3 -4.9 -9.3 4.9 1.8 -10.3 -7.5 -7.3 10.4 -1.5 Z" fill="none" stroke="#c2e8d3" stroke-width="2.2" stroke-linejoin="round"/>
+            </g>
+            <g>
+              <circle cx="288" cy="472" r="30" fill="url(#s5-node)" stroke="#349966" stroke-opacity="0.55" stroke-width="1.6"/>
+              <g fill="none" stroke="#c2e8d3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M272 478 h6 l4 -12 h16 l5 8 h5 v8 h-4"/>
+                <circle cx="284" cy="482" r="4"/><circle cx="302" cy="482" r="4"/>
+                <path d="M288 482 h10"/>
+              </g>
+            </g>
+          </g>
+
+          <g class="vsc-fg">
+            <ellipse cx="720" cy="452" rx="230" ry="16" fill="#020905" opacity="0.85"/>
+            <rect x="470" y="452" width="500" height="18" rx="4" fill="url(#s5-plank)"/>
+            <rect x="470" y="470" width="500" height="8" rx="3" fill="#171208"/>
+            <g>
+              <rect x="590" y="342" width="260" height="104" rx="14" fill="url(#s5-box)"/>
+              <path d="M606 345 H 834" stroke="#8fe7bb" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round"/>
+              <g fill="#050705">
+                <rect x="806" y="360" width="5" height="50" rx="2.5"/>
+                <rect x="816" y="360" width="5" height="50" rx="2.5"/>
+                <rect x="826" y="360" width="5" height="50" rx="2.5"/>
+              </g>
+              <path d="M598 428 H 842" stroke="#000000" stroke-opacity="0.5" stroke-width="1.3"/>
+              <circle cx="622" cy="436" r="46" fill="url(#s5-halo)" class="vsc-breathe"/>
+              <circle cx="622" cy="436" r="15" fill="url(#s5-core)" class="vsc-breathe"/>
+              <circle cx="622" cy="436" r="3.4" fill="#eafff3"/>
+            </g>
+          </g>
+        </svg>
+        <figcaption>One box on one shelf, and every job the front office does in orbit around it. Yours, not rented.</figcaption>
+      </figure>
+
+      <div class="section-head" style="margin-bottom: clamp(var(--chq-space-5), 4vw, var(--chq-space-6));">
         <div class="v-spotrow" aria-hidden="true">
           <img src="assets/img/spot-box-shelf.svg" alt="" width="120" height="120" loading="lazy">
           <img src="assets/img/spot-dollars-home.svg" alt="" width="120" height="120" loading="lazy">

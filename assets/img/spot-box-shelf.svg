@@ -1,35 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="The PlowzBox appliance on its shelf">
-  <!-- Spot set: the box itself - one shelf, one cable, one green light. -->
-  <!-- quiet signal: it's on, working -->
-  <g stroke="#349966" stroke-width="4" stroke-linecap="round" fill="none">
-    <path d="M52 32 a12 12 0 0 1 16 0"/>
-    <path d="M46 23 a21 21 0 0 1 28 0"/>
-  </g>
-  <!-- the box -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="The PlowzBox on its shelf, one green light on">
+  <defs>
+    <radialGradient id="spbs-f" cx="0.5" cy="0.42" r="0.8">
+      <stop offset="0" stop-color="#123324"/><stop offset="1" stop-color="#0b241a"/>
+    </radialGradient>
+    <radialGradient id="spbs-g" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7df0b4" stop-opacity="0.6"/><stop offset="1" stop-color="#7df0b4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="url(#spbs-f)"/>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="none" stroke="#2a4a39" stroke-width="1.5"/>
+  <!-- shelf plank -->
   <g>
-    <rect x="28" y="44" width="64" height="34" rx="8" fill="#123324"/>
-    <path d="M36 47.5 h48" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2.5" stroke-linecap="round"/>
-    <!-- vents -->
-    <g stroke="#0b241a" stroke-width="2.6" stroke-linecap="round">
-      <path d="M76 52 v18 M82.5 52 v18"/>
-    </g>
-    <!-- grass etch -->
-    <g fill="#8fd4ae" transform="translate(38,52) scale(0.36)">
-      <rect x="3" y="41" width="45.5" height="7.4" rx="3.7"/>
-      <path d="M25.7 0.6 C28.6 11.2 30.6 25 30.4 43.7 L20.9 43.7 C20.7 25 22.8 11.2 25.7 0.6 Z"/>
-      <path d="M-4.4 13.2 C3.4 20.4 8.6 30.4 9.7 43.7 L1.2 43.7 C0.1 32.2 -1.9 22 -4.4 13.2 Z"/>
-      <path d="M55.8 13.2 C48 20.4 42.8 30.4 41.7 43.7 L50.2 43.7 C51.3 32.2 53.3 22 55.8 13.2 Z"/>
-    </g>
-    <!-- status LED with glow -->
-    <circle cx="66" cy="70" r="6.5" fill="#8fd4ae" opacity="0.3"/>
-    <circle cx="66" cy="70" r="2.8" fill="#8fd4ae"/>
+    <rect x="20" y="72" width="80" height="10" rx="3" fill="#06140e" opacity="0.6" transform="translate(2.5,3)"/>
+    <rect x="20" y="72" width="80" height="10" rx="3" fill="#8a744e"/>
+    <rect x="20" y="80" width="80" height="4" rx="2" fill="#5f4e33"/>
+    <path d="M30 84 h8 v14 l-8 -7 Z" fill="#3d3222"/>
+    <path d="M82 84 h8 v14 l-8 -7 Z" fill="#3d3222"/>
   </g>
-  <!-- shelf board + brackets -->
-  <path d="M16 84 h88" stroke="#123324" stroke-width="4.5" stroke-linecap="round"/>
-  <g fill="none" stroke="#123324" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M30 86 v10 l12 -10"/>
-    <path d="M90 86 v10 l-12 -10"/>
+  <!-- the box, paper-cut -->
+  <g>
+    <rect x="32" y="42" width="56" height="30" rx="8" fill="#06140e" opacity="0.6" transform="translate(2.5,3)"/>
+    <rect x="32" y="42" width="56" height="30" rx="8" fill="#191c1a"/>
+    <path d="M38 44.5 h44" stroke="#8fe7bb" stroke-opacity="0.5" stroke-width="1.8" stroke-linecap="round"/>
+    <g fill="#050705">
+      <rect x="74" y="50" width="3" height="14" rx="1.5"/>
+      <rect x="80" y="50" width="3" height="14" rx="1.5"/>
+    </g>
+    <!-- v2 mark, etched tiny -->
+    <g transform="translate(42,48) scale(0.32)" fill="#46a878">
+      <rect x="7" y="37.5" width="50" height="20.5" rx="7.25"/>
+      <path d="M30.5 5.5 C33.7 14 36.1 25.5 35.8 42 L25.4 42 C25.4 25.5 27.6 14 30.5 5.5 Z"/>
+      <path d="M12.5 18.5 C17.8 24 21.8 31.5 23.1 42 L16.6 42 C16.2 33.5 14.8 25.5 12.5 18.5 Z"/>
+      <path d="M47.5 16.5 C43.4 22.5 40.3 30.5 39.6 42 L45.9 42 C46.4 33.5 47.3 24.5 47.5 16.5 Z"/>
+    </g>
   </g>
-  <!-- one cable dropping off the shelf -->
-  <path d="M92 62 c10 2 12 10 12 20 v14" fill="none" stroke="#123324" stroke-width="4" stroke-linecap="round"/>
+  <!-- the one light -->
+  <circle cx="40" cy="66" r="18" fill="url(#spbs-g)"/>
+  <circle cx="40" cy="66" r="2.6" fill="#eafff3"/>
+  <!-- one cable to the router, off-frame -->
+  <path d="M88 62 C 98 64 102 60 106 54" fill="none" stroke="#27754f" stroke-width="3" stroke-linecap="round"/>
 </svg>

@@ -1,21 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="The money stays at your shop">
-  <!-- Spot set: dollars staying home - no per-seat fees leaving the
-       building. The shop keeps its own money. -->
-  <!-- shop silhouette -->
-  <g fill="#ffffff" stroke="#123324" stroke-width="4.5" stroke-linejoin="round">
-    <path d="M18 52 L60 24 L102 52 v46 a6 6 0 0 1 -6 6 h-72 a6 6 0 0 1 -6 -6 Z"/>
-    <!-- garage door -->
-    <rect x="42" y="62" width="36" height="42" rx="4" fill="#e1f3e8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="The money staying home at your shop, not leaking to monthly fees">
+  <defs>
+    <radialGradient id="spdh-f" cx="0.5" cy="0.42" r="0.8">
+      <stop offset="0" stop-color="#123324"/><stop offset="1" stop-color="#0b241a"/>
+    </radialGradient>
+    <radialGradient id="spdh-g" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7df0b4" stop-opacity="0.55"/><stop offset="1" stop-color="#7df0b4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="url(#spdh-f)"/>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="none" stroke="#2a4a39" stroke-width="1.5"/>
+  <!-- the shop, paper-cut -->
+  <g>
+    <path d="M26 58 l34 -26 34 26 v36 a5 5 0 0 1 -5 5 h-58 a5 5 0 0 1 -5 -5 Z" fill="#06140e" opacity="0.6" transform="translate(2.5,3)"/>
+    <path d="M26 58 l34 -26 34 26 v36 a5 5 0 0 1 -5 5 h-58 a5 5 0 0 1 -5 -5 Z" fill="#f1f0ea"/>
+    <path d="M20 60 l40 -31 40 31" fill="none" stroke="#c2e8d3" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="36" y="66" width="14" height="14" rx="3" fill="#17422e"/>
+    <rect x="70" y="66" width="14" height="14" rx="3" fill="#17422e"/>
   </g>
-  <g stroke="#123324" stroke-width="3" stroke-linecap="round" opacity="0.35">
-    <path d="M46 72 h28 M46 82 h28 M46 92 h28"/>
-  </g>
-  <!-- roof ridge highlight -->
-  <path d="M26 50 L60 27.5 L94 50" fill="none" stroke="#349966" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- the dollar, home -->
-  <circle cx="60" cy="82" r="15" fill="#1e5e3f"/>
-  <g stroke="#c2e8d3" stroke-width="3.4" stroke-linecap="round" fill="none">
-    <path d="M65.6 76.4 c-7.5 -5.5 -16.3 1.3 -9.5 6 l8 3.7 c6.2 4.5 -3 10.8 -10 5.8"/>
-    <path d="M60 71.5 v21"/>
-  </g>
+  <!-- the dollar, glowing, staying inside -->
+  <circle cx="60" cy="76" r="22" fill="url(#spdh-g)"/>
+  <circle cx="60" cy="76" r="13" fill="#06140e" opacity="0.55" transform="translate(2,2.5)"/>
+  <circle cx="60" cy="76" r="13" fill="#8fd4ae"/>
+  <path d="M60 69.5 v13 M56.5 72 h5.5 a2.9 2.9 0 0 1 0 5.8 h-4 a2.9 2.9 0 0 0 0 5.8 h6" fill="none" stroke="#123324" stroke-width="2.4" stroke-linecap="round"/>
 </svg>

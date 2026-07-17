@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="The ledger kept straight: invoices in columns, the balance line squared">
+  <defs>
+    <radialGradient id="spbk-f" cx="0.5" cy="0.42" r="0.8">
+      <stop offset="0" stop-color="#123324"/><stop offset="1" stop-color="#0b241a"/>
+    </radialGradient>
+    <radialGradient id="spbk-g" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7df0b4" stop-opacity="0.55"/><stop offset="1" stop-color="#7df0b4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="url(#spbk-f)"/>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="none" stroke="#2a4a39" stroke-width="1.5"/>
+  <!-- open ledger book -->
+  <g>
+    <path d="M24 34 c12 -6 24 -6 34 0 c10 -6 22 -6 34 0 v52 c-12 -6 -24 -6 -34 0 c-10 -6 -22 -6 -34 0 Z" fill="#06140e" opacity="0.6" transform="translate(2.5,3)"/>
+    <path d="M24 34 c12 -6 24 -6 34 0 c10 -6 22 -6 34 0 v52 c-12 -6 -24 -6 -34 0 c-10 -6 -22 -6 -34 0 Z" fill="#f1f0ea"/>
+    <path d="M58 34 v52" stroke="#c8cdc8" stroke-width="2"/>
+  </g>
+  <!-- entries -->
+  <g fill="#27754f">
+    <rect x="30" y="42" width="20" height="4.5" rx="2.25"/>
+    <rect x="30" y="52" width="16" height="4.5" rx="2.25"/>
+    <rect x="30" y="62" width="20" height="4.5" rx="2.25"/>
+    <rect x="66" y="42" width="20" height="4.5" rx="2.25"/>
+    <rect x="66" y="52" width="14" height="4.5" rx="2.25"/>
+    <rect x="66" y="62" width="20" height="4.5" rx="2.25"/>
+  </g>
+  <!-- the squared balance line, glowing -->
+  <circle cx="76" cy="76" r="20" fill="url(#spbk-g)"/>
+  <rect x="66" y="72" width="20" height="6" rx="3" fill="#8fd4ae"/>
+  <rect x="30" y="72" width="20" height="6" rx="3" fill="#c2e8d3"/>
+  <!-- export arrow: your numbers, yours to take -->
+  <g>
+    <circle cx="94" cy="94" r="11" fill="#06140e" opacity="0.55" transform="translate(2,2.5)"/>
+    <circle cx="94" cy="94" r="11" fill="#8fd4ae"/>
+    <path d="M94 88.5 v8 M90 93 l4 4.5 4 -4.5" fill="none" stroke="#123324" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

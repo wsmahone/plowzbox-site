@@ -1,25 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="A calendar filling with booked jobs">
-  <!-- Spot set: the calendar fills itself (bookings land as real jobs). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="A booking landing in a real calendar opening">
+  <defs>
+    <radialGradient id="spcf-f" cx="0.5" cy="0.42" r="0.8">
+      <stop offset="0" stop-color="#123324"/><stop offset="1" stop-color="#0b241a"/>
+    </radialGradient>
+    <radialGradient id="spcf-g" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7df0b4" stop-opacity="0.55"/><stop offset="1" stop-color="#7df0b4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="url(#spcf-f)"/>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="none" stroke="#2a4a39" stroke-width="1.5"/>
   <g>
-    <rect x="16" y="20" width="88" height="80" rx="10" fill="#ffffff" stroke="#123324" stroke-width="4.5"/>
-    <path d="M16 42 h88" stroke="#123324" stroke-width="4.5"/>
-    <rect x="16" y="20" width="88" height="22" rx="10" fill="#1e5e3f"/>
-    <rect x="16" y="34" width="88" height="8" fill="#1e5e3f"/>
-    <!-- binding pins -->
-    <g stroke="#123324" stroke-width="4.5" stroke-linecap="round">
-      <path d="M38 14 v10 M82 14 v10"/>
-    </g>
-    <!-- day cells: booked = filled -->
-    <g>
-      <rect x="27" y="52" width="16" height="14" rx="4" fill="#8fd4ae"/>
-      <rect x="52" y="52" width="16" height="14" rx="4" fill="#8fd4ae"/>
-      <rect x="77" y="52" width="16" height="14" rx="4" fill="#e1f3e8"/>
-      <rect x="27" y="74" width="16" height="14" rx="4" fill="#8fd4ae"/>
-      <rect x="52" y="74" width="16" height="14" rx="4" fill="#e1f3e8"/>
-      <rect x="77" y="74" width="16" height="14" rx="4" fill="#e1f3e8"/>
-    </g>
+    <rect x="24" y="26" width="72" height="70" rx="10" fill="#06140e" opacity="0.6" transform="translate(2.5,3)"/>
+    <rect x="24" y="26" width="72" height="70" rx="10" fill="#f1f0ea"/>
+    <path d="M24 36 a10 10 0 0 1 10 -10 h52 a10 10 0 0 1 10 10 v8 h-72 Z" fill="#1e5e3f"/>
+    <rect x="36" y="20" width="6" height="12" rx="3" fill="#c2e8d3"/>
+    <rect x="78" y="20" width="6" height="12" rx="3" fill="#c2e8d3"/>
   </g>
-  <!-- a new booking landing -->
-  <circle cx="98" cy="98" r="13" fill="#1e5e3f"/>
-  <path d="M98 92 v12 M92 98 h12" stroke="#c2e8d3" stroke-width="3.5" stroke-linecap="round"/>
+  <g fill="#c2e8d3">
+    <rect x="32" y="52" width="16" height="12" rx="3"/>
+    <rect x="52" y="52" width="16" height="12" rx="3"/>
+    <rect x="72" y="52" width="16" height="12" rx="3"/>
+    <rect x="32" y="70" width="16" height="12" rx="3"/>
+    <rect x="72" y="70" width="16" height="12" rx="3"/>
+  </g>
+  <!-- the real opening, taken and glowing -->
+  <circle cx="60" cy="76" r="20" fill="url(#spcf-g)"/>
+  <rect x="52" y="70" width="16" height="12" rx="3" fill="#27754f"/>
+  <path d="M56.5 76 l3 3.2 5.5 -6.4" fill="none" stroke="#eafff3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

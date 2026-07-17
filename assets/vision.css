@@ -435,3 +435,129 @@ button { font-family: inherit; }
   .v-tilt-core { transform: none !important; transition: none; }
   .v-mag { transform: none !important; }
 }
+
+/* ------------------------------------------------------------
+   13. Imagery pass v2 (ADDITIVE ONLY, owner: imagery).
+       Act scene bands, scene parallax, feature-page art bands,
+       spot v2 sizing. Nothing above this line was touched.
+   ------------------------------------------------------------ */
+
+/* Cinematic act scene band: an inline SVG panel, slice-cropped
+   so the center of the composition survives 375px screens. */
+.v-sceneband {
+  position: relative;
+  border-radius: var(--chq-radius-xl);
+  overflow: hidden;
+  height: clamp(15rem, 34vw, 27rem);
+  margin: 0 0 clamp(var(--chq-space-6), 5vw, var(--chq-space-7));
+  box-shadow: var(--chq-shadow-lg);
+  border: 1px solid rgba(11, 36, 26, 0.35);
+  background: var(--chq-green-950);
+}
+.v-sceneband > svg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  display: block;
+}
+.v-sceneband figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: var(--chq-space-3) var(--chq-space-5);
+  font-size: var(--chq-text-xs);
+  color: rgba(242, 247, 243, 0.72);
+  background: linear-gradient(180deg, transparent, rgba(4, 12, 9, 0.55));
+  pointer-events: none;
+}
+
+/* Photographic scene bands: real photography (Pexels, licensed,
+   self-hosted in assets/img/photo/), unified by a pine/amber
+   color grade so the set reads as one photographer's work. */
+.v-sceneband--photo img {
+  position: absolute; inset: -8% 0 auto 0;
+  width: 100%; height: 116%;
+  object-fit: cover;
+  filter: saturate(0.88) contrast(1.05) brightness(0.97);
+}
+.v-sceneband--photo::before {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(155deg,
+    rgba(18, 51, 36, 0.6) 0%,
+    rgba(11, 36, 26, 0.22) 45%,
+    rgba(201, 123, 63, 0.3) 100%);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+.v-sceneband--photo::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background:
+    radial-gradient(120% 90% at 50% 42%, transparent 55%, rgba(4, 12, 9, 0.4) 100%),
+    linear-gradient(180deg, rgba(11, 36, 26, 0.2), transparent 32%);
+  pointer-events: none;
+}
+.v-sceneband figcaption { z-index: 2; }
+
+/* Layer parallax: progressive enhancement only. Layers are
+   overdrawn ~40 units past the viewBox so nothing un-paints. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .v-sceneband .vsc-bg,
+    .v-sceneband .vsc-mid,
+    .v-sceneband .vsc-fg {
+      animation: none linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+    .v-sceneband .vsc-bg  { animation-name: v-par-bg; }
+    .v-sceneband .vsc-mid { animation-name: v-par-mid; }
+    .v-sceneband .vsc-fg  { animation-name: v-par-fg; }
+    .v-sceneband--photo img {
+      animation: v-par-mid linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+  }
+}
+@keyframes v-par-bg  { from { transform: translateY(-8px); }  to { transform: translateY(8px); } }
+@keyframes v-par-mid { from { transform: translateY(-15px); } to { transform: translateY(15px); } }
+@keyframes v-par-fg  { from { transform: translateY(-24px); } to { transform: translateY(24px); } }
+
+/* Living light inside the scenes: one breath, shared phase.
+   Static state (reduced motion / no support) is fully lit. */
+@media (prefers-reduced-motion: no-preference) {
+  .vsc-breathe {
+    transform-box: fill-box; transform-origin: center;
+    animation: v-scene-breathe 4.2s ease-in-out infinite;
+  }
+  .vsc-flicker { animation: v-scene-flicker 5.6s ease-in-out infinite; }
+  .vsc-flicker2 { animation: v-scene-flicker 5.6s ease-in-out 2.8s infinite; }
+}
+@keyframes v-scene-breathe {
+  0%, 100% { opacity: 0.62; transform: scale(0.9); }
+  50%      { opacity: 1;    transform: scale(1.12); }
+}
+@keyframes v-scene-flicker {
+  0%, 100% { opacity: 0.25; }
+  45%      { opacity: 0.9; }
+  60%      { opacity: 0.55; }
+}
+
+/* Device render: the thinking aura at the base breathes in phase
+   with the LED. Static (fully lit) under reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .v-aura { animation: v-aura-breathe 3.4s ease-in-out infinite; }
+}
+@keyframes v-aura-breathe {
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 1; }
+}
+
+/* The exploded capability figure (top-down box + labeled rays) */
+.v-capmap { max-width: 56rem; margin-inline: auto; }
+.v-capmap img { width: 100%; height: auto; }
+.v-capmap figcaption {
+  text-align: center; margin-top: var(--chq-space-2);
+  font-size: var(--chq-text-xs); color: var(--chq-ink-secondary);
+}
+
+/* Spot v2 pieces are self-lit dark tiles; give them a touch of
+   lift so the paper-cut shadow reads on recessed bands. */
+.v-spot, .v-spotrow img { border-radius: var(--chq-radius-lg); }
