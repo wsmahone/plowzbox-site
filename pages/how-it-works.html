@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How It Works, Step by Step | PlowzBox</title>
+<meta name="description" content="Plug PlowzBox into your router, teach it your services, prices, and hours, and it drafts grounded replies, books real jobs, and waits for your one-tap approval.">
+<link rel="canonical" href="https://plowzbox.com/pages/how-it-works.html">
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0b241a">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PlowzBox">
+<meta property="og:title" content="How It Works, Step by Step | PlowzBox">
+<meta property="og:description" content="Plug PlowzBox into your router, teach it your services, prices, and hours, and it drafts grounded replies, books real jobs, and waits for your one-tap approval.">
+<meta property="og:url" content="https://plowzbox.com/pages/how-it-works.html">
+<meta property="og:image" content="https://plowzbox.com/assets/img/plowzbox-og.png">
+<link rel="stylesheet" href="../assets/tokens.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--chq-font-sans);
+  font-size: var(--chq-text-base);
+  line-height: var(--chq-leading-body);
+  color: var(--chq-ink);
+  background: var(--chq-bg);
+  text-rendering: optimizeLegibility;
+}
+img, svg { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { margin: 0; line-height: var(--chq-leading-snug); color: var(--chq-brand-ink); }
+p { margin: 0 0 var(--chq-space-4); }
+a { color: var(--chq-brand); }
+a:focus-visible, button:focus-visible {
+  outline: none;
+  box-shadow: var(--chq-shadow-glow);
+  border-radius: var(--chq-radius-sm);
+}
+
+/* ---- layout primitives ---- */
+.wrap { max-width: 72rem; margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 2.5rem); }
+.section { padding-block: clamp(var(--chq-space-8), 9vw, var(--chq-space-9)); }
+.section.recessed { background: var(--chq-bg-recessed); }
+.kicker {
+  display: inline-block;
+  font-size: var(--chq-text-sm);
+  font-weight: var(--chq-weight-bold);
+  letter-spacing: var(--chq-tracking-wide);
+  text-transform: uppercase;
+  color: var(--chq-green-600);
+  margin-bottom: var(--chq-space-3);
+}
+.h2 {
+  font-size: clamp(var(--chq-text-2xl), 3.4vw, var(--chq-text-3xl));
+  font-weight: var(--chq-weight-display);
+  letter-spacing: var(--chq-tracking-tight);
+  max-width: 26ch;
+}
+.lede {
+  font-size: var(--chq-text-md);
+  color: var(--chq-ink-secondary);
+  max-width: 56ch;
+  margin-top: var(--chq-space-4);
+}
+.section-head { margin-bottom: clamp(var(--chq-space-6), 5vw, var(--chq-space-8)); }
+
+/* ---- skip link ---- */
+.skip-link {
+  position: absolute; left: var(--chq-space-4); top: -100px;
+  z-index: 100; padding: var(--chq-space-2) var(--chq-space-4);
+  background: var(--chq-brand); color: var(--chq-white);
+  border-radius: var(--chq-radius-md); font-weight: var(--chq-weight-semibold);
+  text-decoration: none; transition: top var(--chq-duration-1) var(--chq-ease);
+}
+.skip-link:focus { top: var(--chq-space-4); }
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---- buttons ---- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: var(--chq-space-2);
+  padding: 0.8rem 1.4rem;
+  border-radius: var(--chq-radius-md);
+  font-size: var(--chq-text-base);
+  font-weight: var(--chq-weight-semibold);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background var(--chq-duration-1) var(--chq-ease),
+              border-color var(--chq-duration-1) var(--chq-ease),
+              transform var(--chq-duration-1) var(--chq-ease);
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--chq-brand); color: var(--chq-white); }
+.btn-primary:hover { background: var(--chq-brand-hover); }
+.btn-ghost-dark { color: var(--chq-dark-ink); border-color: var(--chq-dark-border); }
+.btn-ghost-dark:hover { border-color: var(--chq-green-500); background: rgba(52,153,102,0.12); }
+.btn-on-dark { background: var(--chq-green-300); color: var(--chq-green-950); }
+.btn-on-dark:hover { background: var(--chq-green-200); }
+
+/* ---- header / nav (shared with index.html) ---- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--chq-neutral-050) 88%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--chq-border);
+}
+.nav {
+  display: flex; align-items: center; gap: var(--chq-space-5);
+  min-height: 4.25rem;
+}
+.brand {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  text-decoration: none; margin-right: auto;
+}
+.brand img { width: 2rem; height: 2rem; }
+.brand-word {
+  font-size: 1.25rem; font-weight: var(--chq-weight-display);
+  letter-spacing: var(--chq-tracking-tight); color: var(--chq-green-900);
+}
+.brand-word b { color: var(--chq-green-700); font-weight: inherit; }
+.nav-links { display: flex; gap: var(--chq-space-5); list-style: none; margin: 0; padding: 0; }
+.nav-links a {
+  text-decoration: none; color: var(--chq-neutral-800);
+  font-size: var(--chq-text-sm); font-weight: var(--chq-weight-medium);
+}
+.nav-links a:hover { color: var(--chq-brand); }
+.nav-links a[aria-current="page"] {
+  color: var(--chq-brand);
+  font-weight: var(--chq-weight-bold);
+}
+.nav .btn { padding: 0.55rem 1rem; font-size: var(--chq-text-sm); }
+/* 7 links on this page, so the collapse point sits a bit higher than the 5-link pages */
+@media (max-width: 63.9rem) { .nav-links { display: none; } }
+
+/* ---- page hero (dark, two column: text + appliance) ---- */
+.hero {
+  background:
+    radial-gradient(52rem 30rem at 82% -12%, rgba(52,153,102,0.22), transparent 60%),
+    radial-gradient(40rem 26rem at -10% 110%, rgba(30,94,63,0.45), transparent 60%),
+    var(--chq-dark-bg);
+  color: var(--chq-dark-ink);
+  overflow: hidden;
+}
+.hero .wrap {
+  display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(var(--chq-space-6), 5vw, var(--chq-space-8));
+  align-items: center;
+  padding-block: clamp(var(--chq-space-8), 9vw, var(--chq-space-9));
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: flex-start; gap: 0.5rem;
+  font-size: var(--chq-text-sm); font-weight: var(--chq-weight-semibold);
+  letter-spacing: var(--chq-tracking-wide); text-transform: uppercase;
+  color: var(--chq-accent); margin-bottom: var(--chq-space-4);
+}
+.hero-eyebrow::before {
+  content: ""; width: 0.5rem; height: 0.5rem; border-radius: 50%;
+  background: var(--chq-green-400);
+  flex: none; margin-top: 0.45em;
+}
+.hero h1 {
+  font-size: clamp(var(--chq-text-3xl), 5.4vw, var(--chq-text-4xl));
+  font-weight: var(--chq-weight-display);
+  letter-spacing: var(--chq-tracking-tight);
+  line-height: var(--chq-leading-tight);
+  color: var(--chq-dark-ink);
+  max-width: 18ch;
+}
+.hero-sub {
+  font-size: clamp(var(--chq-text-md), 2vw, var(--chq-text-lg));
+  color: var(--chq-dark-ink-2);
+  max-width: 52ch;
+  margin-top: var(--chq-space-5);
+}
+.hero-ctas { display: flex; flex-wrap: wrap; gap: var(--chq-space-3); margin-top: var(--chq-space-6); }
+.hero-fine { font-size: var(--chq-text-xs); color: var(--chq-dark-ink-2); margin-top: var(--chq-space-4); max-width: 52ch; }
+.hero-fine strong { color: var(--chq-dark-ink); }
+.hero-visual { display: flex; align-items: center; justify-content: center; }
+.hero-visual img { width: 100%; max-width: 560px; height: auto; }
+@media (max-width: 55rem) { .hero .wrap { grid-template-columns: 1fr; } }
+
+/* ---- two-column detail (text + figure) ---- */
+.duo {
+  display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: clamp(var(--chq-space-6), 5vw, var(--chq-space-8));
+  align-items: start;
+}
+@media (max-width: 55rem) { .duo { grid-template-columns: 1fr; } }
+
+/* ---- cards ---- */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--chq-space-4); }
+.cards.two { grid-template-columns: repeat(2, 1fr); }
+.cards.four { grid-template-columns: repeat(4, 1fr); }
+.card {
+  background: var(--chq-surface);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-lg);
+  padding: var(--chq-space-5);
+  box-shadow: var(--chq-shadow-sm);
+}
+.card h3 { font-size: var(--chq-text-lg); font-weight: var(--chq-weight-bold); margin-bottom: var(--chq-space-2); }
+.card p { margin: 0; color: var(--chq-ink-secondary); font-size: var(--chq-text-sm); line-height: 1.55; }
+.card .tag {
+  display: inline-block;
+  font-family: var(--chq-font-mono); font-size: var(--chq-text-xs);
+  letter-spacing: var(--chq-tracking-wide); text-transform: uppercase;
+  color: var(--chq-green-700); background: var(--chq-green-100);
+  border-radius: var(--chq-radius-full); padding: 0.15rem 0.65rem;
+  margin-bottom: var(--chq-space-3);
+}
+.card-more {
+  display: inline-block; margin-top: var(--chq-space-3);
+  font-size: var(--chq-text-sm); font-weight: var(--chq-weight-semibold);
+  color: var(--chq-brand); text-decoration: none;
+}
+.card-more:hover { text-decoration: underline; }
+@media (max-width: 60rem) { .cards, .cards.four { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 34rem) { .cards, .cards.two, .cards.four { grid-template-columns: 1fr; } }
+
+/* ---- checklist ---- */
+.why-points { list-style: none; margin: var(--chq-space-5) 0 0; padding: 0; display: grid; gap: var(--chq-space-3); max-width: 50ch; }
+.why-points li { display: flex; gap: var(--chq-space-3); align-items: baseline; color: var(--chq-neutral-800); }
+.why-points li::before {
+  content: "\2713"; flex: none;
+  font-weight: var(--chq-weight-bold); color: var(--chq-green-600);
+}
+
+/* ---- numbered steps ---- */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--chq-space-4); counter-reset: step; list-style: none; margin: 0; padding: 0; }
+.steps.stack { grid-template-columns: 1fr; max-width: 34rem; }
+.step {
+  background: var(--chq-surface);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-lg);
+  padding: var(--chq-space-5);
+  box-shadow: var(--chq-shadow-sm);
+}
+.step::before {
+  counter-increment: step;
+  content: counter(step, decimal-leading-zero);
+  display: inline-block;
+  font-family: var(--chq-font-mono);
+  font-weight: var(--chq-weight-bold);
+  font-size: var(--chq-text-sm);
+  color: var(--chq-green-700);
+  background: var(--chq-green-100);
+  border-radius: var(--chq-radius-full);
+  padding: 0.15rem 0.65rem;
+  margin-bottom: var(--chq-space-4);
+}
+.step h3 { font-size: var(--chq-text-lg); margin-bottom: var(--chq-space-2); }
+.step p { margin: 0; color: var(--chq-ink-secondary); font-size: var(--chq-text-sm); line-height: 1.55; }
+@media (max-width: 55rem) { .steps { grid-template-columns: 1fr; } }
+
+/* ---- pipeline flow diagram (CSS only) ---- */
+.flow {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: var(--chq-space-5);
+  counter-reset: flow;
+}
+.flow li {
+  position: relative;
+  background: var(--chq-surface);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-lg);
+  padding: var(--chq-space-4);
+  box-shadow: var(--chq-shadow-sm);
+}
+.flow li::before {
+  counter-increment: flow;
+  content: counter(flow, decimal-leading-zero);
+  display: inline-block;
+  font-family: var(--chq-font-mono);
+  font-weight: var(--chq-weight-bold);
+  font-size: var(--chq-text-xs);
+  color: var(--chq-green-700);
+  background: var(--chq-green-100);
+  border-radius: var(--chq-radius-full);
+  padding: 0.15rem 0.6rem;
+  margin-bottom: var(--chq-space-3);
+}
+.flow li:not(:last-child)::after {
+  content: "\2192";
+  position: absolute; right: -1.15rem; top: 50%;
+  transform: translateY(-50%);
+  color: var(--chq-green-600);
+  font-weight: var(--chq-weight-bold);
+  font-size: var(--chq-text-md);
+}
+.flow h3 { font-size: var(--chq-text-base); font-weight: var(--chq-weight-bold); margin-bottom: var(--chq-space-2); }
+.flow p { margin: 0; color: var(--chq-ink-secondary); font-size: var(--chq-text-xs); line-height: 1.55; }
+@media (max-width: 60rem) {
+  .flow { grid-template-columns: 1fr; max-width: 30rem; }
+  .flow li:not(:last-child)::after {
+    content: "\2193";
+    right: auto; left: 50%; top: auto; bottom: -1.55rem;
+    transform: translateX(-50%);
+  }
+}
+
+/* ---- appliance hookup mini-diagram ---- */
+.hookup {
+  background: var(--chq-surface);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-xl);
+  padding: var(--chq-space-6) var(--chq-space-5);
+  box-shadow: var(--chq-shadow-md);
+  display: flex; align-items: center; justify-content: center;
+  gap: var(--chq-space-2);
+  flex-wrap: wrap;
+}
+.hookup-node {
+  text-align: center;
+  font-size: var(--chq-text-sm);
+  font-weight: var(--chq-weight-semibold);
+  color: var(--chq-brand-ink);
+}
+.hookup-node .shape {
+  width: 7rem; height: 4.25rem;
+  margin: 0 auto var(--chq-space-2);
+  border-radius: var(--chq-radius-md);
+  border: 1px solid var(--chq-border-strong);
+  background: linear-gradient(170deg, var(--chq-neutral-100), var(--chq-surface));
+  position: relative;
+}
+.hookup-node .shape.box {
+  background: linear-gradient(160deg, #17422e 0%, var(--chq-green-950) 80%);
+  border-color: var(--chq-green-800);
+}
+.hookup-node .shape.box::after {
+  content: ""; position: absolute; right: 0.7rem; bottom: 0.7rem;
+  width: 0.45rem; height: 0.45rem; border-radius: 50%;
+  background: var(--chq-green-400);
+  box-shadow: 0 0 8px 2px rgba(88, 191, 133, 0.65);
+}
+.hookup-node .shape.router::after {
+  content: ""; position: absolute; left: 50%; top: -0.9rem;
+  width: 2px; height: 0.9rem; background: var(--chq-border-strong);
+}
+.hookup-node small {
+  display: block; font-weight: var(--chq-weight-regular);
+  color: var(--chq-ink-secondary); font-size: var(--chq-text-xs);
+}
+.hookup-cable {
+  flex: none;
+  font-family: var(--chq-font-mono);
+  font-size: var(--chq-text-xs);
+  color: var(--chq-green-700);
+  text-align: center;
+  padding-inline: var(--chq-space-2);
+}
+.hookup-cable .wire {
+  display: block; width: 5.5rem; height: 2px;
+  background: repeating-linear-gradient(90deg, var(--chq-green-500) 0 8px, transparent 8px 14px);
+  margin: 0.4rem auto;
+}
+.fig-caption {
+  font-size: var(--chq-text-xs); color: var(--chq-ink-secondary);
+  margin: var(--chq-space-3) 0 0; text-align: center;
+}
+
+/* ---- SMS conversation mock (static, illustrative) ---- */
+.chat {
+  background: var(--chq-surface);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-xl);
+  padding: var(--chq-space-5);
+  box-shadow: var(--chq-shadow-md);
+  display: grid; gap: var(--chq-space-3);
+}
+.msg {
+  padding: 0.6rem 0.95rem;
+  border-radius: 14px;
+  font-size: var(--chq-text-sm);
+  line-height: 1.5;
+  max-width: 88%;
+  margin: 0;
+}
+.msg-in {
+  background: var(--chq-neutral-100);
+  border: 1px solid var(--chq-border);
+  justify-self: start;
+  border-bottom-left-radius: 4px;
+}
+.msg-draft {
+  background: var(--chq-green-050);
+  border: 1px dashed var(--chq-green-500);
+  color: var(--chq-green-900);
+  justify-self: end;
+  border-bottom-right-radius: 4px;
+}
+.msg-note {
+  justify-self: center; text-align: center;
+  font-family: var(--chq-font-mono);
+  font-size: var(--chq-text-xs);
+  color: var(--chq-ink-secondary);
+  max-width: 100%;
+  margin: 0;
+}
+.draft-tag {
+  display: block;
+  font-family: var(--chq-font-mono);
+  font-size: 0.65rem; letter-spacing: var(--chq-tracking-wide);
+  text-transform: uppercase; color: var(--chq-green-700);
+  margin-bottom: 0.35rem;
+}
+.approve-row { display: flex; gap: var(--chq-space-2); justify-self: end; }
+.pill-btn {
+  font-size: var(--chq-text-xs); font-weight: var(--chq-weight-semibold);
+  padding: 0.3rem 0.85rem; border-radius: var(--chq-radius-full);
+  border: 1px solid var(--chq-border-strong);
+  color: var(--chq-ink-secondary); background: var(--chq-surface);
+}
+.pill-btn.primary { background: var(--chq-brand); color: var(--chq-white); border-color: transparent; }
+.chat-caption {
+  font-size: var(--chq-text-xs); color: var(--chq-ink-secondary);
+  margin: var(--chq-space-3) 0 0; text-align: center;
+}
+
+/* ---- pull quote ---- */
+.pull {
+  margin: clamp(var(--chq-space-6), 6vw, var(--chq-space-8)) 0 0;
+  padding: clamp(var(--chq-space-5), 4vw, var(--chq-space-7));
+  background: var(--chq-surface-tint);
+  border: 1px solid var(--chq-green-200);
+  border-radius: var(--chq-radius-xl);
+}
+.pull blockquote {
+  margin: 0;
+  font-size: clamp(var(--chq-text-lg), 2.6vw, var(--chq-text-xl));
+  font-weight: var(--chq-weight-bold);
+  letter-spacing: var(--chq-tracking-tight);
+  color: var(--chq-green-900);
+  max-width: 34ch;
+}
+.pull figcaption {
+  margin-top: var(--chq-space-3);
+  font-size: var(--chq-text-sm); color: var(--chq-ink-secondary);
+}
+
+/* ---- dark honesty band (online vs offline) ---- */
+.honesty { background: var(--chq-dark-bg); color: var(--chq-dark-ink); }
+.honesty .kicker { color: var(--chq-accent); }
+.honesty .h2 { color: var(--chq-dark-ink); }
+.honesty .lede { color: var(--chq-dark-ink-2); }
+.rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--chq-space-4); }
+.rules.two { grid-template-columns: repeat(2, 1fr); }
+.rule {
+  background: var(--chq-dark-surface);
+  border: 1px solid var(--chq-dark-border);
+  border-radius: var(--chq-radius-lg);
+  padding: var(--chq-space-5);
+}
+.rule-no {
+  font-family: var(--chq-font-mono); font-size: var(--chq-text-xs);
+  color: var(--chq-accent); letter-spacing: var(--chq-tracking-wide);
+  text-transform: uppercase;
+}
+.rule h3 { color: var(--chq-dark-ink); font-size: var(--chq-text-lg); margin: var(--chq-space-2) 0; }
+.rule p { margin: 0; color: var(--chq-dark-ink-2); font-size: var(--chq-text-sm); line-height: 1.55; }
+.rule ul { margin: var(--chq-space-2) 0 0; padding: 0; list-style: none; display: grid; gap: var(--chq-space-2); }
+.rule ul li { color: var(--chq-dark-ink-2); font-size: var(--chq-text-sm); line-height: 1.55; display: flex; gap: var(--chq-space-2); }
+.rule.is ul li::before { content: "\2713"; color: var(--chq-green-300); font-weight: var(--chq-weight-bold); flex: none; }
+.rule.isnot ul li::before { content: "\00d7"; color: var(--chq-dark-ink-2); font-weight: var(--chq-weight-bold); flex: none; }
+.honesty-foot {
+  margin: var(--chq-space-6) 0 0; max-width: 56ch;
+  color: var(--chq-dark-ink-2); font-size: var(--chq-text-md);
+}
+.honesty-foot strong { color: var(--chq-dark-ink); }
+@media (max-width: 55rem) { .rules, .rules.two { grid-template-columns: 1fr; } }
+
+/* ---- fine-print / stack note ---- */
+.stack-note {
+  margin-top: var(--chq-space-5);
+  font-family: var(--chq-font-mono); font-size: var(--chq-text-xs);
+  color: var(--chq-ink-secondary);
+  background: var(--chq-neutral-100);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-md);
+  padding: var(--chq-space-3) var(--chq-space-4);
+  line-height: 1.7;
+  max-width: 60rem;
+}
+
+/* ---- final CTA ---- */
+.cta-final {
+  background:
+    radial-gradient(46rem 24rem at 50% 130%, rgba(52,153,102,0.30), transparent 65%),
+    var(--chq-dark-bg);
+  color: var(--chq-dark-ink);
+  text-align: center;
+}
+.cta-final .h2 { color: var(--chq-dark-ink); margin-inline: auto; }
+.cta-final .lede { color: var(--chq-dark-ink-2); margin-inline: auto; }
+.cta-final .hero-ctas { justify-content: center; }
+.cta-final .hero-fine { margin-inline: auto; }
+
+/* ---- explore the rest ---- */
+.explore { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--chq-space-4); }
+.explore-card {
+  display: flex; flex-direction: column;
+  background: var(--chq-surface);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-lg);
+  padding: var(--chq-space-5);
+  box-shadow: var(--chq-shadow-sm);
+  text-decoration: none;
+  transition: box-shadow var(--chq-duration-2) var(--chq-ease),
+              transform var(--chq-duration-2) var(--chq-ease),
+              border-color var(--chq-duration-2) var(--chq-ease);
+}
+.explore-card:hover { box-shadow: var(--chq-shadow-md); transform: translateY(-2px); border-color: var(--chq-green-300); }
+.explore-card h3 { font-size: var(--chq-text-base); font-weight: var(--chq-weight-bold); margin-bottom: var(--chq-space-2); }
+.explore-card p { margin: 0; color: var(--chq-ink-secondary); font-size: var(--chq-text-sm); line-height: 1.55; }
+.explore-card .go {
+  margin-top: auto; padding-top: var(--chq-space-3);
+  color: var(--chq-brand); font-weight: var(--chq-weight-semibold);
+  font-size: var(--chq-text-sm);
+}
+@media (max-width: 60rem) { .explore { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 34rem) { .explore { grid-template-columns: 1fr; } }
+
+/* ---- footer ---- */
+.site-footer {
+  background: var(--chq-green-950);
+  color: var(--chq-dark-ink-2);
+  border-top: 1px solid var(--chq-dark-border);
+  padding-block: var(--chq-space-7);
+  font-size: var(--chq-text-sm);
+}
+.footer-grid {
+  display: flex; flex-wrap: wrap; gap: var(--chq-space-6);
+  justify-content: space-between; align-items: flex-start;
+}
+.site-footer .brand-word { color: var(--chq-dark-ink); }
+.site-footer .brand-word b { color: var(--chq-accent); }
+.site-footer a { color: var(--chq-accent); }
+.footer-note { max-width: 44ch; margin: var(--chq-space-3) 0 0; }
+.footer-legal { margin-top: var(--chq-space-6); padding-top: var(--chq-space-5); border-top: 1px solid var(--chq-dark-border); font-size: var(--chq-text-xs); display: flex; flex-wrap: wrap; gap: var(--chq-space-4); justify-content: space-between; }
+.footer-legal p { margin: 0; }
+
+/* ---- motion safety ---- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="../index.html" aria-label="PlowzBox home">
+      <img src="../assets/brand/logo-mark.svg" alt="" width="32" height="32">
+      <span class="brand-word">Plowz<b>Box</b></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="pain-points.html">The problem</a></li>
+      <li><a href="how-it-works.html" aria-current="page">How it works</a></li>
+      <li><a href="security.html">Security</a></li>
+      <li><a href="phone.html">Phone</a></li>
+      <li><a href="sms.html">Texts &amp; email</a></li>
+      <li><a href="scheduling.html">Scheduling</a></li>
+      <li><a href="billing.html">Billing</a></li>
+      <li><a href="ai.html">Local AI</a></li>
+    </ul>
+    <a class="btn btn-primary" href="demo.html">Request a demo</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <div>
+        <p class="hero-eyebrow">PlowzBox &middot; How it works</p>
+        <h1 id="hero-h">What happens between a text and a booked job.</h1>
+        <p class="hero-sub">No magic, no hand-waving. This page walks the whole path: the
+        box on your shelf, what it learns about your business, how it drafts a reply, where
+        you tap approve, and what it does after the customer says yes.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-on-dark" href="demo.html">Request a demo</a>
+          <a class="btn btn-ghost-dark" href="#pipeline">Skip to the pipeline</a>
+        </div>
+        <p class="hero-fine"><strong>The short version:</strong> plug it in, teach it your
+        business, and hold the approve button. Everything else is detail, and the detail
+        is below.</p>
+      </div>
+      <div class="hero-visual">
+        <img src="../assets/img/plowzbox-nuc.svg" alt="The PlowzBox appliance: a matte-black mini computer with a green status light and the PlowzBox mark." width="560" height="361" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 1: THE APPLIANCE -->
+  <section class="section" id="appliance" aria-labelledby="appliance-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Step one &middot; The box</p>
+        <h2 class="h2" id="appliance-h">It's a small computer. It plugs into your router.</h2>
+        <p class="lede">PlowzBox is an appliance, like a modem or a thermostat, not an app
+        you install or a website you log into. Inside is a small Intel PC running Linux.
+        Everything this site describes runs on it, in your building.</p>
+      </div>
+      <div class="duo">
+        <div>
+          <ol class="steps stack">
+            <li class="step">
+              <h3>Unbox it</h3>
+              <p>In the box: the PlowzBox itself, a power cable, and an ethernet cable.
+              That is the complete parts list.</p>
+            </li>
+            <li class="step">
+              <h3>Plug it in</h3>
+              <p>Power to the wall, ethernet to a free port on the router at your shop or
+              home office. No server room, no IT guy, no software to install on your
+              computer.</p>
+            </li>
+            <li class="step">
+              <h3>It comes online</h3>
+              <p>The status light goes green and the owner dashboard is ready on your
+              phone or laptop, protected by a PIN only you set. Then the real setup
+              starts: teaching it your business.</p>
+            </li>
+          </ol>
+        </div>
+        <div>
+          <div class="hookup" role="img" aria-label="Diagram: your internet router connected by one ethernet cable to the PlowzBox appliance.">
+            <div class="hookup-node">
+              <span class="shape router" aria-hidden="true"></span>
+              Your router
+              <small>the one you already have</small>
+            </div>
+            <div class="hookup-cable" aria-hidden="true">
+              ethernet
+              <span class="wire"></span>
+              one cable
+            </div>
+            <div class="hookup-node">
+              <span class="shape box" aria-hidden="true"></span>
+              PlowzBox
+              <small>power + this cable, done</small>
+            </div>
+          </div>
+          <p class="fig-caption">The whole install. If you can plug in a router, you can
+          plug in a PlowzBox.</p>
+        </div>
+      </div>
+      <p class="stack-note">For the technically curious: Intel NUC small-form PC &middot;
+      Ubuntu Linux &middot; full-disk encryption (LUKS2) &middot; no inbound connections
+      from the internet. More on that side of things on the
+      <a href="security.html">security page</a>.</p>
+    </div>
+  </section>
+
+  <!-- STEP 2: GROUNDING -->
+  <section class="section recessed" id="grounding" aria-labelledby="grounding-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Step two &middot; It learns your business</p>
+        <h2 class="h2" id="grounding-h">Before it says a word, it learns what's true.</h2>
+        <p class="lede">The assistant doesn't answer from imagination. It answers from
+        records you give it and records it keeps. That is the difference between an AI
+        that helps and an AI that embarrasses you.</p>
+      </div>
+      <div class="cards four">
+        <div class="card">
+          <span class="tag">Your services</span>
+          <h3>What you actually offer</h3>
+          <p>Weekly mowing, cleanups, mulch, hedge trimming, whatever your operation
+          really sells. If you don't offer it, the assistant says so instead of
+          promising it.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Your price book</span>
+          <h3>Where every dollar comes from</h3>
+          <p>Every price the assistant ever quotes comes from your price book. If the
+          price isn't in there, it tells the customer it needs to check and flags you.
+          It never guesses a number.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Your hours &amp; calendar</span>
+          <h3>Real openings only</h3>
+          <p>It knows when you work and what's already booked, so it offers slots that
+          actually exist. No phantom appointments, no double-booked Saturdays.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Your history</span>
+          <h3>Who's who</h3>
+          <p>Customers, properties, past jobs, and notes build up on the box over time,
+          so &ldquo;it's Dave on Maple Ave&rdquo; means something to it.</p>
+        </div>
+      </div>
+      <p class="stack-note">How this works under the hood: a technique called
+      retrieval-augmented generation. An embedding model indexes your price book, your
+      job history, and a professional landscaping knowledge base, so when a question
+      comes in, the AI is handed the right page of your records to answer from, instead
+      of answering from thin air.</p>
+    </div>
+  </section>
+
+  <!-- STEP 3: THE PIPELINE -->
+  <section class="section" id="pipeline" aria-labelledby="pipeline-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Step three &middot; A customer reaches out</p>
+        <h2 class="h2" id="pipeline-h">One message, five stops, your thumb on the last one.</h2>
+        <p class="lede">A text, an email, or a missed call that turns into a text-back.
+        Whatever the channel, every message rides the same rails:</p>
+      </div>
+      <ol class="flow">
+        <li>
+          <h3>A message arrives</h3>
+          <p>A customer texts, emails, or calls while you're on the mower. A missed call
+          becomes an automatic text-back so they aren't dialing your competitor.</p>
+        </li>
+        <li>
+          <h3>It understands</h3>
+          <p>The AI works out who's writing, which property it's about, and what they're
+          actually asking, even when the ask is three questions in one rambling text.</p>
+        </li>
+        <li>
+          <h3>It checks what's real</h3>
+          <p>Your calendar for genuine openings. Your price book for the real number.
+          Your records for the history. Nothing in the reply is invented.</p>
+        </li>
+        <li>
+          <h3>It drafts a reply</h3>
+          <p>A grounded draft in your company's voice. If the answer isn't in your
+          records, the draft says so honestly and the question is flagged to you.</p>
+        </li>
+        <li>
+          <h3>It waits for you</h3>
+          <p>The draft sits in your approval queue. You decide which kinds of replies can
+          go out on their own and which always wait for your tap.</p>
+        </li>
+      </ol>
+      <div class="duo" style="margin-top: clamp(var(--chq-space-6), 6vw, var(--chq-space-8));">
+        <div>
+          <p class="kicker">Step four &middot; You approve from your phone</p>
+          <h2 class="h2" style="font-size: clamp(var(--chq-text-xl), 2.6vw, var(--chq-text-2xl));">The approve button is the point.</h2>
+          <p class="lede" style="margin-top: var(--chq-space-3);">Drafts queue on your
+          phone. Read it, tweak it if you want, tap approve, and it sends from your
+          business number. Ten seconds at a red light instead of twenty minutes at the
+          kitchen table.</p>
+          <ul class="why-points">
+            <li>One tap to approve, easy edit before it sends.</li>
+            <li>You choose what's allowed to send automatically and what always waits.</li>
+            <li>Disputes, refunds, and upset customers are never answered automatically.
+            They come straight to you, always.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="chat" role="img" aria-label="Illustration of a text conversation: a customer asks about a fall cleanup, PlowzBox checks the price book and calendar, then shows a drafted reply waiting for the owner's approval.">
+            <p class="msg msg-in">Hey, do you guys do fall cleanups? Corner lot on Maple Ave, leaves are out of control</p>
+            <p class="msg-note">PlowzBox checks your price book + this week's openings</p>
+            <div class="msg msg-draft">
+              <span class="draft-tag">Draft &middot; waiting for your approval</span>
+              We do! Fall cleanup for a corner lot is $180 per our price book. We have
+              Thursday morning open this week. Want me to put you down?
+            </div>
+            <div class="approve-row" aria-hidden="true">
+              <span class="pill-btn">Edit</span>
+              <span class="pill-btn primary">Approve &amp; send</span>
+            </div>
+          </div>
+          <p class="chat-caption">Illustrative conversation. Real prices come from your
+          price book, not from this website.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 5: FOLLOW-THROUGH -->
+  <section class="section recessed" id="followthrough" aria-labelledby="follow-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Step five &middot; After the yes</p>
+        <h2 class="h2" id="follow-h">The yes is where the busywork starts. It handles that too.</h2>
+        <p class="lede">Most tools stop at the reply. The point of an office manager is
+        the follow-through: the booking, the nudge, the invoice, the crew sheet.</p>
+      </div>
+      <div class="cards four">
+        <div class="card">
+          <span class="tag">Booking</span>
+          <h3>On the real calendar</h3>
+          <p>The job lands in a genuine opening, the customer gets a confirmation, and
+          reminders and &ldquo;on our way&rdquo; texts follow without you touching it.</p>
+          <a class="card-more" href="scheduling.html">Scheduling <span aria-hidden="true">&rarr;</span><span class="sr-only">: booking and crew details</span></a>
+        </div>
+        <div class="card">
+          <span class="tag">Quotes</span>
+          <h3>Follow-ups that don't forget</h3>
+          <p>Sent quotes get polite follow-up nudges drafted for you, because the fastest
+          and most persistent responders win the work.</p>
+          <a class="card-more" href="billing.html">Quotes &amp; billing <span aria-hidden="true">&rarr;</span><span class="sr-only">: quote follow-up details</span></a>
+        </div>
+        <div class="card">
+          <span class="tag">Invoices</span>
+          <h3>The awkward ask, drafted</h3>
+          <p>Invoices go out when the work is done, and the uncomfortable payment
+          reminder is drafted for you. You just hit approve.</p>
+          <a class="card-more" href="billing.html">Invoicing <span aria-hidden="true">&rarr;</span><span class="sr-only">: invoicing and reminders details</span></a>
+        </div>
+        <div class="card">
+          <span class="tag">Crew</span>
+          <h3>Tomorrow, on one sheet</h3>
+          <p>Each crew gets a day board: where to be, what to do, gate codes and notes
+          included, so the morning doesn't start with twelve texts.</p>
+          <a class="card-more" href="scheduling.html">Crew run-sheets <span aria-hidden="true">&rarr;</span><span class="sr-only">: crew day board details</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE LOCAL AI -->
+  <section class="section" id="brains" aria-labelledby="brains-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">The brains &middot; All on the box</p>
+        <h2 class="h2" id="brains-h">Two sizes of brain, and the box picks.</h2>
+        <p class="lede">All the AI in this walkthrough runs on the box itself. No cloud
+        account, no per-token fees. There are two main models, and the box routes each
+        message to the right one on its own.</p>
+      </div>
+      <div class="cards two">
+        <div class="card">
+          <span class="tag">Fast tier</span>
+          <h3>Routine questions, answered in a blink</h3>
+          <p>&ldquo;When's my next mowing?&rdquo; or &ldquo;can you come Thursday
+          instead?&rdquo; goes to a small, quick model that answers in about the time it
+          takes to read. Most messages live here.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Hard tier</span>
+          <h3>Nuanced ones get the bigger model</h3>
+          <p>A tangled quote request, a long winding email, a customer who's asking three
+          things at once: those get handed to a larger model on the same box. Slower by a
+          beat, better judgment. You never pick, the box routes it.</p>
+        </div>
+      </div>
+      <p class="stack-note">For the technically curious: qwen2.5:7b handles the fast
+      tier, phi4:14b takes the hard and nuanced questions, qwen2.5-vl reads customer
+      photos, and nomic embeddings power the search over your records, all served by
+      Ollama on the box's own hardware. No API keys, no external model endpoints, no
+      cloud fallback quietly sending your data out. Full story on the
+      <a href="ai.html">local AI page</a>.</p>
+    </div>
+  </section>
+
+  <!-- ONLINE vs OFFLINE, HONESTLY -->
+  <section class="section honesty" id="offline" aria-labelledby="offline-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Honest fine print</p>
+        <h2 class="h2" id="offline-h">What needs the internet, and what doesn't.</h2>
+        <p class="lede">The AI and your records live on the box, so a dead connection
+        doesn't stop your day. But messages still have to travel, and travel takes a
+        connection. Here's the honest split.</p>
+      </div>
+      <div class="rules two">
+        <div class="rule is">
+          <span class="rule-no">Keeps working offline</span>
+          <h3>Everything that lives on the box</h3>
+          <ul>
+            <li>Your schedule and calendar</li>
+            <li>Customer records, job history, and notes</li>
+            <li>The AI assistant, drafting and answering your questions</li>
+            <li>Crew day boards and the owner dashboard, on your local network</li>
+          </ul>
+        </div>
+        <div class="rule isnot">
+          <span class="rule-no">Needs a connection</span>
+          <h3>Anything that has to travel</h3>
+          <ul>
+            <li>Sending and receiving texts and emails</li>
+            <li>Missed-call text-backs</li>
+            <li>Checking the queue from your phone while you're away from the shop</li>
+          </ul>
+        </div>
+      </div>
+      <p class="honesty-foot"><strong>Same as any phone.</strong> When the connection
+      drops, the box keeps planning and drafting; outbound messages go when the
+      connection comes back. Nobody's product texts without a network, and we won't
+      pretend ours does.</p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section cta-final" aria-labelledby="cta-h">
+    <div class="wrap">
+      <p class="kicker" style="color: var(--chq-accent);">Early access</p>
+      <h2 class="h2" id="cta-h" style="max-width: 24ch;">Watch the whole loop run, live.</h2>
+      <p class="lede">At the demo, a real message goes in one end and an approved,
+      grounded reply comes out the other, off the box, in front of you.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-on-dark" href="demo.html">Request a demo</a>
+        <a class="btn btn-ghost-dark" href="security.html">Read the security page</a>
+      </div>
+      <p class="hero-fine">You own the box. Your data stays on it. Pricing announced at demo.</p>
+    </div>
+  </section>
+
+  <!-- KEEP EXPLORING -->
+  <section class="section" id="explore" aria-labelledby="explore-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Keep exploring</p>
+        <h2 class="h2" id="explore-h">Go deeper on any piece of it.</h2>
+      </div>
+      <div class="explore">
+        <a class="explore-card" href="security.html">
+          <h3>Security &amp; privacy</h3>
+          <p>Encrypted disk, local AI, no inbound connections, owner PIN, and what we
+          deliberately do not do.</p>
+          <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="explore-card" href="phone.html">
+          <h3>Never miss a call</h3>
+          <p>Missed-call text-back and voicemail transcribed on the box, with a drafted reply waiting for you.</p>
+          <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="explore-card" href="sms.html">
+          <h3>Answer every text</h3>
+          <p>The AI receptionist for texts and email. Grounded answers, your one-tap approval, English and Spanish.</p>
+          <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="explore-card" href="ai.html">
+          <h3>The local AI</h3>
+          <p>Why the models live on your box, what that costs (nothing per token), and how it works offline.</p>
+          <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <span class="brand" aria-hidden="true" style="pointer-events:none;">
+          <img src="../assets/brand/logo-mark.svg" alt="" width="28" height="28">
+          <span class="brand-word">Plowz<b>Box</b></span>
+        </span>
+        <p class="footer-note">The AI office manager for landscaping businesses, in a box
+        you own. Early access, pricing, warranty, and support tiers to be announced.</p>
+      </div>
+      <div>
+        <p style="margin:0;">Talk to a human:
+        <a href="mailto:hello@plowzbox.com">hello@plowzbox.com</a></p>
+        <p class="footer-note">No trackers, no analytics, no cookies on this site. Nothing
+        on this page claims more than the product does today.</p>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>&copy; 2026 PlowzBox, early access.</p>
+      <p><a href="../index.html">Home</a> &middot; <a href="security.html">Security</a> &middot; <a href="../index.html#faq">FAQ</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

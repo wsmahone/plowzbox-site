@@ -1,0 +1,437 @@
+/* ============================================================
+   PlowzBox - vision.css (scroll-narrative interaction layer)
+   Owner: creative front-end. Pairs with assets/vision.js.
+   Rules of the layer:
+     - tokens.css is the law; no new colors outside the ramp
+     - transform/opacity only for anything that moves
+     - every effect has a reduced-motion resolution that is a
+       complete, legible static state
+     - no external resources, no fonts, no em-dashes
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   0. New tokens consumed here live in tokens.css (--chq-*).
+      This layer only defines component styles.
+   ------------------------------------------------------------ */
+
+button { font-family: inherit; }
+
+/* ------------------------------------------------------------
+   1. Scroll reveals (IntersectionObserver adds .v-in)
+      Hidden state only when JS is on AND motion is allowed,
+      so no-JS and reduced-motion readers get the full page.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  .v-js .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  .v-js .reveal.v-in {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity var(--chq-duration-3) var(--chq-ease),
+      transform var(--chq-duration-3) var(--chq-ease);
+  }
+  /* timeline dot pops when its item lands */
+  .v-js .tl-item.v-in::before {
+    animation: v-pop 0.5s var(--chq-ease) both;
+  }
+  @keyframes v-pop {
+    0%   { transform: scale(0.35); }
+    62%  { transform: scale(1.22); }
+    100% { transform: scale(1); }
+  }
+}
+
+/* ------------------------------------------------------------
+   2. Act dividers (the cinematic chapter bars)
+   ------------------------------------------------------------ */
+.v-act {
+  display: flex; align-items: center; gap: var(--chq-space-3);
+  flex-wrap: wrap;
+  margin-bottom: clamp(var(--chq-space-5), 4vw, var(--chq-space-6));
+}
+.v-act-num {
+  font-family: var(--chq-font-mono);
+  font-size: var(--chq-text-xs);
+  font-weight: var(--chq-weight-bold);
+  letter-spacing: var(--chq-tracking-wide);
+  text-transform: uppercase;
+  color: var(--chq-green-700);
+  background: var(--chq-green-100);
+  border-radius: var(--chq-radius-full);
+  padding: 0.15rem 0.7rem;
+}
+.v-act-name {
+  font-size: var(--chq-text-xs);
+  font-weight: var(--chq-weight-bold);
+  letter-spacing: var(--chq-tracking-wide);
+  text-transform: uppercase;
+  color: var(--chq-ink-secondary);
+}
+.v-act-rule {
+  flex: 1 1 3rem; height: 1px; min-width: 2rem;
+  background: var(--chq-border);
+}
+.v-act-time {
+  font-family: var(--chq-font-mono);
+  font-size: var(--chq-text-xs);
+  color: var(--chq-green-600);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------
+   3. The day-clock rail (desktop) + top hairline + mobile chip.
+      All three are injected by vision.js; nothing exists no-JS.
+   ------------------------------------------------------------ */
+.v-topbar {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px;
+  z-index: 60; pointer-events: none;
+}
+.v-topbar i {
+  display: block; height: 100%;
+  background: linear-gradient(90deg, var(--chq-green-600), var(--chq-green-300));
+  transform: scaleX(0); transform-origin: left center;
+  transition: transform 0.6s var(--chq-ease);
+}
+
+.v-rail {
+  position: fixed; right: clamp(0.8rem, 1.6vw, 1.6rem); top: 50%;
+  transform: translateY(-50%);
+  z-index: 45;
+  display: flex; flex-direction: column; align-items: center;
+  gap: var(--chq-space-3);
+  opacity: 0; visibility: hidden;
+  transition: opacity var(--chq-duration-2) var(--chq-ease),
+              visibility 0s var(--chq-duration-2);
+}
+.v-rail.is-on { opacity: 1; visibility: visible; transition-delay: 0s; }
+.v-rail-clock {
+  font-family: var(--chq-font-mono);
+  font-size: var(--chq-text-xs);
+  font-weight: var(--chq-weight-bold);
+  color: var(--chq-dark-ink);
+  background: color-mix(in srgb, var(--chq-green-950) 92%, transparent);
+  border: 1px solid var(--chq-dark-border);
+  border-radius: var(--chq-radius-full);
+  padding: 0.3rem 0.75rem;
+  white-space: nowrap;
+  text-align: center;
+  max-width: 11rem;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.v-rail-track {
+  position: relative;
+  width: 3px; height: 34vh; min-height: 12rem; max-height: 22rem;
+  background: var(--chq-neutral-200);
+  border-radius: var(--chq-radius-full);
+}
+.v-rail-fill {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, var(--chq-green-300), var(--chq-green-700));
+  border-radius: inherit;
+  transform: scaleY(0); transform-origin: top center;
+  transition: transform 0.6s var(--chq-ease);
+}
+.v-dot {
+  position: absolute; left: 50%;
+  width: 0.8rem; height: 0.8rem;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid var(--chq-green-500);
+  background: var(--chq-surface);
+  padding: 0; cursor: pointer;
+  transition: background var(--chq-duration-1) var(--chq-ease),
+              transform var(--chq-duration-1) var(--chq-ease);
+}
+.v-dot:hover, .v-dot:focus-visible { transform: translate(-50%, -50%) scale(1.35); }
+.v-dot.is-past { background: var(--chq-green-500); }
+/* tooltip: act name, drawn from aria-label */
+.v-dot::after {
+  content: attr(aria-label);
+  position: absolute; right: 1.4rem; top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--chq-font-sans);
+  font-size: var(--chq-text-xs);
+  font-weight: var(--chq-weight-semibold);
+  color: var(--chq-dark-ink);
+  background: color-mix(in srgb, var(--chq-green-950) 92%, transparent);
+  border: 1px solid var(--chq-dark-border);
+  border-radius: var(--chq-radius-sm);
+  padding: 0.2rem 0.55rem;
+  white-space: nowrap;
+  opacity: 0; pointer-events: none;
+  transition: opacity var(--chq-duration-1) var(--chq-ease);
+}
+.v-dot:hover::after, .v-dot:focus-visible::after { opacity: 1; }
+@media (max-width: 63.9rem) { .v-rail { display: none; } }
+
+/* mobile / tablet: tiny floating clock chip, bottom right */
+.v-clockchip {
+  position: fixed; right: 0.9rem; bottom: 0.9rem; z-index: 45;
+  font-family: var(--chq-font-mono);
+  font-size: var(--chq-text-xs);
+  font-weight: var(--chq-weight-bold);
+  color: var(--chq-dark-ink);
+  background: color-mix(in srgb, var(--chq-green-950) 92%, transparent);
+  border: 1px solid var(--chq-dark-border);
+  border-radius: var(--chq-radius-full);
+  padding: 0.3rem 0.75rem;
+  pointer-events: none;
+  max-width: 60vw;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity var(--chq-duration-2) var(--chq-ease),
+              transform var(--chq-duration-2) var(--chq-ease);
+}
+.v-clockchip.is-on { opacity: 1; transform: none; }
+@media (min-width: 64rem) { .v-clockchip { display: none; } }
+
+/* ------------------------------------------------------------
+   4. Hero: device tilt + breathing LED
+   ------------------------------------------------------------ */
+.v-tilt { perspective: 900px; width: 100%; display: flex; justify-content: center; }
+.v-tilt-core {
+  width: 100%; max-width: 760px;
+  transform: rotateX(var(--v-rx, 0deg)) rotateY(var(--v-ry, 0deg));
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+}
+.v-nuc { width: 100%; height: auto; display: block; }
+@media (prefers-reduced-motion: no-preference) {
+  .v-led circle:first-child {
+    transform-box: fill-box; transform-origin: center;
+    animation: v-breathe 3.4s ease-in-out infinite;
+  }
+  .v-led-echo { animation: v-breathe-echo 3.4s ease-in-out infinite; }
+  @keyframes v-breathe {
+    0%, 100% { opacity: 0.55; transform: scale(0.82); }
+    50%      { opacity: 1;    transform: scale(1.18); }
+  }
+  @keyframes v-breathe-echo {
+    0%, 100% { opacity: 0.5; }
+    50%      { opacity: 1; }
+  }
+}
+
+/* ------------------------------------------------------------
+   5. Magnetic CTAs (vision.js adds .v-mag on fine pointers only)
+   ------------------------------------------------------------ */
+.v-mag { will-change: transform; }
+.v-mag.v-mag-out { transition: transform 0.35s var(--chq-ease); }
+
+/* ------------------------------------------------------------
+   6. Versus chips: tap to flip to the source
+   ------------------------------------------------------------ */
+.v-chips {
+  list-style: none; margin: 0 0 var(--chq-space-5); padding: 0;
+  display: flex; flex-wrap: wrap; gap: var(--chq-space-3);
+}
+.v-chip {
+  border: 0; background: none; padding: 0;
+  text-align: left; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  max-width: 100%;
+}
+.v-chip-inner {
+  display: grid;
+  transform-style: preserve-3d;
+  transition: transform 0.55s var(--chq-ease);
+  border-radius: var(--chq-radius-lg);
+}
+.v-chip[aria-pressed="true"] .v-chip-inner { transform: rotateX(180deg); }
+.v-chip-face {
+  grid-area: 1 / 1;
+  display: inline-flex; align-items: center; gap: 0.3rem; flex-wrap: wrap;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  font-size: var(--chq-text-sm);
+  line-height: 1.45;
+  border-radius: var(--chq-radius-lg);
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--chq-border);
+}
+.v-chip-front { color: var(--chq-ink-secondary); background: var(--chq-surface); }
+.v-chip-back {
+  transform: rotateX(180deg);
+  color: var(--chq-dark-ink); background: var(--chq-green-900);
+  border-color: var(--chq-green-800);
+}
+.v-chip--us .v-chip-front {
+  color: var(--chq-green-900); background: var(--chq-green-100);
+  border-color: var(--chq-green-200);
+  font-weight: var(--chq-weight-semibold);
+}
+.v-chip-hint {
+  font-style: normal;
+  font-family: var(--chq-font-mono);
+  font-size: 0.625rem;
+  font-weight: var(--chq-weight-bold);
+  letter-spacing: var(--chq-tracking-wide);
+  text-transform: uppercase;
+  color: var(--chq-green-600);
+  border: 1px dashed var(--chq-green-300);
+  border-radius: var(--chq-radius-full);
+  padding: 0.05rem 0.45rem;
+  margin-left: 0.3rem;
+}
+.v-chip:hover .v-chip-front { border-color: var(--chq-green-500); }
+@media (prefers-reduced-motion: reduce) {
+  .v-chip-inner { transition: none; }
+}
+
+/* ------------------------------------------------------------
+   7. Figures: screenshots, spots, diagrams, the shelf scene
+      (shot-*.png carry their own frame + shadow: no borders here)
+   ------------------------------------------------------------ */
+.v-figure { margin: var(--chq-space-5) 0 0; }
+.v-figure img { width: 100%; height: auto; }
+.v-figure figcaption {
+  margin-top: var(--chq-space-2);
+  font-size: var(--chq-text-xs);
+  color: var(--chq-ink-secondary);
+  max-width: 52ch;
+}
+.v-figure--shot { max-width: 38rem; }
+.v-figure--wide { max-width: 56rem; margin-inline: auto; }
+.v-figure--wide figcaption { text-align: center; margin-inline: auto; }
+.v-figure--phone { max-width: 17rem; }
+.v-figure--phone.v-figure--tl { max-width: 15rem; }
+.in-action .v-figure figcaption { color: var(--chq-dark-ink-2); }
+
+/* phone pair inside a dark scene */
+.v-phones {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: clamp(var(--chq-space-5), 4vw, var(--chq-space-7));
+}
+.v-phones .v-figure { margin-top: 0; }
+.v-phones figcaption { text-align: center; }
+
+/* small spot illustrations riding a timeline item */
+.v-spot {
+  width: clamp(4.5rem, 8vw, 6.5rem); height: auto;
+  float: right;
+  margin: 0 0 var(--chq-space-2) var(--chq-space-4);
+}
+@media (max-width: 40rem) { .v-spot { width: 4rem; } }
+.v-spotrow {
+  display: flex; gap: var(--chq-space-4);
+  margin: var(--chq-space-5) 0 var(--chq-space-2);
+}
+.v-spotrow img { width: clamp(4.5rem, 8vw, 6.5rem); height: auto; }
+
+/* ------------------------------------------------------------
+   8. Layout grids new to this pass
+   ------------------------------------------------------------ */
+.v-how-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 19rem);
+  gap: clamp(var(--chq-space-5), 4vw, var(--chq-space-7));
+  align-items: center;
+}
+.v-how-grid .steps-4 { grid-template-columns: repeat(2, 1fr); }
+.v-how-grid .v-figure { margin-top: 0; }
+@media (max-width: 64rem) {
+  .v-how-grid { grid-template-columns: 1fr; }
+  .v-how-grid .v-figure { max-width: 22rem; }
+}
+@media (max-width: 55rem) { .v-how-grid .steps-4 { grid-template-columns: 1fr; } }
+
+.v-install-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(var(--chq-space-5), 4vw, var(--chq-space-7));
+  align-items: center;
+}
+.v-install-grid .steps { grid-template-columns: 1fr; }
+.v-install-grid .v-figure { margin-top: 0; }
+@media (max-width: 55rem) { .v-install-grid { grid-template-columns: 1fr; } }
+
+/* honesty flagship block */
+.v-flagship { margin-top: clamp(var(--chq-space-7), 6vw, var(--chq-space-8)); }
+.v-flagship .ia-head { max-width: 60ch; margin-bottom: var(--chq-space-5); }
+.v-flagship .ia-head h3 {
+  font-size: clamp(var(--chq-text-xl), 2.6vw, var(--chq-text-2xl));
+  font-weight: var(--chq-weight-display);
+  letter-spacing: var(--chq-tracking-tight);
+  color: var(--chq-dark-ink);
+  margin-bottom: var(--chq-space-3);
+}
+.v-flagship .ia-head p { color: var(--chq-dark-ink-2); margin: 0; }
+
+/* ------------------------------------------------------------
+   9. The embedded funnel band (#request-demo)
+      demo-funnel.css does the heavy lifting via .df-stage;
+      only the h2-instead-of-h1 intro needs styling here.
+   ------------------------------------------------------------ */
+.v-funnel .df-intro h2 {
+  font-size: clamp(var(--chq-text-2xl), 4vw, var(--chq-text-3xl));
+  font-weight: var(--chq-weight-display);
+  letter-spacing: var(--chq-tracking-tight);
+  color: var(--chq-dark-ink);
+  margin-bottom: var(--chq-space-3);
+}
+
+/* ------------------------------------------------------------
+   10. Mobile navigation (vision.js injects the toggle button)
+   ------------------------------------------------------------ */
+.v-navtoggle {
+  display: none;
+  align-items: center; justify-content: center;
+  width: 2.75rem; height: 2.75rem;
+  border: 1px solid var(--chq-border-strong);
+  border-radius: var(--chq-radius-md);
+  background: var(--chq-surface);
+  cursor: pointer; padding: 0;
+  color: var(--chq-green-900);
+}
+.v-navtoggle svg { display: block; }
+.v-navtoggle .v-x { display: none; }
+.v-nav-open .v-navtoggle .v-x { display: block; }
+.v-nav-open .v-navtoggle .v-bars { display: none; }
+@media (max-width: 63.9rem) {
+  .v-js .v-navtoggle { display: inline-flex; }
+  .v-js .v-nav-open .nav-links {
+    display: flex; flex-direction: column; align-items: stretch;
+    gap: 0;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--chq-surface);
+    border-bottom: 1px solid var(--chq-border);
+    box-shadow: var(--chq-shadow-lg);
+    padding: var(--chq-space-3) clamp(1.25rem, 4vw, 2.5rem) var(--chq-space-5);
+    max-height: calc(100dvh - 4.25rem);
+    overflow: auto;
+  }
+  .v-nav-open .nav-links > li > a {
+    display: block;
+    padding: 0.7rem 0;
+    font-size: var(--chq-text-base);
+  }
+  .v-nav-open .nav-links > li { border-bottom: 1px solid var(--chq-border); }
+  .v-nav-open .nav-links > li:last-child { border-bottom: 0; }
+  .v-nav-open .nav-drop .nav-sub {
+    display: block; position: static; transform: none;
+    box-shadow: none; border: 0; min-width: 0;
+    padding: 0 0 var(--chq-space-3) var(--chq-space-4);
+  }
+  .v-nav-open .nav-drop::after { display: none; }
+}
+
+/* ------------------------------------------------------------
+   11. Small-screen tightening (360px honest pass)
+   ------------------------------------------------------------ */
+@media (max-width: 26rem) {
+  .v-act-time { flex-basis: 100%; }
+  .v-figure--phone { max-width: 13rem; }
+  .v-phones { gap: var(--chq-space-4); }
+}
+
+/* ------------------------------------------------------------
+   12. Reduced motion: rail and chips resolve statically
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .v-rail-fill, .v-topbar i, .v-dot { transition: none; }
+  .v-tilt-core { transform: none !important; transition: none; }
+  .v-mag { transform: none !important; }
+}

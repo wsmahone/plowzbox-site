@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 356 64" role="img" aria-label="PlowzBox">
+  <!-- PlowzBox primary lockup (for LIGHT backgrounds (explicit alias of logo.svg)).
+       Wordmark is a custom monoline drawn as stroked paths - no <text>,
+       no fonts: renders identically everywhere, matching the appliance's
+       zero-downloaded-assets principle. Grid: cap 46, x-height 34,
+       stroke 10.5, round caps/joins ("appliance corners"). -->
+  <!-- mark -->
+  <g>
+    <rect x="2" y="2" width="60" height="60" rx="15" fill="#1e5e3f"/>
+    <g fill="#fafaf7">
+      <rect x="15" y="45" width="34" height="5.5" rx="2.75"/>
+      <path d="M32 12.5 C34 21 35.3 32 35.1 47 L28.9 47 C28.7 32 30 21 32 12.5 Z"/>
+      <path d="M16.5 23 C22 28.5 25.8 36.5 26.5 47 L21 47 C20.2 38 18.6 30 16.5 23 Z"/>
+      <path d="M47.5 23 C42 28.5 38.2 36.5 37.5 47 L43 47 C43.8 38 45.4 30 47.5 23 Z"/>
+    </g>
+    <circle cx="46.4" cy="55.4" r="4.6" fill="#8fd4ae" opacity="0.28"/>
+    <circle cx="46.4" cy="55.4" r="2.6" fill="#8fd4ae"/>
+  </g>
+  <!-- wordmark -->
+  <g transform="translate(82,5) scale(0.925)" fill="none" stroke-width="10.5"
+     stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#123324">
+      <path d="M5.25 50 L5.25 9.25"/>
+      <path d="M5.25 9.25 L17 9.25 A9.4 9.4 0 0 1 17 28.05 L5.25 28.05"/>
+      <path d="M43.4 9.25 L43.4 50"/>
+      <path d="M60.4 33 A11.75 11.75 0 1 0 83.9 33 A11.75 11.75 0 1 0 60.4 33"/>
+      <path d="M100.9 21.25 L107.3 44.75 L114.5 26.75 L121.7 44.75 L128.1 21.25"/>
+      <path d="M145.7 21.25 L166.5 21.25 L145.7 44.75 L167.1 44.75"/>
+    </g>
+    <g stroke="#1e5e3f">
+      <path d="M187.1 50 L187.1 9.25"/>
+      <path d="M187.1 9.25 L197.35 9.25 A8.7 8.7 0 0 1 197.35 26.65 L187.1 26.65"/>
+      <path d="M197.35 26.65 L199.35 26.65 A11.65 11.65 0 0 1 199.35 50 L187.1 50"/>
+      <path d="M228 33 A11.75 11.75 0 1 0 251.5 33 A11.75 11.75 0 1 0 228 33"/>
+      <path d="M268.5 21.25 L289.5 44.75"/>
+      <path d="M289.5 21.25 L268.5 44.75"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,527 @@
+/* ============================================================
+   PlowzBox — showcase widgets (assets/showcase.css)
+   Owner: interaction/motion engineer.
+   Namespaced: every rule lives under a .pb- class or a
+   #pb-* mount id. No global element selectors, no bleed.
+   Palette/type come exclusively from tokens.css (--chq-*).
+   ============================================================ */
+
+/* ---------- shared ---------- */
+.pb-mounted {
+  font-family: var(--chq-font-sans);
+  color: var(--chq-ink);
+  -webkit-font-smoothing: antialiased;
+}
+.pb-caption {
+  margin-top: var(--chq-space-4);
+  font-size: var(--chq-text-sm);
+  line-height: 1.5;
+  color: var(--chq-ink-secondary);
+  text-align: center;
+  max-width: 42ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pb-sr {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   1. #pb-appliance — isometric hero scene
+   ============================================================ */
+#pb-appliance .pb-scene {
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  margin-inline: auto;
+}
+#pb-appliance .pb-float {
+  animation: pb-float 8s ease-in-out infinite;
+}
+@keyframes pb-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-5px); }
+}
+/* status LED: core blink + soft halo */
+#pb-appliance .pb-led-core {
+  animation: pb-led 2.8s ease-in-out infinite;
+}
+#pb-appliance .pb-led-halo {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pb-led-halo 2.8s ease-in-out infinite;
+}
+@keyframes pb-led {
+  0%, 100% { opacity: 0.35; }
+  45%, 60% { opacity: 1; }
+}
+@keyframes pb-led-halo {
+  0%, 100% { opacity: 0; transform: scale(0.6); }
+  50%      { opacity: 0.5; transform: scale(1); }
+}
+/* wifi arcs shimmer outward, staggered */
+#pb-appliance .pb-wifi path {
+  opacity: 0.14;
+  animation: pb-wifi 2.6s ease-out infinite;
+}
+#pb-appliance .pb-wifi path:nth-child(2) { animation-delay: 0.35s; }
+#pb-appliance .pb-wifi path:nth-child(3) { animation-delay: 0.7s; }
+@keyframes pb-wifi {
+  0%       { opacity: 0.14; }
+  35%      { opacity: 0.85; }
+  70%, 100%{ opacity: 0.14; }
+}
+
+/* ============================================================
+   2. #pb-sms-demo — approve-to-send phone loop
+   ============================================================ */
+#pb-sms-demo .pb-sms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#pb-sms-demo .pb-phone {
+  width: min(320px, 100%);
+  background: var(--chq-neutral-950);
+  border-radius: 38px;
+  padding: 10px;
+  box-shadow: var(--chq-shadow-lg);
+}
+#pb-sms-demo .pb-screen {
+  background: var(--chq-neutral-050);
+  border-radius: 29px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 480px;
+}
+#pb-sms-demo .pb-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 14px 11px;
+  background: var(--chq-white);
+  border-bottom: 1px solid var(--chq-border);
+}
+#pb-sms-demo .pb-avatar {
+  flex: none;
+  width: 34px; height: 34px;
+  border-radius: var(--chq-radius-full);
+  background: var(--chq-green-100);
+  color: var(--chq-green-800);
+  font-size: 13px;
+  font-weight: var(--chq-weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#pb-sms-demo .pb-chat-name {
+  font-size: 14px;
+  font-weight: var(--chq-weight-semibold);
+  color: var(--chq-ink);
+  line-height: 1.2;
+}
+#pb-sms-demo .pb-chat-sub {
+  font-size: 11px;
+  color: var(--chq-ink-secondary);
+  line-height: 1.3;
+}
+#pb-sms-demo .pb-chat-badge {
+  margin-left: auto;
+  font-size: 9px;
+  font-weight: var(--chq-weight-bold);
+  letter-spacing: var(--chq-tracking-wide);
+  text-transform: uppercase;
+  color: var(--chq-green-700);
+  background: var(--chq-green-100);
+  border-radius: var(--chq-radius-full);
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+#pb-sms-demo .pb-chat {
+  flex: 1;
+  overflow: hidden;
+  padding: 14px 12px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+}
+#pb-sms-demo .pb-chat.pb-reset > * {
+  opacity: 0 !important;
+  transition: opacity 0.5s ease;
+}
+
+/* bubbles */
+#pb-sms-demo .pb-bubble {
+  max-width: 82%;
+  padding: 9px 13px;
+  border-radius: 17px;
+  font-size: 14px;
+  line-height: 1.42;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.45s var(--chq-ease);
+}
+#pb-sms-demo .pb-bubble.pb-in {
+  opacity: 1;
+  transform: none;
+}
+#pb-sms-demo .pb-bubble--in {
+  align-self: flex-start;
+  background: var(--chq-neutral-200);
+  color: var(--chq-ink);
+  border-bottom-left-radius: 5px;
+}
+#pb-sms-demo .pb-bubble--out {
+  align-self: flex-end;
+  background: var(--chq-green-700);
+  color: var(--chq-white);
+  border-bottom-right-radius: 5px;
+}
+#pb-sms-demo .pb-meta {
+  font-size: 10.5px;
+  color: var(--chq-ink-secondary);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+#pb-sms-demo .pb-meta.pb-in { opacity: 1; }
+#pb-sms-demo .pb-meta--in  { align-self: flex-start; padding-left: 6px; }
+#pb-sms-demo .pb-meta--out { align-self: flex-end; padding-right: 6px; }
+
+/* typing indicator */
+#pb-sms-demo .pb-typing {
+  align-self: flex-start;
+  display: flex;
+  gap: 4px;
+  padding: 12px 14px;
+  background: var(--chq-neutral-200);
+  border-radius: 17px;
+  border-bottom-left-radius: 5px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.4s var(--chq-ease);
+}
+#pb-sms-demo .pb-typing.pb-in { opacity: 1; transform: none; }
+#pb-sms-demo .pb-typing.pb-out { opacity: 0; }
+#pb-sms-demo .pb-typing i {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--chq-neutral-600);
+  animation: pb-dot 1.1s ease-in-out infinite;
+}
+#pb-sms-demo .pb-typing i:nth-child(2) { animation-delay: 0.18s; }
+#pb-sms-demo .pb-typing i:nth-child(3) { animation-delay: 0.36s; }
+@keyframes pb-dot {
+  0%, 60%, 100% { transform: translateY(0);    opacity: 0.5; }
+  30%           { transform: translateY(-4px); opacity: 1; }
+}
+
+/* approval card */
+#pb-sms-demo .pb-card {
+  align-self: stretch;
+  background: var(--chq-surface);
+  border: 1px solid var(--chq-border);
+  border-left: 3px solid var(--chq-warning);
+  border-radius: var(--chq-radius-md);
+  padding: 10px 12px 11px;
+  box-shadow: var(--chq-shadow-md);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.45s var(--chq-ease),
+              border-color 0.3s ease;
+}
+#pb-sms-demo .pb-card.pb-in { opacity: 1; transform: none; }
+#pb-sms-demo .pb-card.pb-approved { border-left-color: var(--chq-success); }
+#pb-sms-demo .pb-card.pb-done { opacity: 0.45; }
+#pb-sms-demo .pb-card-tag {
+  font-size: 9.5px;
+  font-weight: var(--chq-weight-bold);
+  letter-spacing: var(--chq-tracking-wide);
+  text-transform: uppercase;
+  color: var(--chq-warning);
+}
+#pb-sms-demo .pb-card.pb-approved .pb-card-tag { color: var(--chq-success); }
+#pb-sms-demo .pb-card-body {
+  margin: 6px 0 9px;
+  font-size: 13.5px;
+  line-height: 1.42;
+  color: var(--chq-ink);
+}
+#pb-sms-demo .pb-card-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+#pb-sms-demo .pb-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 15px;
+  border-radius: var(--chq-radius-sm);
+  font-size: 13px;
+  font-weight: var(--chq-weight-semibold);
+  transition: transform 0.15s ease, background-color 0.25s ease;
+  user-select: none;
+}
+#pb-sms-demo .pb-btn--ghost {
+  border: 1px solid var(--chq-border-strong);
+  color: var(--chq-ink-secondary);
+}
+#pb-sms-demo .pb-btn--primary {
+  background: var(--chq-green-700);
+  color: var(--chq-white);
+}
+#pb-sms-demo .pb-btn--primary.pb-press { transform: scale(0.92); }
+#pb-sms-demo .pb-card.pb-approved .pb-btn--primary {
+  background: var(--chq-success);
+}
+#pb-sms-demo .pb-ripple {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  animation: pb-ripple 0.55s ease-out forwards;
+  pointer-events: none;
+}
+@keyframes pb-ripple {
+  from { transform: scale(1);  opacity: 0.9; }
+  to   { transform: scale(14); opacity: 0; }
+}
+
+/* ============================================================
+   3. #pb-dashboard — owner dashboard preview (static-ish)
+   ============================================================ */
+#pb-dashboard .pb-dash {
+  max-width: 660px;
+  margin-inline: auto;
+  background: var(--chq-surface);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-lg);
+  box-shadow: var(--chq-shadow-lg);
+  overflow: hidden;
+}
+#pb-dashboard .pb-dash-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: var(--chq-green-950);
+}
+#pb-dashboard .pb-dash-bar i {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--chq-dark-border);
+}
+#pb-dashboard .pb-dash-bar i:first-child { background: var(--chq-green-500); }
+#pb-dashboard .pb-dash-bar span {
+  margin-left: 8px;
+  font-family: var(--chq-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--chq-dark-ink-2);
+}
+#pb-dashboard .pb-dash-body { padding: 18px 18px 14px; }
+#pb-dashboard .pb-dash-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+#pb-dashboard .pb-dash-title {
+  font-size: var(--chq-text-lg);
+  font-weight: var(--chq-weight-bold);
+  color: var(--chq-brand-ink);
+  letter-spacing: var(--chq-tracking-tight);
+}
+#pb-dashboard .pb-chip {
+  font-size: 11px;
+  font-weight: var(--chq-weight-semibold);
+  color: var(--chq-green-700);
+  background: var(--chq-green-100);
+  border-radius: var(--chq-radius-full);
+  padding: 3px 10px;
+}
+#pb-dashboard .pb-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+#pb-dashboard .pb-tile {
+  background: var(--chq-neutral-050);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-md);
+  padding: 11px 12px 10px;
+  animation: pb-rise 0.6s var(--chq-ease) backwards;
+}
+#pb-dashboard .pb-tile:nth-child(2) { animation-delay: 0.08s; }
+#pb-dashboard .pb-tile:nth-child(3) { animation-delay: 0.16s; }
+#pb-dashboard .pb-tile:nth-child(4) { animation-delay: 0.24s; }
+@keyframes pb-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+#pb-dashboard .pb-tile-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: var(--chq-weight-bold);
+  letter-spacing: var(--chq-tracking-wide);
+  text-transform: uppercase;
+  color: var(--chq-ink-secondary);
+}
+#pb-dashboard .pb-tile-value {
+  margin-top: 4px;
+  font-size: 26px;
+  line-height: 1.1;
+  font-weight: var(--chq-weight-display);
+  color: var(--chq-brand-ink);
+  font-variant-numeric: tabular-nums;
+}
+#pb-dashboard .pb-tile-sub {
+  margin-top: 2px;
+  font-size: 11.5px;
+  color: var(--chq-ink-secondary);
+}
+#pb-dashboard .pb-tile--warn   { border-top: 3px solid var(--chq-warning); }
+#pb-dashboard .pb-tile--danger { border-top: 3px solid var(--chq-danger); }
+#pb-dashboard .pb-tile--info   { border-top: 3px solid var(--chq-info); }
+#pb-dashboard .pb-tile--brand  { border-top: 3px solid var(--chq-green-500); }
+#pb-dashboard .pb-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--chq-warning);
+  animation: pb-blip 2s ease-in-out infinite;
+}
+@keyframes pb-blip {
+  0%, 100% { opacity: 0.35; }
+  50%      { opacity: 1; }
+}
+#pb-dashboard .pb-rows {
+  margin-top: 14px;
+  border-top: 1px solid var(--chq-border);
+  padding-top: 6px;
+}
+#pb-dashboard .pb-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 2px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--chq-neutral-100);
+}
+#pb-dashboard .pb-row:last-child { border-bottom: 0; }
+#pb-dashboard .pb-row-time {
+  font-family: var(--chq-font-mono);
+  font-size: 11.5px;
+  color: var(--chq-ink-secondary);
+  width: 4.2em;
+  flex: none;
+}
+#pb-dashboard .pb-row-name {
+  font-weight: var(--chq-weight-medium);
+  color: var(--chq-ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#pb-dashboard .pb-row-desc {
+  color: var(--chq-ink-secondary);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#pb-dashboard .pb-row-chip {
+  margin-left: auto;
+  flex: none;
+  font-size: 10px;
+  font-weight: var(--chq-weight-bold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: var(--chq-radius-full);
+}
+#pb-dashboard .pb-row-chip--done    { color: var(--chq-success); background: var(--chq-success-bg); }
+#pb-dashboard .pb-row-chip--active  { color: var(--chq-info);    background: var(--chq-info-bg); }
+#pb-dashboard .pb-row-chip--soon    { color: var(--chq-neutral-600); background: var(--chq-neutral-100); }
+@media (max-width: 480px) {
+  #pb-dashboard .pb-row-desc { display: none; }
+}
+#pb-dashboard .pb-footnote {
+  padding: 8px 18px 12px;
+  font-size: 11px;
+  color: var(--chq-neutral-400);
+  text-align: right;
+}
+
+/* ============================================================
+   4. #pb-channels — four channels, one inbox
+   ============================================================ */
+#pb-channels .pb-channels-svg {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  margin-inline: auto;
+}
+#pb-channels .pb-flow {
+  fill: none;
+  stroke: var(--chq-green-500);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 5 14;
+  animation: pb-flow 1.3s linear infinite;
+}
+#pb-channels .pb-flow:nth-of-type(2) { animation-delay: 0.32s; }
+#pb-channels .pb-flow:nth-of-type(3) { animation-delay: 0.65s; }
+#pb-channels .pb-flow:nth-of-type(4) { animation-delay: 0.97s; }
+@keyframes pb-flow {
+  to { stroke-dashoffset: -19; }
+}
+#pb-channels .pb-inbox-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pb-inbox 2.6s ease-in-out infinite;
+}
+@keyframes pb-inbox {
+  0%, 100% { transform: scale(1);    opacity: 0.35; }
+  50%      { transform: scale(1.05); opacity: 0.7; }
+}
+
+/* ============================================================
+   Reduced motion — freeze everything to a clean static state.
+   (The SMS demo also renders its finished conversation via JS.)
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .pb-mounted,
+  .pb-mounted *,
+  .pb-mounted *::before,
+  .pb-mounted *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  #pb-appliance .pb-wifi path { opacity: 0.55 !important; }
+  #pb-appliance .pb-led-core  { opacity: 1 !important; }
+  #pb-appliance .pb-led-halo  { opacity: 0.4 !important; transform: none !important; }
+  #pb-channels .pb-flow {
+    stroke-dasharray: none !important;
+    opacity: 0.8;
+  }
+  #pb-channels .pb-inbox-pulse { opacity: 0.5 !important; }
+  #pb-sms-demo .pb-bubble,
+  #pb-sms-demo .pb-card,
+  #pb-sms-demo .pb-meta {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

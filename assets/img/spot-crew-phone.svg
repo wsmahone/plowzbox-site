@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="The crew's morning run sheet arrives as a plain text">
+  <!-- Spot set: crew phone - the morning digest is a plain text with jobs,
+       addresses and notes. No app to install. -->
+  <!-- morning sun -->
+  <g stroke="#349966" stroke-width="4" stroke-linecap="round" fill="none">
+    <circle cx="94" cy="26" r="9" fill="#e1f3e8"/>
+    <path d="M94 10 v-2 M110 26 h2 M105.3 14.7 l1.5 -1.5 M105.3 37.3 l1.5 1.5"/>
+  </g>
+  <!-- phone -->
+  <g>
+    <rect x="26" y="14" width="52" height="92" rx="12" fill="#ffffff" stroke="#123324" stroke-width="4.5"/>
+    <path d="M44 22 h16" stroke="#123324" stroke-width="4" stroke-linecap="round"/>
+    <!-- run-sheet rows -->
+    <g>
+      <circle cx="38" cy="42" r="5" fill="#8fd4ae"/>
+      <path d="M35.8 42 l1.8 1.9 3 -3.6" fill="none" stroke="#123324" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M50 42 h18" stroke="#c8cdc8" stroke-width="3.5" stroke-linecap="round"/>
+      <circle cx="38" cy="60" r="5" fill="#8fd4ae"/>
+      <path d="M35.8 60 l1.8 1.9 3 -3.6" fill="none" stroke="#123324" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M50 60 h14" stroke="#c8cdc8" stroke-width="3.5" stroke-linecap="round"/>
+      <!-- next stop: map pin -->
+      <path d="M38 72 a6.5 6.5 0 0 1 6.5 6.5 c0 4.6 -4 8.4 -6.5 11 c-2.5 -2.6 -6.5 -6.4 -6.5 -11 a6.5 6.5 0 0 1 6.5 -6.5 Z"
+            fill="#1e5e3f"/>
+      <circle cx="38" cy="78.5" r="2.2" fill="#c2e8d3"/>
+      <path d="M50 78 h18" stroke="#c8cdc8" stroke-width="3.5" stroke-linecap="round"/>
+    </g>
+  </g>
+  <!-- the text arriving -->
+  <g>
+    <path d="M74 88 h20 a7 7 0 0 1 7 7 v6 a7 7 0 0 1 -7 7 h-9 l-8 6 v-6 a7 7 0 0 1 -7 -7 v-6 a7 7 0 0 1 7 -7 Z" fill="#1e5e3f"/>
+    <path d="M79 98 h13" stroke="#c2e8d3" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

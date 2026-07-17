@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="A review request going out after a finished job">
+  <!-- Spot set: review booster - the ask goes out after the job, the
+       fifth star is the one being earned. -->
+  <!-- five stars in a shallow arc; the last one is being earned -->
+  <g stroke="#123324" stroke-width="3.2" stroke-linejoin="round">
+    <path d="M18 40 l2.5 5.3 5.6 0.7 -4.1 4 1 5.6 -5 -2.7 -5 2.7 1 -5.6 -4.1 -4 5.6 -0.7 Z" fill="#8fd4ae"/>
+    <path d="M39 32 l2.5 5.3 5.6 0.7 -4.1 4 1 5.6 -5 -2.7 -5 2.7 1 -5.6 -4.1 -4 5.6 -0.7 Z" fill="#8fd4ae"/>
+    <path d="M60 29 l2.5 5.3 5.6 0.7 -4.1 4 1 5.6 -5 -2.7 -5 2.7 1 -5.6 -4.1 -4 5.6 -0.7 Z" fill="#8fd4ae"/>
+    <path d="M81 32 l2.5 5.3 5.6 0.7 -4.1 4 1 5.6 -5 -2.7 -5 2.7 1 -5.6 -4.1 -4 5.6 -0.7 Z" fill="#8fd4ae"/>
+    <path d="M102 40 l2.5 5.3 5.6 0.7 -4.1 4 1 5.6 -5 -2.7 -5 2.7 1 -5.6 -4.1 -4 5.6 -0.7 Z" fill="#ffffff"/>
+  </g>
+  <!-- review card -->
+  <g>
+    <rect x="24" y="66" width="72" height="34" rx="10" fill="#ffffff" stroke="#123324" stroke-width="4.5"/>
+    <g stroke="#c8cdc8" stroke-width="3.5" stroke-linecap="round">
+      <path d="M34 78 h40"/>
+      <path d="M34 88 h28"/>
+    </g>
+    <!-- send arrow chip -->
+    <circle cx="88" cy="92" r="12" fill="#1e5e3f"/>
+    <path d="M83 92 h9 M89 88 l4 4 -4 4" fill="none" stroke="#c2e8d3" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

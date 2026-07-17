@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Local AI on a Box You Own | PlowzBox</title>
+<meta name="description" content="Open-weight AI models run on the PlowzBox itself. No cloud account, no per-token fees, works offline, and your customer data never leaves the building.">
+<link rel="canonical" href="https://plowzbox.com/pages/ai.html">
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0b241a">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PlowzBox">
+<meta property="og:title" content="Local AI on a Box You Own | PlowzBox">
+<meta property="og:description" content="Open-weight AI models run on the PlowzBox itself. No cloud account, no per-token fees, works offline, and your customer data never leaves the building.">
+<meta property="og:url" content="https://plowzbox.com/pages/ai.html">
+<meta property="og:image" content="https://plowzbox.com/assets/og-image.png">
+<link rel="stylesheet" href="../assets/tokens.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--chq-font-sans);
+  font-size: var(--chq-text-base);
+  line-height: var(--chq-leading-body);
+  color: var(--chq-ink);
+  background: var(--chq-bg);
+  text-rendering: optimizeLegibility;
+}
+img, svg { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { margin: 0; line-height: var(--chq-leading-snug); color: var(--chq-brand-ink); }
+p { margin: 0 0 var(--chq-space-4); }
+a { color: var(--chq-brand); }
+a:focus-visible, button:focus-visible {
+  outline: none;
+  box-shadow: var(--chq-shadow-glow);
+  border-radius: var(--chq-radius-sm);
+}
+
+/* ---- layout primitives ---- */
+.wrap { max-width: 72rem; margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 2.5rem); }
+.section { padding-block: clamp(var(--chq-space-8), 9vw, var(--chq-space-9)); }
+.section.recessed { background: var(--chq-bg-recessed); }
+.kicker {
+  display: inline-block;
+  font-size: var(--chq-text-sm);
+  font-weight: var(--chq-weight-bold);
+  letter-spacing: var(--chq-tracking-wide);
+  text-transform: uppercase;
+  color: var(--chq-green-600);
+  margin-bottom: var(--chq-space-3);
+}
+.h2 {
+  font-size: clamp(var(--chq-text-2xl), 3.4vw, var(--chq-text-3xl));
+  font-weight: var(--chq-weight-display);
+  letter-spacing: var(--chq-tracking-tight);
+  max-width: 26ch;
+}
+.lede {
+  font-size: var(--chq-text-md);
+  color: var(--chq-ink-secondary);
+  max-width: 56ch;
+  margin-top: var(--chq-space-4);
+}
+.section-head { margin-bottom: clamp(var(--chq-space-6), 5vw, var(--chq-space-8)); }
+
+/* ---- skip link ---- */
+.skip-link {
+  position: absolute; left: var(--chq-space-4); top: -100px;
+  z-index: 100; padding: var(--chq-space-2) var(--chq-space-4);
+  background: var(--chq-brand); color: var(--chq-white);
+  border-radius: var(--chq-radius-md); font-weight: var(--chq-weight-semibold);
+  text-decoration: none; transition: top var(--chq-duration-1) var(--chq-ease);
+}
+.skip-link:focus { top: var(--chq-space-4); }
+
+/* ---- buttons ---- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: var(--chq-space-2);
+  padding: 0.8rem 1.4rem;
+  border-radius: var(--chq-radius-md);
+  font-size: var(--chq-text-base);
+  font-weight: var(--chq-weight-semibold);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background var(--chq-duration-1) var(--chq-ease),
+              border-color var(--chq-duration-1) var(--chq-ease),
+              transform var(--chq-duration-1) var(--chq-ease);
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--chq-brand); color: var(--chq-white); }
+.btn-primary:hover { background: var(--chq-brand-hover); }
+.btn-ghost-dark { color: var(--chq-dark-ink); border-color: var(--chq-dark-border); }
+.btn-ghost-dark:hover { border-color: var(--chq-green-500); background: rgba(52,153,102,0.12); }
+.btn-on-dark { background: var(--chq-green-300); color: var(--chq-green-950); }
+.btn-on-dark:hover { background: var(--chq-green-200); }
+
+/* ---- header / nav (shared with index.html) ---- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--chq-neutral-050) 88%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--chq-border);
+}
+.nav {
+  display: flex; align-items: center; gap: var(--chq-space-5);
+  min-height: 4.25rem;
+}
+.brand {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  text-decoration: none; margin-right: auto;
+}
+.brand img { width: 2rem; height: 2rem; }
+.brand-word {
+  font-size: 1.25rem; font-weight: var(--chq-weight-display);
+  letter-spacing: var(--chq-tracking-tight); color: var(--chq-green-900);
+}
+.brand-word b { color: var(--chq-green-700); font-weight: inherit; }
+.nav-links { display: flex; gap: var(--chq-space-5); list-style: none; margin: 0; padding: 0; }
+.nav-links a {
+  text-decoration: none; color: var(--chq-neutral-800);
+  font-size: var(--chq-text-sm); font-weight: var(--chq-weight-medium);
+}
+.nav-links a:hover { color: var(--chq-brand); }
+.nav-links a[aria-current="page"] {
+  color: var(--chq-brand);
+  font-weight: var(--chq-weight-bold);
+}
+.nav .btn { padding: 0.55rem 1rem; font-size: var(--chq-text-sm); }
+@media (max-width: 47.9rem) { .nav-links { display: none; } }
+
+/* ---- page hero (dark, single column) ---- */
+.hero {
+  background:
+    radial-gradient(52rem 30rem at 82% -12%, rgba(52,153,102,0.22), transparent 60%),
+    radial-gradient(40rem 26rem at -10% 110%, rgba(30,94,63,0.45), transparent 60%),
+    var(--chq-dark-bg);
+  color: var(--chq-dark-ink);
+  overflow: hidden;
+}
+.hero .wrap { padding-block: clamp(var(--chq-space-8), 9vw, var(--chq-space-9)); }
+.hero-eyebrow {
+  display: inline-flex; align-items: flex-start; gap: 0.5rem;
+  font-size: var(--chq-text-sm); font-weight: var(--chq-weight-semibold);
+  letter-spacing: var(--chq-tracking-wide); text-transform: uppercase;
+  color: var(--chq-accent); margin-bottom: var(--chq-space-4);
+}
+.hero-eyebrow::before {
+  content: ""; width: 0.5rem; height: 0.5rem; border-radius: 50%;
+  background: var(--chq-green-400);
+  flex: none; margin-top: 0.45em;
+}
+.hero h1 {
+  font-size: clamp(var(--chq-text-3xl), 5.4vw, var(--chq-text-4xl));
+  font-weight: var(--chq-weight-display);
+  letter-spacing: var(--chq-tracking-tight);
+  line-height: var(--chq-leading-tight);
+  color: var(--chq-dark-ink);
+  max-width: 20ch;
+}
+.hero-sub {
+  font-size: clamp(var(--chq-text-md), 2vw, var(--chq-text-lg));
+  color: var(--chq-dark-ink-2);
+  max-width: 52ch;
+  margin-top: var(--chq-space-5);
+}
+.hero-ctas { display: flex; flex-wrap: wrap; gap: var(--chq-space-3); margin-top: var(--chq-space-6); }
+.hero-fine { font-size: var(--chq-text-xs); color: var(--chq-dark-ink-2); margin-top: var(--chq-space-4); max-width: 52ch; }
+.hero-fine strong { color: var(--chq-dark-ink); }
+
+/* ---- two-column detail (text + figure) ---- */
+.duo {
+  display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: clamp(var(--chq-space-6), 5vw, var(--chq-space-8));
+  align-items: start;
+}
+@media (max-width: 55rem) { .duo { grid-template-columns: 1fr; } }
+
+/* ---- cards ---- */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--chq-space-4); }
+.cards.two { grid-template-columns: repeat(2, 1fr); }
+.cards.four { grid-template-columns: repeat(4, 1fr); }
+.card {
+  background: var(--chq-surface);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-lg);
+  padding: var(--chq-space-5);
+  box-shadow: var(--chq-shadow-sm);
+}
+.card h3 { font-size: var(--chq-text-lg); font-weight: var(--chq-weight-bold); margin-bottom: var(--chq-space-2); }
+.card p { margin: 0; color: var(--chq-ink-secondary); font-size: var(--chq-text-sm); line-height: 1.55; }
+.card .tag {
+  display: inline-block;
+  font-family: var(--chq-font-mono); font-size: var(--chq-text-xs);
+  letter-spacing: var(--chq-tracking-wide); text-transform: uppercase;
+  color: var(--chq-green-700); background: var(--chq-green-100);
+  border-radius: var(--chq-radius-full); padding: 0.15rem 0.65rem;
+  margin-bottom: var(--chq-space-3);
+}
+@media (max-width: 60rem) { .cards, .cards.four { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 34rem) { .cards, .cards.two, .cards.four { grid-template-columns: 1fr; } }
+
+/* ---- checklist ---- */
+.why-points { list-style: none; margin: var(--chq-space-5) 0 0; padding: 0; display: grid; gap: var(--chq-space-3); max-width: 50ch; }
+.why-points li { display: flex; gap: var(--chq-space-3); align-items: baseline; color: var(--chq-neutral-800); }
+.why-points li::before {
+  content: "\2713"; flex: none;
+  font-weight: var(--chq-weight-bold); color: var(--chq-green-600);
+}
+
+/* ---- numbered steps ---- */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--chq-space-4); counter-reset: step; list-style: none; margin: 0; padding: 0; }
+.steps.stack { grid-template-columns: 1fr; max-width: 34rem; }
+.step {
+  background: var(--chq-surface);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-lg);
+  padding: var(--chq-space-5);
+  box-shadow: var(--chq-shadow-sm);
+}
+.step::before {
+  counter-increment: step;
+  content: counter(step, decimal-leading-zero);
+  display: inline-block;
+  font-family: var(--chq-font-mono);
+  font-weight: var(--chq-weight-bold);
+  font-size: var(--chq-text-sm);
+  color: var(--chq-green-700);
+  background: var(--chq-green-100);
+  border-radius: var(--chq-radius-full);
+  padding: 0.15rem 0.65rem;
+  margin-bottom: var(--chq-space-4);
+}
+.step h3 { font-size: var(--chq-text-lg); margin-bottom: var(--chq-space-2); }
+.step p { margin: 0; color: var(--chq-ink-secondary); font-size: var(--chq-text-sm); line-height: 1.55; }
+@media (max-width: 55rem) { .steps { grid-template-columns: 1fr; } }
+
+/* ---- attributed stat callout ---- */
+.stat {
+  background: var(--chq-surface);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-lg);
+  padding: var(--chq-space-5);
+  box-shadow: var(--chq-shadow-sm);
+  max-width: 26rem;
+  display: flex; flex-direction: column;
+}
+.stat-num {
+  font-size: clamp(var(--chq-text-2xl), 3vw, var(--chq-text-3xl));
+  font-weight: var(--chq-weight-display);
+  letter-spacing: var(--chq-tracking-tight);
+  color: var(--chq-brand-ink);
+}
+.stat-label { margin: var(--chq-space-2) 0 var(--chq-space-3); color: var(--chq-neutral-800); font-size: var(--chq-text-sm); }
+.stat-src {
+  margin-top: auto; font-size: var(--chq-text-xs);
+  color: var(--chq-ink-secondary); font-family: var(--chq-font-mono);
+}
+
+/* ---- pull quote / hard-rule callout ---- */
+.pull {
+  margin: clamp(var(--chq-space-6), 6vw, var(--chq-space-8)) 0 0;
+  padding: clamp(var(--chq-space-5), 4vw, var(--chq-space-7));
+  background: var(--chq-surface-tint);
+  border: 1px solid var(--chq-green-200);
+  border-radius: var(--chq-radius-xl);
+}
+.pull blockquote {
+  margin: 0;
+  font-size: clamp(var(--chq-text-lg), 2.6vw, var(--chq-text-xl));
+  font-weight: var(--chq-weight-bold);
+  letter-spacing: var(--chq-tracking-tight);
+  color: var(--chq-green-900);
+  max-width: 34ch;
+}
+.pull figcaption {
+  margin-top: var(--chq-space-3);
+  font-size: var(--chq-text-sm); color: var(--chq-ink-secondary);
+}
+
+/* ---- dark honesty band ---- */
+.honesty { background: var(--chq-dark-bg); color: var(--chq-dark-ink); }
+.honesty .kicker { color: var(--chq-accent); }
+.honesty .h2 { color: var(--chq-dark-ink); }
+.honesty .lede { color: var(--chq-dark-ink-2); }
+.rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--chq-space-4); }
+.rules.two { grid-template-columns: repeat(2, 1fr); }
+.rule {
+  background: var(--chq-dark-surface);
+  border: 1px solid var(--chq-dark-border);
+  border-radius: var(--chq-radius-lg);
+  padding: var(--chq-space-5);
+}
+.rule-no {
+  font-family: var(--chq-font-mono); font-size: var(--chq-text-xs);
+  color: var(--chq-accent); letter-spacing: var(--chq-tracking-wide);
+  text-transform: uppercase;
+}
+.rule h3 { color: var(--chq-dark-ink); font-size: var(--chq-text-lg); margin: var(--chq-space-2) 0; }
+.rule p { margin: 0; color: var(--chq-dark-ink-2); font-size: var(--chq-text-sm); line-height: 1.55; }
+.rule ul { margin: var(--chq-space-2) 0 0; padding: 0; list-style: none; display: grid; gap: var(--chq-space-2); }
+.rule ul li { color: var(--chq-dark-ink-2); font-size: var(--chq-text-sm); line-height: 1.55; display: flex; gap: var(--chq-space-2); }
+.rule.is ul li::before { content: "\2713"; color: var(--chq-green-300); font-weight: var(--chq-weight-bold); flex: none; }
+.rule.isnot ul li::before { content: "\00d7"; color: var(--chq-dark-ink-2); font-weight: var(--chq-weight-bold); flex: none; }
+.honesty-foot {
+  margin: var(--chq-space-6) 0 0; max-width: 56ch;
+  color: var(--chq-dark-ink-2); font-size: var(--chq-text-md);
+}
+.honesty-foot strong { color: var(--chq-dark-ink); }
+@media (max-width: 55rem) { .rules, .rules.two { grid-template-columns: 1fr; } }
+
+/* ---- SMS conversation mock (static, illustrative) ---- */
+.chat {
+  background: var(--chq-surface);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-xl);
+  padding: var(--chq-space-5);
+  box-shadow: var(--chq-shadow-md);
+  display: grid; gap: var(--chq-space-3);
+}
+.msg {
+  padding: 0.6rem 0.95rem;
+  border-radius: 14px;
+  font-size: var(--chq-text-sm);
+  line-height: 1.5;
+  max-width: 88%;
+}
+.msg-in {
+  background: var(--chq-neutral-100);
+  border: 1px solid var(--chq-border);
+  justify-self: start;
+  border-bottom-left-radius: 4px;
+}
+.msg-out {
+  background: var(--chq-green-100);
+  color: var(--chq-green-900);
+  justify-self: end;
+  border-bottom-right-radius: 4px;
+}
+.msg-draft {
+  background: var(--chq-green-050);
+  border: 1px dashed var(--chq-green-500);
+  color: var(--chq-green-900);
+  justify-self: end;
+  border-bottom-right-radius: 4px;
+}
+.msg-note {
+  justify-self: center; text-align: center;
+  font-family: var(--chq-font-mono);
+  font-size: var(--chq-text-xs);
+  color: var(--chq-ink-secondary);
+  max-width: 100%;
+}
+.draft-tag {
+  display: block;
+  font-family: var(--chq-font-mono);
+  font-size: 0.65rem; letter-spacing: var(--chq-tracking-wide);
+  text-transform: uppercase; color: var(--chq-green-700);
+  margin-bottom: 0.35rem;
+}
+.approve-row { display: flex; gap: var(--chq-space-2); justify-self: end; }
+.pill-btn {
+  font-size: var(--chq-text-xs); font-weight: var(--chq-weight-semibold);
+  padding: 0.3rem 0.85rem; border-radius: var(--chq-radius-full);
+  border: 1px solid var(--chq-border-strong);
+  color: var(--chq-ink-secondary); background: var(--chq-surface);
+}
+.pill-btn.primary { background: var(--chq-brand); color: var(--chq-white); border-color: transparent; }
+.chat-caption {
+  font-size: var(--chq-text-xs); color: var(--chq-ink-secondary);
+  margin: var(--chq-space-3) 0 0; text-align: center;
+}
+
+/* ---- fine-print / stack note ---- */
+.stack-note {
+  margin-top: var(--chq-space-5);
+  font-family: var(--chq-font-mono); font-size: var(--chq-text-xs);
+  color: var(--chq-ink-secondary);
+  background: var(--chq-neutral-100);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-md);
+  padding: var(--chq-space-3) var(--chq-space-4);
+  line-height: 1.7;
+  max-width: 60rem;
+}
+
+/* ---- final CTA ---- */
+.cta-final {
+  background:
+    radial-gradient(46rem 24rem at 50% 130%, rgba(52,153,102,0.30), transparent 65%),
+    var(--chq-dark-bg);
+  color: var(--chq-dark-ink);
+  text-align: center;
+}
+.cta-final .h2 { color: var(--chq-dark-ink); margin-inline: auto; }
+.cta-final .lede { color: var(--chq-dark-ink-2); margin-inline: auto; }
+.cta-final .hero-ctas { justify-content: center; }
+.cta-final .hero-fine { margin-inline: auto; }
+
+/* ---- explore the rest ---- */
+.explore { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--chq-space-4); }
+.explore-card {
+  display: flex; flex-direction: column;
+  background: var(--chq-surface);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-lg);
+  padding: var(--chq-space-5);
+  box-shadow: var(--chq-shadow-sm);
+  text-decoration: none;
+  transition: box-shadow var(--chq-duration-2) var(--chq-ease),
+              transform var(--chq-duration-2) var(--chq-ease),
+              border-color var(--chq-duration-2) var(--chq-ease);
+}
+.explore-card:hover { box-shadow: var(--chq-shadow-md); transform: translateY(-2px); border-color: var(--chq-green-300); }
+.explore-card h3 { font-size: var(--chq-text-base); font-weight: var(--chq-weight-bold); margin-bottom: var(--chq-space-2); }
+.explore-card p { margin: 0; color: var(--chq-ink-secondary); font-size: var(--chq-text-sm); line-height: 1.55; }
+.explore-card .go {
+  margin-top: auto; padding-top: var(--chq-space-3);
+  color: var(--chq-brand); font-weight: var(--chq-weight-semibold);
+  font-size: var(--chq-text-sm);
+}
+@media (max-width: 60rem) { .explore { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 34rem) { .explore { grid-template-columns: 1fr; } }
+
+/* ---- footer ---- */
+.site-footer {
+  background: var(--chq-green-950);
+  color: var(--chq-dark-ink-2);
+  border-top: 1px solid var(--chq-dark-border);
+  padding-block: var(--chq-space-7);
+  font-size: var(--chq-text-sm);
+}
+.footer-grid {
+  display: flex; flex-wrap: wrap; gap: var(--chq-space-6);
+  justify-content: space-between; align-items: flex-start;
+}
+.site-footer .brand-word { color: var(--chq-dark-ink); }
+.site-footer .brand-word b { color: var(--chq-accent); }
+.site-footer a { color: var(--chq-accent); }
+.footer-note { max-width: 44ch; margin: var(--chq-space-3) 0 0; }
+.footer-legal { margin-top: var(--chq-space-6); padding-top: var(--chq-space-5); border-top: 1px solid var(--chq-dark-border); font-size: var(--chq-text-xs); display: flex; flex-wrap: wrap; gap: var(--chq-space-4); justify-content: space-between; }
+.footer-legal p { margin: 0; }
+
+/* ---- motion safety ---- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="../index.html" aria-label="PlowzBox home">
+      <img src="../assets/brand/logo-mark.svg" alt="" width="32" height="32">
+      <span class="brand-word">Plowz<b>Box</b></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="pain-points.html">The problem</a></li>
+      <li><a href="phone.html">Phone</a></li>
+      <li><a href="sms.html">Texts &amp; email</a></li>
+      <li><a href="scheduling.html">Scheduling</a></li>
+      <li><a href="billing.html">Billing</a></li>
+      <li><a href="ai.html" aria-current="page">Local AI</a></li>
+      <li><a href="compare.html">Compare</a></li>
+      <li><a href="roi.html">The math</a></li>
+      <li><a href="guides/">Guides</a></li>
+    </ul>
+    <a class="btn btn-primary" href="demo.html">Request a demo</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <div>
+        <p class="hero-eyebrow">PlowzBox &middot; The AI</p>
+        <h1 id="hero-h">The AI runs on the box. All of it.</h1>
+        <p class="hero-sub">Every answer is computed on the box at your shop, not in somebody's data center. No cloud account, no per-token fees, no meter running. Your customer list never leaves the building, and the assistant keeps working when the internet doesn't.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-on-dark" href="demo.html">Request a demo</a>
+          <a class="btn btn-ghost-dark" href="#how">See how it works</a>
+        </div>
+        <p class="hero-fine">The models are on the disk you own. Running them costs you electricity, not a subscription tier.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how" aria-labelledby="tiers-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">How it thinks</p>
+        <h2 class="h2" id="tiers-h">Small questions get the small model. Hard ones get the big one.</h2>
+        <p class="lede">There isn't one AI on the box, there are four, each doing the job
+        it's actually good at. Here's the plain-English version.</p>
+      </div>
+      <div class="cards four">
+        <div class="card">
+          <span class="tag">Fast tier</span>
+          <h3>Routine, in a blink</h3>
+          <p>&ldquo;When's my next mowing?&rdquo; doesn't need a supercomputer. A small,
+          quick model handles the routine stuff in about the time it takes to read it.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Hard tier</span>
+          <h3>Tricky, done right</h3>
+          <p>A tangled quote request or a long, winding email gets handed to the bigger
+          model on the same box. Slower by a beat, better judgment. You never pick, the
+          box routes it.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Vision</span>
+          <h3>Reads the photos</h3>
+          <p>A customer texts a picture of the brown patch or the overgrown backyard. A
+          vision model on the box looks at it, so the drafted reply can reflect what they
+          actually sent.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Search</span>
+          <h3>Finds the right answer</h3>
+          <p>An embedding model indexes your knowledge base and your job history, so
+          answers get pulled from the right page instead of made up from thin air.</p>
+        </div>
+      </div>
+      <p class="stack-note">For the technically curious: fully open-weight models from
+      the Qwen and Phi families, running locally on the box's own hardware. No API keys,
+      no external model endpoints, no cloud fallback quietly sending your data out.</p>
+    </div>
+  </section>
+
+  <section class="section recessed" aria-labelledby="nocloud-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">No cloud, no meter</p>
+        <h2 class="h2" id="nocloud-h">Ask it anything, all day. The price is the box.</h2>
+        <p class="lede">Cloud AI bills you per token, per conversation, or per
+        &ldquo;credit.&rdquo; The models on your PlowzBox are already on the disk, so
+        using them more doesn't cost more.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <span class="tag">Flat cost</span>
+          <h3>No per-token fees, ever</h3>
+          <p>No AI usage tier, no surprise overage, no meter. Your busiest week of the
+          season costs the same as the quietest week of January: nothing beyond the
+          electricity.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Offline</span>
+          <h3>Keeps working when the internet doesn't</h3>
+          <p>Schedule, customer notes, and the assistant all run locally, so drafting and
+          planning keep working through an outage. Texts and emails send when the
+          connection comes back, same as any phone.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Private</span>
+          <h3>Your book of business stays home</h3>
+          <p>Customer names, numbers, addresses, and job history live on the box in your
+          building. There is no vendor cloud copy of your customer list to leak, sell, or
+          hold hostage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section honesty" aria-labelledby="honestai-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Honesty by design</p>
+        <h2 class="h2" id="honestai-h">Built to say &ldquo;I don't know.&rdquo;</h2>
+        <p class="lede">An AI that guesses confidently is a liability in your customer's
+        pocket. This one is built to hand the hard ones to you. These are hard rules in
+        the software, not settings.</p>
+      </div>
+      <div class="rules">
+        <div class="rule">
+          <span class="rule-no">Hard rule 01</span>
+          <h3>Never invents a price</h3>
+          <p>Every dollar figure comes from your price book. If the price isn't there,
+          the assistant says so and flags it to you. It does not guess.</p>
+        </div>
+        <div class="rule">
+          <span class="rule-no">Hard rule 02</span>
+          <h3>Never fakes a booking</h3>
+          <p>It never says a job is booked unless it is actually on the calendar. What it
+          tells customers is what the schedule actually says.</p>
+        </div>
+        <div class="rule">
+          <span class="rule-no">Hard rule 03</span>
+          <h3>Waits for your approval</h3>
+          <p>Every reply can require your one-tap approval before it sends, and disputes,
+          refunds, and money talk always come to you. The AI drafts. You decide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="yours-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Your data</p>
+        <h2 class="h2" id="yours-h">Yours to keep. Yours to take.</h2>
+        <p class="lede">Owning the hardware only matters if the data on it is really
+        yours. So it is, in both directions.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <span class="tag">Owner PIN</span>
+          <h3>You hold the keys</h3>
+          <p>The owner dashboard sits behind your PIN. Crew phones see run-sheets, not
+          the books. Approvals, money, and settings are yours alone.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Encrypted</span>
+          <h3>Full-disk encryption</h3>
+          <p>The drive is encrypted end to end. If someone walks off with the box, they
+          walk off with a very heavy paperweight, not your customer list.</p>
+        </div>
+        <div class="card">
+          <span class="tag">CSV export</span>
+          <h3>Leave whenever you want</h3>
+          <p>Customers, jobs, and invoices export to plain CSV files anytime. No hostage
+          data, no export fee, no &ldquo;talk to sales to leave.&rdquo; It's your
+          business; these are just its records.</p>
+        </div>
+      </div>
+      <p class="stack-note">Also true, and worth saying: the box accepts no inbound
+      connections from the internet. There is no login page for the world to knock on.</p>
+    </div>
+  </section>
+
+  <section class="section cta-final" aria-labelledby="cta-h">
+    <div class="wrap">
+      <p class="kicker" style="color: var(--chq-accent);">Early access</p>
+      <h2 class="h2" id="cta-h" style="max-width: 24ch;">See it think, on real hardware.</h2>
+      <p class="lede">At the demo, the answers come off the box in front of you, with the network cable's status on display. No cloud behind the curtain.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-on-dark" href="demo.html">Request a demo</a>
+        <a class="btn btn-ghost-dark" href="../index.html#what">See everything it does</a>
+      </div>
+      <p class="hero-fine">You own the box. Your data stays on it. Pricing in plain numbers at the demo.</p>
+    </div>
+  </section>
+
+  <section class="section" id="explore" aria-labelledby="explore-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Keep exploring</p>
+        <h2 class="h2" id="explore-h">The rest of the front office.</h2>
+      </div>
+      <div class="explore">
+        <a class="explore-card" href="phone.html">
+          <h3>Never miss a call</h3>
+          <p>Missed-call text-back and voicemail transcribed on the box, with a drafted reply waiting for you.</p>
+          <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="explore-card" href="sms.html">
+          <h3>Answer every text</h3>
+          <p>The AI receptionist for texts and email. Grounded answers, your one-tap approval, English and Spanish.</p>
+          <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="explore-card" href="scheduling.html">
+          <h3>Booking and the day</h3>
+          <p>Online booking, recurring jobs, crew run-sheets by text, route ordering, and weather reflow.</p>
+          <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="explore-card" href="billing.html">
+          <h3>Get paid</h3>
+          <p>Quotes that follow up, invoices with AR aging, and payment reminders you approve before they send.</p>
+          <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <span class="brand" aria-hidden="true" style="pointer-events:none;">
+          <img src="../assets/brand/logo-mark.svg" alt="" width="28" height="28">
+          <span class="brand-word">Plowz<b>Box</b></span>
+        </span>
+        <p class="footer-note">The AI office manager for landscaping businesses, in a box
+        you own. Early access, pricing, warranty, and support tiers to be announced.</p>
+      </div>
+      <div>
+        <p style="margin:0;">Talk to a human:
+        <a href="mailto:hello@plowzbox.com">hello@plowzbox.com</a></p>
+        <p class="footer-note">No trackers, no analytics, no cookies on this site. Every
+        statistic on this page names its source; nothing here claims more than the product
+        does today.</p>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>&copy; 2026 PlowzBox, early access.</p>
+      <p><a href="../index.html">Home</a> &middot; <a href="../index.html#faq">FAQ</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

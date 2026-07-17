@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 440" role="img" aria-label="Illustration: a phone showing a drafted reply with an Approve button under your thumb. Nothing sends without you.">
+  <!-- PlowzBox glyph: the one-tap approval. ids prefixed ucap- ; self-contained. -->
+  <defs>
+    <linearGradient id="ucap-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#143726"/>
+      <stop offset="1" stop-color="#102b1f"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="412" height="432" rx="26" fill="url(#ucap-panel)" stroke="#2a4a39" stroke-width="1.5"/>
+
+  <text x="32" y="50" font-family="ui-monospace, SF Mono, Menlo, monospace" font-size="12" letter-spacing="2.5" fill="#8fd4ae">YOU APPROVE</text>
+  <text x="32" y="80" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="22" font-weight="800" fill="#f2f7f3">Nothing sends without you.</text>
+
+  <!-- phone -->
+  <g>
+    <rect x="118" y="104" width="184" height="286" rx="26" fill="#0b241a" stroke="#2a4a39" stroke-width="1.5"/>
+    <rect x="130" y="118" width="160" height="258" rx="16" fill="#fafaf7"/>
+    <!-- speaker notch -->
+    <rect x="186" y="110" width="48" height="5" rx="2.5" fill="#2a4a39"/>
+
+    <!-- incoming bubble -->
+    <rect x="142" y="132" width="108" height="34" rx="10" fill="#f1f0ea" stroke="#e3e5e0"/>
+    <rect x="152" y="142" width="76" height="5" rx="2.5" fill="#9aa19c"/>
+    <rect x="152" y="152" width="52" height="5" rx="2.5" fill="#c8cdc8"/>
+
+    <!-- draft card -->
+    <rect x="150" y="178" width="128" height="88" rx="10" fill="#f2faf5" stroke="#349966" stroke-dasharray="4 3"/>
+    <text x="160" y="196" font-family="ui-monospace, SF Mono, Menlo, monospace" font-size="9" letter-spacing="1.6" fill="#1e5e3f">DRAFT REPLY</text>
+    <rect x="160" y="206" width="104" height="5" rx="2.5" fill="#349966"/>
+    <rect x="160" y="217" width="88" height="5" rx="2.5" fill="#8fd4ae"/>
+    <rect x="160" y="228" width="98" height="5" rx="2.5" fill="#8fd4ae"/>
+    <text x="160" y="253" font-family="ui-monospace, SF Mono, Menlo, monospace" font-size="8.5" fill="#5b615d">from your price book</text>
+
+    <!-- edit + approve -->
+    <rect x="142" y="282" width="56" height="30" rx="15" fill="#ffffff" stroke="#c8cdc8"/>
+    <text x="170" y="301" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="600" fill="#5b615d">Edit</text>
+    <rect x="206" y="282" width="72" height="30" rx="15" fill="#1e5e3f"/>
+    <text x="242" y="301" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="12" font-weight="700" fill="#ffffff">Approve</text>
+
+    <!-- sent confirmation -->
+    <g font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+      <circle cx="152" cy="344" r="8" fill="#e1f3e8"/>
+      <path d="M148 344 l3 3 l6 -6" fill="none" stroke="#1e5e3f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="168" y="348" font-size="11" font-weight="600" fill="#5b615d">Sent after your tap</text>
+    </g>
+  </g>
+
+  <!-- tap rings on the Approve button -->
+  <g fill="none" stroke="#8fd4ae">
+    <circle cx="242" cy="297" r="26" stroke-opacity="0.55" stroke-width="2"/>
+    <circle cx="242" cy="297" r="40" stroke-opacity="0.28" stroke-width="2"/>
+    <circle cx="242" cy="297" r="54" stroke-opacity="0.14" stroke-width="2"/>
+  </g>
+
+  <text x="32" y="416" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="13" fill="#b9cfc2">The AI drafts. You decide. One tap, from anywhere.</text>
+</svg>

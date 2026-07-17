@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request a Demo | PlowzBox</title>
+<meta name="description" content="Request a PlowzBox demo. Four quick questions, under a minute, and a human gets back to you within one business day. Your info stays private.">
+<link rel="canonical" href="https://plowzbox.com/pages/demo.html">
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0b241a">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PlowzBox">
+<meta property="og:title" content="Request a Demo | PlowzBox">
+<meta property="og:description" content="Four quick questions and a human gets back to you within one business day. Your info stays private.">
+<meta property="og:url" content="https://plowzbox.com/pages/demo.html">
+<meta property="og:image" content="https://plowzbox.com/assets/og-image.png">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/demo-funnel.css">
+<script defer src="../assets/demo-funnel.js"></script>
+<!-- ============================================================
+     LEAD DELIVERY, HOW IT WORKS (owner notes):
+     1. PRIMARY: assets/demo-funnel.js POSTs the answers to a
+        Formspree endpoint, which emails them to wills@plowz.com.
+        ONE setup step required: create the free Formspree form
+        and paste its endpoint into FORM_ENDPOINT at the top of
+        assets/demo-funnel.js. See pages/DEMO-FUNNEL-SETUP.md.
+     2. FALLBACK: if the endpoint is unset or the POST fails, the
+        visitor gets a prefilled mailto:wills@plowz.com carrying
+        every answer, plus a copy-paste block. No lead is lost.
+     No trackers, no cookies, no analytics on this page.
+     ============================================================ -->
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="../index.html" aria-label="PlowzBox home">
+      <img src="../assets/brand/logo-mark.svg" alt="" width="32" height="32">
+      <span class="brand-word">Plowz<b>Box</b></span>
+    </a>
+    <a class="nav-back" href="../index.html">&larr; Back to the site</a>
+  </nav>
+</header>
+
+<main id="main" class="df-stage">
+  <div class="wrap">
+
+    <div class="df-intro">
+      <p class="df-eyebrow">Early access &middot; Request a demo</p>
+      <h1>See it catch the calls you're missing.</h1>
+      <p>Four quick questions so the demo fits your operation. Takes under a minute.</p>
+    </div>
+
+    <div class="df-card">
+
+      <div class="df-progress" id="df-progress">
+        <div class="df-progress-meta">
+          <span id="df-progress-count">Step 1 of 4</span>
+          <span class="df-progress-label" id="df-progress-label">About you</span>
+        </div>
+        <div class="df-progress-track" role="progressbar" aria-label="Demo request progress"
+             aria-valuemin="1" aria-valuemax="4" aria-valuenow="1">
+          <div class="df-progress-fill" id="df-progress-fill" style="width:25%"></div>
+        </div>
+      </div>
+
+      <div class="df-body" id="df-body">
+
+        <p class="sr-only" id="df-live" aria-live="polite"></p>
+
+        <form id="demo-funnel" novalidate autocomplete="on">
+
+          <!-- Honeypot: invisible to humans and assistive tech.
+               If a bot fills it, nothing is sent anywhere. -->
+          <div class="df-meadow" aria-hidden="true">
+            <label for="company_website">Leave this field empty</label>
+            <input type="text" id="company_website" name="company_website"
+                   tabindex="-1" autocomplete="off">
+          </div>
+
+          <!-- STEP 1: who -->
+          <section class="df-step is-active" aria-label="Step 1 of 4: About you">
+            <h2 tabindex="-1">First, who are we talking to?</h2>
+            <p class="df-step-hint">Just so a real person can say hello properly.</p>
+            <div class="df-field">
+              <label for="f-name">Your name</label>
+              <input class="df-input" type="text" id="f-name" name="name"
+                     autocomplete="name" placeholder="Sam Alvarez" required
+                     aria-describedby="err-name">
+              <p class="df-error" id="err-name"></p>
+            </div>
+            <div class="df-field">
+              <label for="f-business">Business name</label>
+              <input class="df-input" type="text" id="f-business" name="business"
+                     autocomplete="organization" placeholder="Wayneview Lawn &amp; Snow" required
+                     aria-describedby="err-business">
+              <p class="df-error" id="err-business"></p>
+            </div>
+            <div class="df-nav">
+              <button class="btn btn-primary df-next" type="submit" disabled aria-disabled="true">
+                <span class="df-next-label">Continue</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- STEP 2: size -->
+          <section class="df-step" aria-label="Step 2 of 4: Your operation">
+            <h2 tabindex="-1">How big is your operation?</h2>
+            <p class="df-step-hint">Closest fit is fine. It shapes what we show you.</p>
+            <fieldset class="df-chips" aria-describedby="err-crews">
+              <legend class="sr-only">How many crews do you run?</legend>
+              <div class="df-chip">
+                <input type="radio" id="crews-solo" name="crews" value="Just me">
+                <label for="crews-solo">Just me</label>
+              </div>
+              <div class="df-chip">
+                <input type="radio" id="crews-1" name="crews" value="1 crew">
+                <label for="crews-1">1 crew</label>
+              </div>
+              <div class="df-chip">
+                <input type="radio" id="crews-23" name="crews" value="2 to 3 crews">
+                <label for="crews-23">2 to 3 crews</label>
+              </div>
+              <div class="df-chip">
+                <input type="radio" id="crews-4" name="crews" value="4 or more crews">
+                <label for="crews-4">4 or more</label>
+              </div>
+            </fieldset>
+            <p class="df-error" id="err-crews"></p>
+            <div class="df-nav">
+              <button class="df-back" type="button">&larr; Back</button>
+              <button class="btn btn-primary df-next" type="submit" disabled aria-disabled="true">
+                <span class="df-next-label">Continue</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- STEP 3: headache -->
+          <section class="df-step" aria-label="Step 3 of 4: Your biggest headache">
+            <h2 tabindex="-1">What's the number one headache?</h2>
+            <p class="df-step-hint">Pick the one that costs you the most sleep. We'll demo that first.</p>
+            <fieldset class="df-chips" aria-describedby="err-headache">
+              <legend class="sr-only">Your biggest front-office headache</legend>
+              <div class="df-chip">
+                <input type="radio" id="ha-calls" name="headache" value="Missed calls">
+                <label for="ha-calls">Missed calls</label>
+              </div>
+              <div class="df-chip">
+                <input type="radio" id="ha-sched" name="headache" value="Scheduling">
+                <label for="ha-sched">Scheduling</label>
+              </div>
+              <div class="df-chip">
+                <input type="radio" id="ha-quote" name="headache" value="Quoting">
+                <label for="ha-quote">Quoting</label>
+              </div>
+              <div class="df-chip">
+                <input type="radio" id="ha-bill" name="headache" value="Billing">
+                <label for="ha-bill">Billing</label>
+              </div>
+              <div class="df-chip">
+                <input type="radio" id="ha-all" name="headache" value="All of it">
+                <label for="ha-all">All of it</label>
+              </div>
+            </fieldset>
+            <p class="df-error" id="err-headache"></p>
+            <div class="df-nav">
+              <button class="df-back" type="button">&larr; Back</button>
+              <button class="btn btn-primary df-next" type="submit" disabled aria-disabled="true">
+                <span class="df-next-label">Continue</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- STEP 4: contact -->
+          <section class="df-step" aria-label="Step 4 of 4: How to reach you">
+            <h2 tabindex="-1">Last one. Where should we reach you?</h2>
+            <p class="df-step-hint">A human reaches out within one business day. No drip campaign, no list.</p>
+            <div class="df-field">
+              <label for="f-phone">Phone</label>
+              <input class="df-input" type="tel" id="f-phone" name="phone"
+                     autocomplete="tel" inputmode="tel" placeholder="(315) 555-0140" required
+                     aria-describedby="err-phone">
+              <p class="df-error" id="err-phone"></p>
+            </div>
+            <div class="df-field">
+              <label for="f-email">Email</label>
+              <input class="df-input" type="email" id="f-email" name="email"
+                     autocomplete="email" inputmode="email" placeholder="sam@wayneview.com" required
+                     aria-describedby="err-email">
+              <p class="df-error" id="err-email"></p>
+            </div>
+            <div class="df-field">
+              <fieldset class="df-chips" aria-describedby="err-preferred">
+                <legend style="font-size: var(--chq-text-sm); font-weight: var(--chq-weight-semibold); color: var(--chq-brand-ink); margin-bottom: var(--chq-space-2); padding: 0;">How should we reach out first?</legend>
+                <div class="df-chip">
+                  <input type="radio" id="pref-text" name="preferred" value="Text">
+                  <label for="pref-text">Text me</label>
+                </div>
+                <div class="df-chip">
+                  <input type="radio" id="pref-call" name="preferred" value="Call">
+                  <label for="pref-call">Call me</label>
+                </div>
+                <div class="df-chip">
+                  <input type="radio" id="pref-email" name="preferred" value="Email">
+                  <label for="pref-email">Email me</label>
+                </div>
+              </fieldset>
+              <p class="df-error" id="err-preferred"></p>
+            </div>
+            <div class="df-nav">
+              <button class="df-back" type="button">&larr; Back</button>
+              <button class="btn btn-primary df-next" type="submit" disabled aria-disabled="true">
+                <span class="df-spinner" hidden aria-hidden="true"></span>
+                <span class="df-next-label">Request my demo</span>
+              </button>
+            </div>
+          </section>
+
+        </form>
+
+        <!-- SUCCESS: backend accepted the lead -->
+        <div class="df-final" id="df-success" hidden>
+          <span class="df-final-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <h2 tabindex="-1">Request received.</h2>
+          <p class="df-final-lede"><span id="df-success-name">Thanks.</span>
+          We'll reach out within one business day. Your info stays private, it goes
+          to a human at PlowzBox and nowhere else.</p>
+          <div class="df-recap" id="df-success-recap" aria-label="What you told us"></div>
+          <a class="btn btn-ghost-light" href="../index.html">Back to the site</a>
+        </div>
+
+        <!-- FALLBACK: endpoint unset, or the send failed.
+             The prefilled mailto carries every answer, so the lead
+             is never lost. -->
+        <div class="df-final" id="df-fallback" hidden>
+          <span class="df-final-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </span>
+          <h2 tabindex="-1">One more tap to send it.</h2>
+          <p class="df-final-lede">We couldn't send this straight from the page, but
+          nothing you typed is lost. The button below opens your email app with every
+          answer already filled in and addressed to us. Just hit send.</p>
+          <a class="btn btn-primary" id="df-mailto-link" href="mailto:wills@plowz.com">Send by email</a>
+          <div class="df-recap" id="df-fallback-recap" aria-label="What your email will contain"></div>
+          <details class="df-copyblock">
+            <summary>No email app on this device? Copy and paste instead.</summary>
+            <pre id="df-copy-body"></pre>
+            <button class="btn btn-ghost-light" type="button" id="df-copy-btn">Copy my answers</button>
+          </details>
+          <p class="df-final-fine">Your answers go to wills@plowz.com and nowhere else.
+          We'll reach out within one business day.</p>
+        </div>
+
+        <noscript>
+          <div class="df-noscript" style="box-shadow:none; border:0; border-radius:0;">
+            <h2>This form needs JavaScript, but you don't.</h2>
+            <p>Email us directly and we'll set up your demo the old-fashioned way:</p>
+            <a class="btn btn-primary" href="mailto:wills@plowz.com?subject=PlowzBox%20demo%20request&amp;body=Name%3A%20%0ABusiness%3A%20%0ACrew%20size%3A%20%0ABiggest%20headache%3A%20%0APhone%3A%20%0APreferred%20contact%3A%20">Request a demo by email</a>
+          </div>
+        </noscript>
+
+      </div>
+    </div>
+
+    <p class="df-privacy">No trackers, no cookies, no analytics on this page. Your answers
+    go to a human at PlowzBox so we can set up your demo, and nowhere else. Prefer plain
+    email? <a href="mailto:wills@plowz.com?subject=PlowzBox%20demo%20request">wills@plowz.com</a></p>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <p>&copy; 2026 PlowzBox, early access. You own the box. Your data stays on it.</p>
+    <p class="fine"><a href="../index.html">Home</a> &middot; <a href="../index.html#faq">FAQ</a></p>
+  </div>
+</footer>
+</body>
+</html>

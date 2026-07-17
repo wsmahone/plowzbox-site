@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="The PlowzBox appliance on its shelf">
+  <!-- Spot set: the box itself - one shelf, one cable, one green light. -->
+  <!-- quiet signal: it's on, working -->
+  <g stroke="#349966" stroke-width="4" stroke-linecap="round" fill="none">
+    <path d="M52 32 a12 12 0 0 1 16 0"/>
+    <path d="M46 23 a21 21 0 0 1 28 0"/>
+  </g>
+  <!-- the box -->
+  <g>
+    <rect x="28" y="44" width="64" height="34" rx="8" fill="#123324"/>
+    <path d="M36 47.5 h48" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- vents -->
+    <g stroke="#0b241a" stroke-width="2.6" stroke-linecap="round">
+      <path d="M76 52 v18 M82.5 52 v18"/>
+    </g>
+    <!-- grass etch -->
+    <g fill="#8fd4ae" transform="translate(38,52) scale(0.36)">
+      <rect x="3" y="41" width="45.5" height="7.4" rx="3.7"/>
+      <path d="M25.7 0.6 C28.6 11.2 30.6 25 30.4 43.7 L20.9 43.7 C20.7 25 22.8 11.2 25.7 0.6 Z"/>
+      <path d="M-4.4 13.2 C3.4 20.4 8.6 30.4 9.7 43.7 L1.2 43.7 C0.1 32.2 -1.9 22 -4.4 13.2 Z"/>
+      <path d="M55.8 13.2 C48 20.4 42.8 30.4 41.7 43.7 L50.2 43.7 C51.3 32.2 53.3 22 55.8 13.2 Z"/>
+    </g>
+    <!-- status LED with glow -->
+    <circle cx="66" cy="70" r="6.5" fill="#8fd4ae" opacity="0.3"/>
+    <circle cx="66" cy="70" r="2.8" fill="#8fd4ae"/>
+  </g>
+  <!-- shelf board + brackets -->
+  <path d="M16 84 h88" stroke="#123324" stroke-width="4.5" stroke-linecap="round"/>
+  <g fill="none" stroke="#123324" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M30 86 v10 l12 -10"/>
+    <path d="M90 86 v10 l-12 -10"/>
+  </g>
+  <!-- one cable dropping off the shelf -->
+  <path d="M92 62 c10 2 12 10 12 20 v14" fill="none" stroke="#123324" stroke-width="4" stroke-linecap="round"/>
+</svg>

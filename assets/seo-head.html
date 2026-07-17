@@ -1,0 +1,78 @@
+<!-- ============================================================
+     PlowzBox — SEO <head> block v1 (owner: Copy + SEO)
+     Paste inside <head> of index.html. Self-contained: no external
+     requests, no trackers, no third-party scripts.
+
+     OPEN ITEMS for lead/deploy:
+       1. assets/img/plowzbox-og.png does NOT exist yet — must be produced.
+          Required: 1200x630 px PNG (og:image), under ~300KB.
+          Optional nice-to-have: 1200x600 variant for X/Twitter
+          large card (same tag works; 1200x630 is fine for both).
+          Content suggestion: appliance illustration on green-950
+          (#0b241a) with logo + "Never miss another job."
+       2. Confirm canonical host (https://plowzbox.com, no www)
+          matches the deploy plan's redirect rules.
+     ============================================================ -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Title: 55 chars -->
+<title>PlowzBox | AI Office Manager for Landscaping Businesses</title>
+
+<!-- Description: 148 chars -->
+<meta name="description" content="PlowzBox answers every text, email, and missed call, books jobs, sends quotes and invoices. Local AI on a box you own. No cloud fees. Request a demo.">
+
+<link rel="canonical" href="https://plowzbox.com/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<!-- Theme color: brand green-950 (dark hero) with light fallback -->
+<meta name="theme-color" content="#0b241a">
+<meta name="color-scheme" content="light">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PlowzBox">
+<meta property="og:title" content="PlowzBox | Never miss another job">
+<meta property="og:description" content="An AI office manager in a box that plugs into your router. Answers every text, email, and missed call. Your data stays on hardware you own.">
+<meta property="og:url" content="https://plowzbox.com/">
+<meta property="og:image" content="https://plowzbox.com/assets/img/plowzbox-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The PlowzBox appliance: a small box that runs a landscaping company's front office.">
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PlowzBox | Never miss another job">
+<meta name="twitter:description" content="An AI office manager in a box that plugs into your router. Answers every text, email, and missed call. Your data stays on hardware you own.">
+<meta name="twitter:image" content="https://plowzbox.com/assets/img/plowzbox-og.png">
+
+<!-- Structured data: Product + Organization only.
+     Deliberately NO offers (pricing TBD), NO aggregateRating,
+     NO reviews (none exist). Add an Offer node only when public
+     pricing ships. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://plowzbox.com/#org",
+      "name": "PlowzBox",
+      "url": "https://plowzbox.com/",
+      "logo": "https://plowzbox.com/assets/logo.svg",
+      "description": "Maker of PlowzBox, an on-premises AI office-manager appliance for landscaping businesses."
+    },
+    {
+      "@type": "Product",
+      "@id": "https://plowzbox.com/#product",
+      "name": "PlowzBox",
+      "brand": { "@id": "https://plowzbox.com/#org" },
+      "image": "https://plowzbox.com/assets/img/plowzbox-og.png",
+      "description": "An AI office-manager appliance for landscaping businesses. Plugs into your router and answers customer texts, emails, and missed calls, books jobs, sends quotes and invoices, and runs crew day boards. The AI runs locally on hardware you own; customer data stays on the encrypted box. Currently in early access.",
+      "category": "Business appliance",
+      "url": "https://plowzbox.com/"
+    }
+  ]
+}
+</script>

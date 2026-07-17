@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Rain moves the day's jobs to the next dry day">
+  <!-- Spot set: rain-day reflow - the plan slides one day right, with
+       your approval. -->
+  <!-- cloud + rain (kept left; the move happens on the right) -->
+  <g>
+    <path d="M26 34 a11 11 0 0 1 21 -4.5 a9.5 9.5 0 0 1 13.5 8.7 a8 8 0 0 1 -1.5 15.8 h-30 a10 10 0 0 1 -3 -20 Z"
+          fill="#e1f3e8" stroke="#123324" stroke-width="4.5" stroke-linejoin="round"/>
+    <g stroke="#349966" stroke-width="4" stroke-linecap="round">
+      <path d="M32 62 l-3.4 8.6"/>
+      <path d="M44 62 l-3.4 8.6"/>
+      <path d="M56 62 l-3.4 8.6"/>
+    </g>
+  </g>
+  <!-- mini week board -->
+  <g>
+    <rect x="14" y="80" width="92" height="26" rx="8" fill="#ffffff" stroke="#123324" stroke-width="4.5"/>
+    <g stroke="#c8cdc8" stroke-width="3">
+      <path d="M37 82 v22 M60 82 v22 M83 82 v22"/>
+    </g>
+    <!-- job card leaving the rainy day -->
+    <rect x="42" y="87" width="13" height="12" rx="3.5" fill="none" stroke="#9aa19c" stroke-width="3" stroke-dasharray="4 4"/>
+    <!-- landing on the dry day -->
+    <rect x="65" y="87" width="13" height="12" rx="3.5" fill="#8fd4ae"/>
+  </g>
+  <!-- the move -->
+  <path d="M62 74 c8 -8 16 -8 24 0 M86 74 v-8 M86 74 h-8" fill="none" stroke="#1e5e3f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

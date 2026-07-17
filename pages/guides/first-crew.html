@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hiring Your First Crew Without Drowning in Office Work | PlowzBox Guides</title>
+<meta name="description" content="The operational cliff at crew number one: what changes when the owner stops mowing and starts managing, what must get systematized (dispatch, time, quality, communication), the real labor-shortage context, and where software helps versus where it cannot.">
+<link rel="canonical" href="https://plowzbox.com/pages/guides/first-crew.html">
+<link rel="icon" href="../../assets/brand/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0b241a">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PlowzBox">
+<meta property="og:title" content="Hiring Your First Crew Without Drowning in Office Work">
+<meta property="og:description" content="The operational cliff at crew number one, what must get systematized before it, the labor-shortage reality, and where software helps versus where it cannot.">
+<meta property="og:url" content="https://plowzbox.com/pages/guides/first-crew.html">
+<meta property="og:image" content="https://plowzbox.com/assets/og-image.png">
+<link rel="stylesheet" href="../../assets/tokens.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--chq-font-sans);
+  font-size: var(--chq-text-base);
+  line-height: var(--chq-leading-body);
+  color: var(--chq-ink);
+  background: var(--chq-bg);
+  text-rendering: optimizeLegibility;
+}
+img, svg { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { margin: 0; line-height: var(--chq-leading-snug); color: var(--chq-brand-ink); }
+p { margin: 0 0 var(--chq-space-4); }
+a { color: var(--chq-brand); }
+a:focus-visible { outline: none; box-shadow: var(--chq-shadow-glow); border-radius: var(--chq-radius-sm); }
+.wrap { max-width: 72rem; margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 2.5rem); }
+.skip-link {
+  position: absolute; left: var(--chq-space-4); top: -100px;
+  z-index: 100; padding: var(--chq-space-2) var(--chq-space-4);
+  background: var(--chq-brand); color: var(--chq-white);
+  border-radius: var(--chq-radius-md); font-weight: var(--chq-weight-semibold);
+  text-decoration: none;
+}
+.skip-link:focus { top: var(--chq-space-4); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: var(--chq-space-2); padding: 0.8rem 1.4rem;
+  border-radius: var(--chq-radius-md); font-size: var(--chq-text-base);
+  font-weight: var(--chq-weight-semibold); text-decoration: none;
+  border: 1px solid transparent;
+}
+.btn-primary { background: var(--chq-brand); color: var(--chq-white); }
+.btn-primary:hover { background: var(--chq-brand-hover); }
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--chq-neutral-050) 88%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--chq-border);
+}
+.nav { display: flex; align-items: center; gap: var(--chq-space-5); min-height: 4.25rem; }
+.brand { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; margin-right: auto; }
+.brand img { width: 2rem; height: 2rem; }
+.brand-word { font-size: 1.25rem; font-weight: var(--chq-weight-display); letter-spacing: var(--chq-tracking-tight); color: var(--chq-green-900); }
+.brand-word b { color: var(--chq-green-700); font-weight: inherit; }
+.nav-links { display: flex; gap: var(--chq-space-5); list-style: none; margin: 0; padding: 0; }
+.nav-links a { text-decoration: none; color: var(--chq-neutral-800); font-size: var(--chq-text-sm); font-weight: var(--chq-weight-medium); }
+.nav-links a:hover { color: var(--chq-brand); }
+.nav .btn { padding: 0.55rem 1rem; font-size: var(--chq-text-sm); }
+@media (max-width: 47.9rem) { .nav-links { display: none; } }
+.hero {
+  background:
+    radial-gradient(52rem 30rem at 82% -12%, rgba(52,153,102,0.22), transparent 60%),
+    radial-gradient(40rem 26rem at -10% 110%, rgba(30,94,63,0.45), transparent 60%),
+    var(--chq-dark-bg);
+  color: var(--chq-dark-ink);
+  overflow: hidden;
+}
+.hero .wrap { padding-block: clamp(var(--chq-space-7), 8vw, var(--chq-space-9)); }
+.hero-eyebrow {
+  display: inline-flex; align-items: flex-start; gap: 0.5rem;
+  font-size: var(--chq-text-sm); font-weight: var(--chq-weight-semibold);
+  letter-spacing: var(--chq-tracking-wide); text-transform: uppercase;
+  color: var(--chq-accent); margin-bottom: var(--chq-space-4);
+}
+.hero-eyebrow::before { content: ""; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--chq-green-400); flex: none; margin-top: 0.45em; }
+.hero h1 {
+  font-size: clamp(var(--chq-text-2xl), 4.8vw, var(--chq-text-4xl));
+  font-weight: var(--chq-weight-display); letter-spacing: var(--chq-tracking-tight);
+  line-height: var(--chq-leading-tight); color: var(--chq-dark-ink); max-width: 24ch;
+}
+.hero-sub { font-size: clamp(var(--chq-text-md), 2vw, var(--chq-text-lg)); color: var(--chq-dark-ink-2); max-width: 58ch; margin-top: var(--chq-space-5); }
+.article { max-width: 46rem; margin-inline: auto; padding-block: clamp(var(--chq-space-7), 7vw, var(--chq-space-8)); }
+.article > h2 {
+  font-size: clamp(var(--chq-text-xl), 3vw, var(--chq-text-2xl));
+  font-weight: var(--chq-weight-display); letter-spacing: var(--chq-tracking-tight);
+  margin: clamp(var(--chq-space-7), 6vw, var(--chq-space-8)) 0 var(--chq-space-4);
+}
+.article > h3 { font-size: var(--chq-text-lg); font-weight: var(--chq-weight-bold); margin: var(--chq-space-6) 0 var(--chq-space-3); }
+.article p, .article li { color: var(--chq-neutral-800); }
+.article ul, .article ol { margin: 0 0 var(--chq-space-4); padding-left: 1.4rem; }
+.article li { margin-bottom: var(--chq-space-2); }
+.article li strong, .article p strong { color: var(--chq-ink); }
+.lead { font-size: var(--chq-text-md); color: var(--chq-neutral-800); }
+.stat-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--chq-space-4); margin: var(--chq-space-5) 0; }
+.stat {
+  background: var(--chq-surface); border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-lg); padding: var(--chq-space-5);
+  box-shadow: var(--chq-shadow-sm); display: flex; flex-direction: column;
+}
+.stat-num { font-size: clamp(var(--chq-text-xl), 2.6vw, var(--chq-text-2xl)); font-weight: var(--chq-weight-display); letter-spacing: var(--chq-tracking-tight); color: var(--chq-brand-ink); }
+.stat-label { margin: var(--chq-space-2) 0 var(--chq-space-3); color: var(--chq-neutral-800); font-size: var(--chq-text-sm); line-height: 1.55; }
+.stat-src { margin-top: auto; font-size: var(--chq-text-xs); color: var(--chq-ink-secondary); font-family: var(--chq-font-mono); }
+@media (max-width: 47.9rem) { .stat-row { grid-template-columns: 1fr; } }
+.note {
+  background: var(--chq-surface-tint); border: 1px solid var(--chq-green-200);
+  border-radius: var(--chq-radius-lg); padding: var(--chq-space-4) var(--chq-space-5);
+  font-size: var(--chq-text-sm); color: var(--chq-green-900); margin: var(--chq-space-5) 0;
+}
+.note strong { color: var(--chq-green-900); }
+.table-scroll { overflow-x: auto; margin: var(--chq-space-5) 0; -webkit-overflow-scrolling: touch; }
+table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: var(--chq-text-sm); background: var(--chq-surface); border: 1px solid var(--chq-border); border-radius: var(--chq-radius-md); }
+th, td { text-align: left; padding: var(--chq-space-3) var(--chq-space-4); border-bottom: 1px solid var(--chq-border); vertical-align: top; color: var(--chq-neutral-800); }
+th { color: var(--chq-brand-ink); font-weight: var(--chq-weight-bold); background: var(--chq-green-050); }
+tr:last-child td { border-bottom: none; }
+.callout {
+  background: var(--chq-dark-bg); color: var(--chq-dark-ink);
+  border-radius: var(--chq-radius-xl); padding: clamp(var(--chq-space-5), 4vw, var(--chq-space-6));
+  margin: clamp(var(--chq-space-7), 6vw, var(--chq-space-8)) 0;
+}
+.callout .kicker {
+  display: inline-block; font-size: var(--chq-text-xs); font-weight: var(--chq-weight-bold);
+  letter-spacing: var(--chq-tracking-wide); text-transform: uppercase;
+  color: var(--chq-accent); margin-bottom: var(--chq-space-3);
+}
+.callout h2 { color: var(--chq-dark-ink); font-size: var(--chq-text-xl); margin: 0 0 var(--chq-space-3); }
+.callout p { color: var(--chq-dark-ink-2); margin-bottom: var(--chq-space-4); }
+.callout a.btn { background: var(--chq-green-300); color: var(--chq-green-950); }
+.callout a.btn:hover { background: var(--chq-green-200); }
+.sources { border-top: 1px solid var(--chq-border); margin-top: var(--chq-space-7); padding-top: var(--chq-space-5); }
+.sources h2 { font-size: var(--chq-text-md); margin: 0 0 var(--chq-space-3); }
+.sources ul { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--chq-space-2); }
+.sources li { font-size: var(--chq-text-xs); color: var(--chq-ink-secondary); font-family: var(--chq-font-mono); line-height: 1.6; overflow-wrap: anywhere; }
+.more-guides { background: var(--chq-bg-recessed); padding-block: clamp(var(--chq-space-7), 7vw, var(--chq-space-8)); border-top: 1px solid var(--chq-border); }
+.more-guides .h2 { font-size: clamp(var(--chq-text-xl), 3vw, var(--chq-text-2xl)); font-weight: var(--chq-weight-display); letter-spacing: var(--chq-tracking-tight); margin-bottom: var(--chq-space-5); }
+.guide-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--chq-space-4); }
+.guide-card {
+  display: flex; flex-direction: column; background: var(--chq-surface);
+  border: 1px solid var(--chq-border); border-radius: var(--chq-radius-lg);
+  padding: var(--chq-space-5); box-shadow: var(--chq-shadow-sm); text-decoration: none;
+}
+.guide-card:hover { box-shadow: var(--chq-shadow-md); border-color: var(--chq-green-300); }
+.guide-card h3 { font-size: var(--chq-text-base); font-weight: var(--chq-weight-bold); margin-bottom: var(--chq-space-2); }
+.guide-card p { margin: 0; color: var(--chq-ink-secondary); font-size: var(--chq-text-sm); line-height: 1.55; }
+.guide-card .go { margin-top: auto; padding-top: var(--chq-space-3); color: var(--chq-brand); font-weight: var(--chq-weight-semibold); font-size: var(--chq-text-sm); }
+@media (max-width: 55rem) { .guide-cards { grid-template-columns: 1fr; } }
+.site-footer { background: var(--chq-green-950); color: var(--chq-dark-ink-2); border-top: 1px solid var(--chq-dark-border); padding-block: var(--chq-space-7); font-size: var(--chq-text-sm); }
+.footer-grid { display: flex; flex-wrap: wrap; gap: var(--chq-space-6); justify-content: space-between; align-items: flex-start; }
+.site-footer .brand-word { color: var(--chq-dark-ink); }
+.site-footer .brand-word b { color: var(--chq-accent); }
+.site-footer a { color: var(--chq-accent); }
+.footer-note { max-width: 44ch; margin: var(--chq-space-3) 0 0; }
+.footer-legal { margin-top: var(--chq-space-6); padding-top: var(--chq-space-5); border-top: 1px solid var(--chq-dark-border); font-size: var(--chq-text-xs); display: flex; flex-wrap: wrap; gap: var(--chq-space-4); justify-content: space-between; }
+.footer-legal p { margin: 0; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="../../index.html" aria-label="PlowzBox home">
+      <img src="../../assets/brand/logo-mark.svg" alt="" width="32" height="32">
+      <span class="brand-word">Plowz<b>Box</b></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../phone.html">Phone</a></li>
+      <li><a href="../sms.html">Texts &amp; email</a></li>
+      <li><a href="../scheduling.html">Scheduling</a></li>
+      <li><a href="../billing.html">Billing</a></li>
+      <li><a href="../ai.html">Local AI</a></li>
+      <li><a href="../compare.html">Compare</a></li>
+    </ul>
+    <a class="btn btn-primary" href="../demo.html">Request a demo</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <p class="hero-eyebrow">Field guide &middot; Growth</p>
+      <h1 id="hero-h">Hiring your first crew without drowning in office work</h1>
+      <p class="hero-sub">The jump from solo operator to first crew is the hardest transition in this trade, and it is not a mowing problem. It is the moment your business grows an office whether you wanted one or not. This guide maps the cliff, the four systems that must exist before you jump, and an honest accounting of where software helps and where it flatly cannot.</p>
+    </div>
+  </section>
+
+  <article class="wrap article">
+
+    <p class="lead">Every landscaping company that grows passes through the same narrow gate: the day the owner stops being the person who mows and starts being the person who makes sure the mowing happens. Most owners expect the hard part to be finding the hire. The hard part is that the hire converts you into a manager, dispatcher, quality inspector, and office clerk overnight, with no reduction in the selling and quoting you were already doing at night.</p>
+
+    <h2 id="cliff">The cliff at crew number one</h2>
+
+    <p>As a solo operator, your business runs on a genuinely elegant system: everything is in your head, and your head is always on site. You know every gate code because you opened every gate. Quality control is instant because the person who cares about the lawn is the person on the mower. Dispatch is deciding where to drive next. There is no communication overhead because there is nobody to communicate with.</p>
+
+    <p>The first crew breaks every one of those loops at once. The knowledge in your head has to come out of your head. The route you improvised has to be written down. The standard you held by instinct has to be inspected, because the person doing the work no longer automatically shares it. And a new category of work appears from nowhere: relaying instructions, checking completions, answering "which house is next," fielding the customer text that used to be answered by the person standing on the lawn.</p>
+
+    <p>The economics of the moment are worth stating plainly. A solo operator's hours were all billable. A managing owner's hours are split: some selling, some supervising, some office work, and the leftover slice still mowing. If revenue does not grow past the new payroll plus the value of your redirected hours, the hire made you busier and poorer. The hires that work are the ones where the owner's freed hours go into the two things only the owner can do: selling more work and running the standard. The hires that fail are the ones where the owner's freed hours disappear into improvised office work, one text at a time, from the seat of a truck.</p>
+
+    <p>That is the drowning this guide's title refers to, and it is avoidable, because office work, unlike mowing, can be systematized in advance.</p>
+
+    <h2 id="labor">The labor market you are hiring into, honestly</h2>
+
+    <p>Before the systems, the context, because it sets expectations about the hire itself. Landscaping is structurally short of labor and has been for years. This is not a complaint; it is a planning input.</p>
+
+    <div class="stat-row">
+      <div class="stat">
+        <span class="stat-num">70%</span>
+        <p class="stat-label">of landscaping companies report difficulty filling open positions.</p>
+        <span class="stat-src">National Association of Landscape Professionals, Green Industry Workforce Report</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">~36%</span>
+        <p class="stat-label">of all H-2B seasonal guest-worker positions certified by the U.S. Department of Labor are landscaping and groundskeeping jobs, the largest share of any occupation. The industry imports labor at national scale because it cannot hire enough locally.</p>
+        <span class="stat-src">U.S. DOL certification data, FY2024, via American Immigration Council / CRS</span>
+      </div>
+    </div>
+
+    <p>The drivers are structural: the work is physically hard and outdoors, the season makes year-round employment difficult to offer, and construction, warehousing, and delivery compete for the same workers with steadier hours. For a first-time employer, three practical consequences follow:</p>
+
+    <ul>
+      <li><strong>Hiring will take longer than you planned.</strong> Start recruiting before the season you need help, not during it. Spring is when everyone else is hiring too.</li>
+      <li><strong>Retention is the cheap strategy.</strong> In a market this tight, keeping one good crew member beats recruiting three replacements. Clear expectations, predictable schedules, and being a decent, organized employer are retention tools that cost less than churn. Disorganization, the "figure it out when you get there" style, reads to an employee exactly like it reads to a customer.</li>
+      <li><strong>Your first hire will probably not be a finished professional.</strong> Budget real time for training, and write the standard down so the training survives the trainee. A crew that turns over into an undocumented business takes the business's knowledge with it.</li>
+    </ul>
+
+    <h2 id="systems">The four systems that must exist before the hire</h2>
+
+    <p>Everything that was in your head needs a home outside your head. Four systems cover it. None of them require software; all of them require deciding.</p>
+
+    <h3>1. Dispatch: the day, written down</h3>
+    <p>The crew needs to know, without calling you: which properties, in what order, what service at each, and the site quirks, the narrow gate, the dog, the shed the clippings go behind, the corner the truck cannot turn. The minimum viable version is a written day sheet per crew with the route ordered sensibly and job notes attached. The test is brutal and simple: could the crew run Tuesday if your phone died Monday night? Until the answer is yes, you have not hired a crew, you have hired a person you must remote-control.</p>
+
+    <h3>2. Time: when work started, ended, and how long jobs take</h3>
+    <p>Solo, you never needed a clock; the day was the day. With payroll, hours become money, and job-level time becomes your pricing feedback loop: if the new crew takes 50 minutes on a lawn you quoted from your own 30-minute pace, that account is now mispriced, and only recorded time will tell you. The minimum version is a start-and-done record per job, even by text message. What matters is that it is recorded at the job, not reconstructed at the kitchen table on Friday.</p>
+
+    <h3>3. Quality: the standard, made inspectable</h3>
+    <p>Your standard was enforced by your presence. Now it has to be enforced by definition: what does a finished property look like? Gates closed, clippings off the walks, stripes straight, debris on the trailer. Write the five-line checklist per service, have the crew confirm it per job, ideally with a photo at completion, and spot-check personally on a schedule rather than in a panic after a complaint. The checklist sounds bureaucratic until the first time a customer calls about an unlatched gate and a dog. It is also your training curriculum, your dispute evidence, and the concrete answer to "what does good look like here."</p>
+
+    <h3>4. Communication: customers and crew, without you as the switchboard</h3>
+    <p>This is the system that actually drowns owners, because it grows quadratically: customers now text you about work you did not personally do, the crew texts you about properties you are not standing on, and you are the relay between them, all day, from the truck. The fixes are structural. Job notes travel with the job so the crew is not asking you for the gate code you wrote down in April. Completion gets confirmed to the customer so "did they come?" never gets asked. Arrival windows get communicated so "where are they?" never gets asked. And inbound customer questions get answered from the schedule and the price book, which no longer need to live exclusively in your head. Every question that answers itself is a text you did not receive on a mower. If the missed-call side of this problem is already biting, the <a href="stop-losing-calls.html">missed-call guide</a> covers it in depth.</p>
+
+    <div class="note"><strong>Sequencing matters:</strong> build the four systems before the hire, in skeleton form, not after. A week of writing down routes, gate codes, per-service checklists, and your price book (the <a href="pricing-lawn-care.html">pricing guide</a> covers what a written price book looks like) is the cheapest management training you will ever get, and it converts the first hire from an improvisation into an onboarding.</div>
+
+    <h2 id="software">Where software helps, and where it cannot</h2>
+
+    <p>Software vendors, this site's owner included, have an obvious interest in telling you software solves this. The honest version is narrower and still worth having.</p>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Job</th><th>Software genuinely helps</th><th>Software cannot</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Dispatch</strong></td>
+            <td>Holds the schedule, orders the route, attaches job notes, reshuffles a rain day without an evening of phone calls.</td>
+            <td>Know that the Hendersons' gate sticks unless you recorded it. The system is only as good as what you put in it.</td>
+          </tr>
+          <tr>
+            <td><strong>Time</strong></td>
+            <td>Captures start and done per job, turns it into hours and job-level history you can price from.</td>
+            <td>Make an unrecorded hour exist, or make a slow crew fast.</td>
+          </tr>
+          <tr>
+            <td><strong>Quality</strong></td>
+            <td>Carries the checklist, stores the completion photos, keeps the complaint history per property.</td>
+            <td>Mow. Or care. The standard is set and enforced by a human, on the grass, or it does not exist.</td>
+          </tr>
+          <tr>
+            <td><strong>Communication</strong></td>
+            <td>Answers routine customer questions from the real schedule and price book, sends arrival and completion texts, drafts the follow-ups, catches the calls you miss in the field.</td>
+            <td>Handle the upset customer, the pay conversation, or the crew member who did not show. Judgment calls are yours; anything that pretends otherwise should worry you.</td>
+          </tr>
+          <tr>
+            <td><strong>Training and retention</strong></td>
+            <td>Nothing meaningful. This row is deliberately here.</td>
+            <td>Teach a new hire to edge, notice a struggling employee, or be the kind of operation people stay at. All human, all owner.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The pattern in that table: software is good at memory, arithmetic, and repetition, the office clerk parts of the new job the hire created. It is useless at judgment, standards, and skill, the manager parts. The trap to avoid is buying software instead of building the four systems; a tool full of nothing is a subscription, not a system. The right order is: decide the systems, run them on paper for a week if you have to, then let software take over the typing.</p>
+
+    <h2 id="readiness">A short readiness checklist</h2>
+
+    <ul>
+      <li>Demand: you are turning down or deferring more work than a crew would cost, across a season, not one hot month.</li>
+      <li>The route, job notes, and price book exist outside your head.</li>
+      <li>A day sheet for the crew could be produced tonight for tomorrow.</li>
+      <li>A per-service completion checklist is written.</li>
+      <li>You know which of your freed hours go to selling and which to supervising.</li>
+      <li>Cash covers payroll through the ramp, including the training weeks where the crew is slower than you were. If winter sits inside that ramp, read the <a href="winter-cashflow.html">off-season cashflow guide</a> first.</li>
+    </ul>
+
+    <p>None of this makes the jump easy. It makes the jump survivable, which is the realistic goal. The owners who drown at crew number one are almost never bad landscapers. They are good landscapers who tried to hold a two-person business in a one-person head.</p>
+
+    <div class="callout">
+      <span class="kicker">How PlowzBox handles this</span>
+      <h2>The office side of the cliff, on one box</h2>
+      <p>PlowzBox runs the day board per crew, sends run sheets and "on our way" texts, keeps job notes and customer history in one place, and answers routine customer texts from your real schedule and price book with your one-tap approval. It is the memory-and-typing column of the table above. The standard, the training, and the mowing stay yours, which is exactly how it should be.</p>
+      <a class="btn" href="../scheduling.html">See scheduling and crew day-boards &rarr;</a>
+    </div>
+
+    <section class="sources" aria-label="Sources">
+      <h2>Sources</h2>
+      <ul>
+        <li>National Association of Landscape Professionals (NALP), Green Industry Workforce Report: 70 percent of landscaping companies report difficulty filling open positions. landscapeprofessionals.org</li>
+        <li>U.S. Department of Labor, Office of Foreign Labor Certification, FY2024: roughly 50,000 H-2B positions certified in landscaping and groundskeeping occupations, about 36 percent of all H-2B certifications and the largest single occupation; see American Immigration Council, "The Expanding Role of H-2B Workers in the United States" and CRS report R44849.</li>
+        <li>Operational patterns (day sheets, expectation-setting, communication load) are distilled from a production landscaping operation's multi-year support and dispatch corpus.</li>
+      </ul>
+    </section>
+
+  </article>
+
+  <section class="more-guides" aria-labelledby="more-h">
+    <div class="wrap">
+      <h2 class="h2" id="more-h">More field guides</h2>
+      <div class="guide-cards">
+        <a class="guide-card" href="pricing-lawn-care.html">
+          <h3>How landscapers actually price work</h3>
+          <p>The eight pricing models, the factor library, and the honest line where a fixed quote becomes a guess.</p>
+          <span class="go">Read the guide <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="guide-card" href="stop-losing-calls.html">
+          <h3>The missed-call math</h3>
+          <p>What an unanswered phone actually costs, the response-time ladder, and the honest comparison of ways to fix it.</p>
+          <span class="go">Read the guide <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="guide-card" href="winter-cashflow.html">
+          <h3>Surviving the off-season</h3>
+          <p>Snow-work economics, pre-pay patterns, and the collections discipline that keeps January survivable.</p>
+          <span class="go">Read the guide <span aria-hidden="true">&rarr;</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <span class="brand" aria-hidden="true" style="pointer-events:none;">
+          <img src="../../assets/brand/logo-mark.svg" alt="" width="28" height="28">
+          <span class="brand-word">Plowz<b>Box</b></span>
+        </span>
+        <p class="footer-note">The AI office manager for landscaping businesses, in a box
+        you own. Early access, pricing, warranty, and support tiers to be announced.</p>
+      </div>
+      <div>
+        <p style="margin:0;">Talk to a human:
+        <a href="mailto:hello@plowzbox.com">hello@plowzbox.com</a></p>
+        <p class="footer-note">No trackers, no analytics, no cookies on this site. Every
+        statistic on this page names its source; nothing here claims more than the product
+        does today.</p>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>&copy; 2026 PlowzBox, early access.</p>
+      <p><a href="../../index.html">Home</a> &middot; <a href="../../index.html#faq">FAQ</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" role="img" aria-label="Diagram: rain flagged over Tuesday's jobs on a week calendar, with the jobs sliding to Wednesday. One approval texts every affected customer.">
+  <!-- PlowzBox diagram: weather reflow. ids prefixed ucwr- ; self-contained. -->
+  <defs>
+    <linearGradient id="ucwr-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#143726"/>
+      <stop offset="1" stop-color="#102b1f"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="752" height="432" rx="26" fill="url(#ucwr-panel)" stroke="#2a4a39" stroke-width="1.5"/>
+
+  <text x="36" y="52" font-family="ui-monospace, SF Mono, Menlo, monospace" font-size="12" letter-spacing="2.5" fill="#8fd4ae">RAIN DAY</text>
+  <text x="36" y="82" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="22" font-weight="800" fill="#f2f7f3">Slide the day, not your week.</text>
+
+  <!-- rain cloud over Tuesday -->
+  <g>
+    <path d="M270 116 a16 16 0 0 1 15 -10 a17 17 0 0 1 33 4 a12 12 0 0 1 -1 24 l-41 0 a13 13 0 0 1 -6 -18 Z"
+          fill="#17422e" stroke="#b9cfc2" stroke-width="2" stroke-linejoin="round"/>
+    <g stroke="#8fd4ae" stroke-width="2" stroke-linecap="round" opacity="0.8">
+      <line x1="278" y1="142" x2="273" y2="152"/>
+      <line x1="292" y1="142" x2="287" y2="152"/>
+      <line x1="306" y1="142" x2="301" y2="152"/>
+    </g>
+  </g>
+
+  <!-- week columns: Mon..Fri -->
+  <g font-family="ui-monospace, SF Mono, Menlo, monospace" font-size="11" letter-spacing="2" fill="#b9cfc2" text-anchor="middle">
+    <text x="176" y="178">MON</text>
+    <text x="316" y="178">TUE</text>
+    <text x="456" y="178">WED</text>
+    <text x="596" y="178">THU</text>
+    <text x="700" y="178">FRI</text>
+  </g>
+
+  <!-- column wells -->
+  <g fill="#0e2a1e" stroke="#2a4a39">
+    <rect x="112" y="190" width="128" height="164" rx="12"/>
+    <rect x="252" y="190" width="128" height="164" rx="12"/>
+    <rect x="392" y="190" width="128" height="164" rx="12"/>
+    <rect x="532" y="190" width="128" height="164" rx="12"/>
+    <rect x="672" y="190" width="56" height="164" rx="12"/>
+  </g>
+
+  <!-- Monday: settled jobs -->
+  <g>
+    <rect x="122" y="202" width="108" height="30" rx="8" fill="#17422e"/>
+    <rect x="132" y="214" width="66" height="6" rx="3" fill="#8fd4ae"/>
+    <rect x="122" y="240" width="108" height="30" rx="8" fill="#17422e"/>
+    <rect x="132" y="252" width="52" height="6" rx="3" fill="#8fd4ae"/>
+  </g>
+
+  <!-- Tuesday: at-risk jobs (dashed, flagged) -->
+  <g>
+    <rect x="262" y="202" width="108" height="30" rx="8" fill="none" stroke="#8fd4ae" stroke-dasharray="5 4" stroke-width="1.8"/>
+    <rect x="272" y="214" width="60" height="6" rx="3" fill="#55b184"/>
+    <rect x="262" y="240" width="108" height="30" rx="8" fill="none" stroke="#8fd4ae" stroke-dasharray="5 4" stroke-width="1.8"/>
+    <rect x="272" y="252" width="72" height="6" rx="3" fill="#55b184"/>
+    <rect x="262" y="278" width="108" height="30" rx="8" fill="none" stroke="#8fd4ae" stroke-dasharray="5 4" stroke-width="1.8"/>
+    <rect x="272" y="290" width="48" height="6" rx="3" fill="#55b184"/>
+    <text x="316" y="336" text-anchor="middle" font-family="ui-monospace, SF Mono, Menlo, monospace" font-size="10" letter-spacing="1.5" fill="#8fd4ae">AT RISK: 3 JOBS</text>
+  </g>
+
+  <!-- arrow Tue -> Wed -->
+  <path d="M374 220 C 410 200, 430 200, 448 216" fill="none" stroke="#8fd4ae" stroke-width="2.5"/>
+  <path d="M450 218 l-11 -1 l6 -9 Z" fill="#8fd4ae"/>
+
+  <!-- Wednesday: landed jobs -->
+  <g>
+    <rect x="402" y="202" width="108" height="30" rx="8" fill="#1e5e3f"/>
+    <rect x="412" y="214" width="60" height="6" rx="3" fill="#c2e8d3"/>
+    <rect x="402" y="240" width="108" height="30" rx="8" fill="#1e5e3f"/>
+    <rect x="412" y="252" width="72" height="6" rx="3" fill="#c2e8d3"/>
+    <rect x="402" y="278" width="108" height="30" rx="8" fill="#1e5e3f"/>
+    <rect x="412" y="290" width="48" height="6" rx="3" fill="#c2e8d3"/>
+    <text x="456" y="336" text-anchor="middle" font-family="ui-monospace, SF Mono, Menlo, monospace" font-size="10" letter-spacing="1.5" fill="#c2e8d3">NEW PLAN: WED</text>
+  </g>
+
+  <!-- Thursday: existing jobs untouched -->
+  <g>
+    <rect x="542" y="202" width="108" height="30" rx="8" fill="#17422e"/>
+    <rect x="552" y="214" width="56" height="6" rx="3" fill="#8fd4ae"/>
+    <rect x="542" y="240" width="108" height="30" rx="8" fill="#17422e"/>
+    <rect x="552" y="252" width="70" height="6" rx="3" fill="#8fd4ae"/>
+  </g>
+  <!-- Friday sliver -->
+  <rect x="680" y="202" width="40" height="30" rx="8" fill="#17422e"/>
+
+  <!-- approval row -->
+  <g>
+    <rect x="112" y="376" width="170" height="34" rx="17" fill="#8fd4ae"/>
+    <text x="197" y="398" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="13.5" font-weight="700" fill="#0b241a">Approve new plan</text>
+    <text x="300" y="390" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="13" fill="#b9cfc2">One approval texts every affected customer.</text>
+    <text x="300" y="407" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="13" fill="#b9cfc2">Nothing moves until you say so.</text>
+  </g>
+</svg>

@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Surviving the Off-Season: Winter Cashflow for Landscapers | PlowzBox Guides</title>
+<meta name="description" content="Seasonal cashflow reality for landscaping businesses: snow-work economics (per-push, per-inch, seasonal packages and the risk each carries), pre-pay and retainer patterns, dunning before December, and the collections discipline that keeps January survivable.">
+<link rel="canonical" href="https://plowzbox.com/pages/guides/winter-cashflow.html">
+<link rel="icon" href="../../assets/brand/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0b241a">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PlowzBox">
+<meta property="og:title" content="Surviving the Off-Season: Winter Cashflow for Landscapers">
+<meta property="og:description" content="Snow-work economics, pre-pay patterns, dunning before December, and the collections discipline that keeps January survivable.">
+<meta property="og:url" content="https://plowzbox.com/pages/guides/winter-cashflow.html">
+<meta property="og:image" content="https://plowzbox.com/assets/og-image.png">
+<link rel="stylesheet" href="../../assets/tokens.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--chq-font-sans);
+  font-size: var(--chq-text-base);
+  line-height: var(--chq-leading-body);
+  color: var(--chq-ink);
+  background: var(--chq-bg);
+  text-rendering: optimizeLegibility;
+}
+img, svg { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { margin: 0; line-height: var(--chq-leading-snug); color: var(--chq-brand-ink); }
+p { margin: 0 0 var(--chq-space-4); }
+a { color: var(--chq-brand); }
+a:focus-visible { outline: none; box-shadow: var(--chq-shadow-glow); border-radius: var(--chq-radius-sm); }
+.wrap { max-width: 72rem; margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 2.5rem); }
+.skip-link {
+  position: absolute; left: var(--chq-space-4); top: -100px;
+  z-index: 100; padding: var(--chq-space-2) var(--chq-space-4);
+  background: var(--chq-brand); color: var(--chq-white);
+  border-radius: var(--chq-radius-md); font-weight: var(--chq-weight-semibold);
+  text-decoration: none;
+}
+.skip-link:focus { top: var(--chq-space-4); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: var(--chq-space-2); padding: 0.8rem 1.4rem;
+  border-radius: var(--chq-radius-md); font-size: var(--chq-text-base);
+  font-weight: var(--chq-weight-semibold); text-decoration: none;
+  border: 1px solid transparent;
+}
+.btn-primary { background: var(--chq-brand); color: var(--chq-white); }
+.btn-primary:hover { background: var(--chq-brand-hover); }
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--chq-neutral-050) 88%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--chq-border);
+}
+.nav { display: flex; align-items: center; gap: var(--chq-space-5); min-height: 4.25rem; }
+.brand { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; margin-right: auto; }
+.brand img { width: 2rem; height: 2rem; }
+.brand-word { font-size: 1.25rem; font-weight: var(--chq-weight-display); letter-spacing: var(--chq-tracking-tight); color: var(--chq-green-900); }
+.brand-word b { color: var(--chq-green-700); font-weight: inherit; }
+.nav-links { display: flex; gap: var(--chq-space-5); list-style: none; margin: 0; padding: 0; }
+.nav-links a { text-decoration: none; color: var(--chq-neutral-800); font-size: var(--chq-text-sm); font-weight: var(--chq-weight-medium); }
+.nav-links a:hover { color: var(--chq-brand); }
+.nav .btn { padding: 0.55rem 1rem; font-size: var(--chq-text-sm); }
+@media (max-width: 47.9rem) { .nav-links { display: none; } }
+.hero {
+  background:
+    radial-gradient(52rem 30rem at 82% -12%, rgba(52,153,102,0.22), transparent 60%),
+    radial-gradient(40rem 26rem at -10% 110%, rgba(30,94,63,0.45), transparent 60%),
+    var(--chq-dark-bg);
+  color: var(--chq-dark-ink);
+  overflow: hidden;
+}
+.hero .wrap { padding-block: clamp(var(--chq-space-7), 8vw, var(--chq-space-9)); }
+.hero-eyebrow {
+  display: inline-flex; align-items: flex-start; gap: 0.5rem;
+  font-size: var(--chq-text-sm); font-weight: var(--chq-weight-semibold);
+  letter-spacing: var(--chq-tracking-wide); text-transform: uppercase;
+  color: var(--chq-accent); margin-bottom: var(--chq-space-4);
+}
+.hero-eyebrow::before { content: ""; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--chq-green-400); flex: none; margin-top: 0.45em; }
+.hero h1 {
+  font-size: clamp(var(--chq-text-2xl), 4.8vw, var(--chq-text-4xl));
+  font-weight: var(--chq-weight-display); letter-spacing: var(--chq-tracking-tight);
+  line-height: var(--chq-leading-tight); color: var(--chq-dark-ink); max-width: 24ch;
+}
+.hero-sub { font-size: clamp(var(--chq-text-md), 2vw, var(--chq-text-lg)); color: var(--chq-dark-ink-2); max-width: 58ch; margin-top: var(--chq-space-5); }
+.article { max-width: 46rem; margin-inline: auto; padding-block: clamp(var(--chq-space-7), 7vw, var(--chq-space-8)); }
+.article > h2 {
+  font-size: clamp(var(--chq-text-xl), 3vw, var(--chq-text-2xl));
+  font-weight: var(--chq-weight-display); letter-spacing: var(--chq-tracking-tight);
+  margin: clamp(var(--chq-space-7), 6vw, var(--chq-space-8)) 0 var(--chq-space-4);
+}
+.article > h3 { font-size: var(--chq-text-lg); font-weight: var(--chq-weight-bold); margin: var(--chq-space-6) 0 var(--chq-space-3); }
+.article p, .article li { color: var(--chq-neutral-800); }
+.article ul, .article ol { margin: 0 0 var(--chq-space-4); padding-left: 1.4rem; }
+.article li { margin-bottom: var(--chq-space-2); }
+.article li strong, .article p strong { color: var(--chq-ink); }
+.lead { font-size: var(--chq-text-md); color: var(--chq-neutral-800); }
+.stat {
+  background: var(--chq-surface); border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-lg); padding: var(--chq-space-5);
+  box-shadow: var(--chq-shadow-sm); display: flex; flex-direction: column;
+  max-width: 26rem; margin: var(--chq-space-5) 0;
+}
+.stat-num { font-size: clamp(var(--chq-text-xl), 2.6vw, var(--chq-text-2xl)); font-weight: var(--chq-weight-display); letter-spacing: var(--chq-tracking-tight); color: var(--chq-brand-ink); }
+.stat-label { margin: var(--chq-space-2) 0 var(--chq-space-3); color: var(--chq-neutral-800); font-size: var(--chq-text-sm); line-height: 1.55; }
+.stat-src { margin-top: auto; font-size: var(--chq-text-xs); color: var(--chq-ink-secondary); font-family: var(--chq-font-mono); }
+.note {
+  background: var(--chq-surface-tint); border: 1px solid var(--chq-green-200);
+  border-radius: var(--chq-radius-lg); padding: var(--chq-space-4) var(--chq-space-5);
+  font-size: var(--chq-text-sm); color: var(--chq-green-900); margin: var(--chq-space-5) 0;
+}
+.note strong { color: var(--chq-green-900); }
+.table-scroll { overflow-x: auto; margin: var(--chq-space-5) 0; -webkit-overflow-scrolling: touch; }
+table { border-collapse: collapse; width: 100%; min-width: 38rem; font-size: var(--chq-text-sm); background: var(--chq-surface); border: 1px solid var(--chq-border); border-radius: var(--chq-radius-md); }
+th, td { text-align: left; padding: var(--chq-space-3) var(--chq-space-4); border-bottom: 1px solid var(--chq-border); vertical-align: top; color: var(--chq-neutral-800); }
+th { color: var(--chq-brand-ink); font-weight: var(--chq-weight-bold); background: var(--chq-green-050); }
+tr:last-child td { border-bottom: none; }
+.callout {
+  background: var(--chq-dark-bg); color: var(--chq-dark-ink);
+  border-radius: var(--chq-radius-xl); padding: clamp(var(--chq-space-5), 4vw, var(--chq-space-6));
+  margin: clamp(var(--chq-space-7), 6vw, var(--chq-space-8)) 0;
+}
+.callout .kicker {
+  display: inline-block; font-size: var(--chq-text-xs); font-weight: var(--chq-weight-bold);
+  letter-spacing: var(--chq-tracking-wide); text-transform: uppercase;
+  color: var(--chq-accent); margin-bottom: var(--chq-space-3);
+}
+.callout h2 { color: var(--chq-dark-ink); font-size: var(--chq-text-xl); margin: 0 0 var(--chq-space-3); }
+.callout p { color: var(--chq-dark-ink-2); margin-bottom: var(--chq-space-4); }
+.callout a.btn { background: var(--chq-green-300); color: var(--chq-green-950); }
+.callout a.btn:hover { background: var(--chq-green-200); }
+.sources { border-top: 1px solid var(--chq-border); margin-top: var(--chq-space-7); padding-top: var(--chq-space-5); }
+.sources h2 { font-size: var(--chq-text-md); margin: 0 0 var(--chq-space-3); }
+.sources ul { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--chq-space-2); }
+.sources li { font-size: var(--chq-text-xs); color: var(--chq-ink-secondary); font-family: var(--chq-font-mono); line-height: 1.6; overflow-wrap: anywhere; }
+.more-guides { background: var(--chq-bg-recessed); padding-block: clamp(var(--chq-space-7), 7vw, var(--chq-space-8)); border-top: 1px solid var(--chq-border); }
+.more-guides .h2 { font-size: clamp(var(--chq-text-xl), 3vw, var(--chq-text-2xl)); font-weight: var(--chq-weight-display); letter-spacing: var(--chq-tracking-tight); margin-bottom: var(--chq-space-5); }
+.guide-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--chq-space-4); }
+.guide-card {
+  display: flex; flex-direction: column; background: var(--chq-surface);
+  border: 1px solid var(--chq-border); border-radius: var(--chq-radius-lg);
+  padding: var(--chq-space-5); box-shadow: var(--chq-shadow-sm); text-decoration: none;
+}
+.guide-card:hover { box-shadow: var(--chq-shadow-md); border-color: var(--chq-green-300); }
+.guide-card h3 { font-size: var(--chq-text-base); font-weight: var(--chq-weight-bold); margin-bottom: var(--chq-space-2); }
+.guide-card p { margin: 0; color: var(--chq-ink-secondary); font-size: var(--chq-text-sm); line-height: 1.55; }
+.guide-card .go { margin-top: auto; padding-top: var(--chq-space-3); color: var(--chq-brand); font-weight: var(--chq-weight-semibold); font-size: var(--chq-text-sm); }
+@media (max-width: 55rem) { .guide-cards { grid-template-columns: 1fr; } }
+.site-footer { background: var(--chq-green-950); color: var(--chq-dark-ink-2); border-top: 1px solid var(--chq-dark-border); padding-block: var(--chq-space-7); font-size: var(--chq-text-sm); }
+.footer-grid { display: flex; flex-wrap: wrap; gap: var(--chq-space-6); justify-content: space-between; align-items: flex-start; }
+.site-footer .brand-word { color: var(--chq-dark-ink); }
+.site-footer .brand-word b { color: var(--chq-accent); }
+.site-footer a { color: var(--chq-accent); }
+.footer-note { max-width: 44ch; margin: var(--chq-space-3) 0 0; }
+.footer-legal { margin-top: var(--chq-space-6); padding-top: var(--chq-space-5); border-top: 1px solid var(--chq-dark-border); font-size: var(--chq-text-xs); display: flex; flex-wrap: wrap; gap: var(--chq-space-4); justify-content: space-between; }
+.footer-legal p { margin: 0; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="../../index.html" aria-label="PlowzBox home">
+      <img src="../../assets/brand/logo-mark.svg" alt="" width="32" height="32">
+      <span class="brand-word">Plowz<b>Box</b></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../phone.html">Phone</a></li>
+      <li><a href="../sms.html">Texts &amp; email</a></li>
+      <li><a href="../scheduling.html">Scheduling</a></li>
+      <li><a href="../billing.html">Billing</a></li>
+      <li><a href="../ai.html">Local AI</a></li>
+      <li><a href="../compare.html">Compare</a></li>
+    </ul>
+    <a class="btn btn-primary" href="../demo.html">Request a demo</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <p class="hero-eyebrow">Field guide &middot; Cashflow</p>
+      <h1 id="hero-h">Surviving the off-season</h1>
+      <p class="hero-sub">In a cold-climate landscaping business, the money arrives in seven months and the bills arrive in twelve. This guide covers the economics of snow work and the risk each pricing model carries, the pre-pay patterns that smooth the curve, and the collections discipline that decides whether January is quiet or terrifying.</p>
+    </div>
+  </section>
+
+  <article class="wrap article">
+
+    <p class="lead">Every landscaper in a snow state runs two businesses wearing one name: a green business that earns from April to October and a white business that may or may not earn from November to March, depending on the sky. The failure mode is treating them as one smooth year. They are not. The green season's cash has to bridge the gap, the white season's pricing has to price its own risk, and the receivables from October have to actually arrive before the customers who owe them disappear until spring.</p>
+
+    <p>The margin for error is thinner than most owners assume. The JPMorgan Chase Institute, analyzing transactions from roughly 600,000 small businesses, found the median small business holds only about 27 days of cash buffer, enough to survive 27 days of outflows if the inflows stopped. A business whose inflows genuinely stop for three or four months every year cannot live at the median. Winter survival is not an attitude; it is a number you can compute in October.</p>
+
+    <div class="stat">
+      <span class="stat-num">27 days</span>
+      <p class="stat-label">of cash buffer is what the median small business holds, across roughly 600,000 businesses studied. A seasonal business needs several multiples of that going into winter.</p>
+      <span class="stat-src">JPMorgan Chase Institute, "Cash is King: Flows, Balances, and Buffer Days"</span>
+    </div>
+
+    <h2 id="reality">The seasonal cashflow curve, honestly drawn</h2>
+
+    <p>The green season has a predictable shape: a spring spike (cleanups, mulch, first cuts, everyone calling the same two weeks), a long summer plateau of recurring revenue, and a fall spike (leaf cleanups, blowouts, gutters) that compresses into the few weeks after leaf drop. Then the curve does one of two things. If you do not do snow, it goes to zero and stays there. If you do snow, it becomes a slot machine: winter revenue in a per-push model is a direct function of how many times it snows, which nobody controls.</p>
+
+    <p>Meanwhile the cost curve barely moves. Insurance renews in the winter. Truck payments do not pause. Equipment loans, shop rent, phone lines, and software subscriptions run year-round, and if you carry any year-round staff, payroll is the biggest flat line of all. The off-season problem, stated precisely, is a fixed-cost line crossing a collapsed revenue line, bridged by whatever cash and receivables you carried out of October.</p>
+
+    <p>Three levers move that picture, and the rest of this guide takes them in order: price the winter work so its risk is paid for, pull cash forward with pre-pay structures, and make sure fall receivables become cash before the snow flies.</p>
+
+    <h2 id="snow">Snow economics: three models, three different risks</h2>
+
+    <p>Snow pricing looks like lawn pricing wearing a coat, but there is one deep difference: the demand is random. A mowing schedule is a promise you control; a plowing season is a bet on weather. Each of the three standard models splits that bet differently between you and the customer, and knowing who holds the risk is the entire game. (For the general pricing toolkit behind this section, see <a href="pricing-lawn-care.html">the eight pricing models</a>.)</p>
+
+    <h3>Per push: the customer holds the risk</h3>
+    <p>One price each time you clear the driveway, tiered by driveway size, banded by depth. A commonly seen band structure steps roughly 1x, 1.4x, 1.9x across shallow, middle, and deep bands (illustrative multipliers; the bands exist because deeper snow is genuinely slower work: more passes, heavier loads, more equipment strain). Per push is the fairest model in a light winter and the most honest one to sell, but it makes your winter revenue exactly as volatile as the weather. Ten storms is a good season; two storms is a truck payment problem. The customer carries no risk at all: no snow, no bill.</p>
+
+    <h3>Per inch: fairer in the extremes, harder to run</h3>
+    <p>Depth bands taken further: the bill scales with measured accumulation. It protects both sides in extreme winters, but it lives or dies on measurement discipline, because "how deep was it really" is the number one winter pricing dispute in the trade. If you run any depth-banded pricing, the operational rule that prevents the dispute is simple: the crew records actual depth, and any charge above the booked band gets confirmed with the customer before the extra work, not discovered on the invoice.</p>
+
+    <h3>The seasonal package: you hold the risk, and you get paid for holding it</h3>
+    <p>A fixed price for the season, ideally structured as a prepaid count of visits rather than "unlimited." This is the model that fixes your cashflow problem, because the cash arrives in the fall, before the season, whatever the sky does. In exchange, you now hold the weather risk: in a brutal winter you will clear that driveway more times than the package priced. Operators who run packages typically find break-even lands somewhere around 8 to 12 pushes a season (illustrative; run your own number), and the honest sales move is to do that arithmetic openly with the customer: package price divided by included visits, against the per-push rate, against a typical winter on their street. Heavy-snow customers genuinely win with the package. Light-winter customers genuinely do not. Selling it honestly costs you a few packages and saves you the March argument.</p>
+
+    <p>Two package rules that protect both sides: never sell it as unlimited (a visit count with a rollover sweetener, where unused visits credit toward spring services, is both kinder and safer), and put in writing what happens beyond the count. A package customer buried by a record winter should trigger a conversation you already scripted, not a dispute.</p>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Model</th><th>Who holds the weather risk</th><th>Cashflow shape</th><th>Watch out for</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Per push</strong></td><td>Customer</td><td>Lumpy; tracks storms</td><td>Light winters; depth-band disputes</td></tr>
+          <tr><td><strong>Per inch / depth bands</strong></td><td>Split</td><td>Lumpy, scales with severity</td><td>Measurement discipline; confirm surcharges before work</td></tr>
+          <tr><td><strong>Seasonal package</strong></td><td>You</td><td>Cash up front, in the fall</td><td>Record winters; never sell as unlimited</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>A blended book is the mature answer: enough seasonal packages to cover your winter fixed costs even if it never snows, per-push work on top as the upside. When the fixed line is covered by pre-paid packages, a brown December is a quiet month instead of a crisis.</p>
+
+    <p>Two margin notes on the white season. First, the method ladder is real economics: plowing is the cheapest way to clear a square foot, blowing costs more, hand shoveling costs the most, so walkways and steps are their own line, and a property a truck cannot serve is a different price because it is different work. Second, salting is a separate line item with a real product multiplier (rock salt base, calcium chloride and pet-safe blends above it), and a refreeze re-application is a new visit, not a free callback. Both of those sentences, said at quote time, are winter margin you keep.</p>
+
+    <h2 id="prepay">Pulling cash forward: pre-pay and retainer patterns</h2>
+
+    <p>Beyond snow packages, the same pull-forward logic applies to the whole book:</p>
+
+    <ul>
+      <li><strong>Fall-sold snow packages.</strong> The classic. Sell in October, collect before the first flake. Early sign-ups also produce the calmest winters operationally, because the route is planned before the first storm instead of during it.</li>
+      <li><strong>Season pre-pay with a discount.</strong> Some customers will pre-pay the coming mowing season for a modest discount. The discount is real margin given up, so treat it as what it is: the price of financing. It is often cheaper than the alternative financing available to a small operation, but do the comparison rather than assuming.</li>
+      <li><strong>Level monthly billing.</strong> Annualize a customer's expected services into twelve equal payments. Commercial properties and HOAs often prefer it, and it converts your lumpy curve into the flat line your costs already are. It requires discipline in month one: the flat payment is not extra profit in July, it is January's revenue arriving early.</li>
+      <li><strong>Retainers for commercial snow.</strong> A monthly standby fee that guarantees your capacity, plus per-service billing on top. This is the honest way to price the fact that your loader sits ready all winter whether it snows or not. Availability is a product; charge for it.</li>
+    </ul>
+
+    <p>All of these trade a little margin or a little pricing complexity for certainty, and certainty is precisely the thing a seasonal business is short of. The operators who get hurt are the ones who take the pre-paid cash and spend it on August problems. Pre-paid winter money is winter's money. Park it.</p>
+
+    <h2 id="dunning">Dunning before December</h2>
+
+    <p>Here is the collections fact peculiar to this industry: your leverage evaporates on a schedule. In July, a customer who owes you money also wants next week's mow, and a paused visit gets an invoice paid remarkably fast. In December, that same customer does not need you again until April, and an unpaid October leaf cleanup is now a small unsecured loan to someone with no reason to call you back. The receivable did not get worse; your position did.</p>
+
+    <p>So the off-season collections calendar works backward from the freeze:</p>
+
+    <ul>
+      <li><strong>October: tighten the loop.</strong> Fall work is invoiced the day it is done, not batched at month-end. The fall spike is your biggest invoicing month and the last one where follow-up is easy.</li>
+      <li><strong>November: the sweep.</strong> Every open balance gets a friendly, specific reminder. Not a statement in the mail, a direct message naming the amount and the job. Most late payment in residential services is disorganization, not refusal, and a plain reminder collects most of it.</li>
+      <li><strong>Before the first storm: the policy line.</strong> If you carry balances into winter for customers on your snow route, that is a choice; make it consciously. Many operators require a clean balance to hold a seasonal snow slot, which is both fair and a remarkably effective November collections message.</li>
+      <li><strong>December onward: smaller, calmer, consistent.</strong> A monthly cadence on anything still open. The goal is to never let a green-season receivable meet the spring price conversation, because "you still owe for October" and "here is the new season's rate" is the worst possible opening to a reactivation.</li>
+    </ul>
+
+    <p>The discipline that makes all of this cheap instead of awkward is cadence: reminders that go out on schedule, in a consistent voice, without you psyching yourself up to send them. The reminder nobody enjoys writing is the one most worth automating, precisely because the alternative is that it does not get sent.</p>
+
+    <h2 id="checklist">The October checklist</h2>
+
+    <ul>
+      <li>Compute the number: monthly fixed costs times the months until reliable spring revenue, versus cash on hand plus pre-paid packages sold. The gap, if any, is the problem to solve in October, not February.</li>
+      <li>Sell the snow book early, with honest break-even math, and price the packages to cover fixed costs at zero snowfall.</li>
+      <li>Invoice the fall spike same-day; sweep every open balance in November; decide the carry-into-winter policy on purpose.</li>
+      <li>Capture winter sign-ups when interest first appears in mid-fall. Early books make calm winters.</li>
+      <li>Put pre-paid money somewhere it will still exist in January.</li>
+    </ul>
+
+    <p>None of this makes winter lucrative on its own. What it does is convert winter from a gamble into a budget, and a budgeted winter is one you can spend fixing equipment, selling next season's work, and resting, which is what the off-season is supposed to be for.</p>
+
+    <div class="callout">
+      <span class="kicker">How PlowzBox handles this</span>
+      <h2>The awkward reminder, drafted for you</h2>
+      <p>PlowzBox tracks invoices and receivables aging on the box and drafts the payment reminders you never enjoy writing, in a plain, friendly voice, on the cadence you set. Every reminder waits for your one-tap approval before it goes anywhere, and disputes always route to you, never to the software. It will not fix a light winter, but it makes sure October's work is actually paid for by the time the snow flies.</p>
+      <a class="btn" href="../billing.html">See invoicing and reminders &rarr;</a>
+    </div>
+
+    <section class="sources" aria-label="Sources">
+      <h2>Sources</h2>
+      <ul>
+        <li>JPMorgan Chase Institute, "Cash is King: Flows, Balances, and Buffer Days" (study of ~600,000 small businesses): median small business holds 27 cash buffer days. jpmorganchase.com/institute</li>
+        <li>Snow pricing structures (depth bands, method ladder, package break-even around 8 to 12 pushes) are distilled from a production landscaping operation's winter pricing playbook and dispute record. All multipliers and break-even figures are illustrative structure, not rates.</li>
+      </ul>
+    </section>
+
+  </article>
+
+  <section class="more-guides" aria-labelledby="more-h">
+    <div class="wrap">
+      <h2 class="h2" id="more-h">More field guides</h2>
+      <div class="guide-cards">
+        <a class="guide-card" href="pricing-lawn-care.html">
+          <h3>How landscapers actually price work</h3>
+          <p>The eight pricing models, the factor library, and the honest line where a fixed quote becomes a guess.</p>
+          <span class="go">Read the guide <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="guide-card" href="stop-losing-calls.html">
+          <h3>The missed-call math</h3>
+          <p>What an unanswered phone actually costs, the response-time ladder, and the honest comparison of ways to fix it.</p>
+          <span class="go">Read the guide <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="guide-card" href="first-crew.html">
+          <h3>Hiring your first crew</h3>
+          <p>The operational cliff at crew number one, and what has to get systematized before it.</p>
+          <span class="go">Read the guide <span aria-hidden="true">&rarr;</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <span class="brand" aria-hidden="true" style="pointer-events:none;">
+          <img src="../../assets/brand/logo-mark.svg" alt="" width="28" height="28">
+          <span class="brand-word">Plowz<b>Box</b></span>
+        </span>
+        <p class="footer-note">The AI office manager for landscaping businesses, in a box
+        you own. Early access, pricing, warranty, and support tiers to be announced.</p>
+      </div>
+      <div>
+        <p style="margin:0;">Talk to a human:
+        <a href="mailto:hello@plowzbox.com">hello@plowzbox.com</a></p>
+        <p class="footer-note">No trackers, no analytics, no cookies on this site. Every
+        statistic on this page names its source; nothing here claims more than the product
+        does today.</p>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>&copy; 2026 PlowzBox, early access.</p>
+      <p><a href="../../index.html">Home</a> &middot; <a href="../../index.html#faq">FAQ</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

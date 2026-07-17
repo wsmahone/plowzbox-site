@@ -1,0 +1,164 @@
+/* ============================================================
+   CrewHQ (working title) — Design Tokens v1
+   ============================================================
+   Source of truth for the CrewHQ visual identity.
+   All tokens are prefixed --chq- so this file can be dropped
+   into any surface (marketing site, owner dashboard, booking
+   page) without colliding with existing custom properties.
+
+   Adoption pattern for the dashboard team:
+     1. <link rel="stylesheet" href="/brand/tokens.css">
+        (or copy the file — it has zero dependencies)
+     2. Reference semantic tokens (--chq-bg, --chq-ink,
+        --chq-accent...) in components. Reach for primitive
+        tokens (--chq-green-700...) only when building NEW
+        semantic tokens.
+   Nothing in this file styles an element. Tokens only.
+   ============================================================ */
+
+:root {
+  /* ----------------------------------------------------------
+     1. PRIMITIVES — color
+     Greens are the brand. Neutrals are warm ("paper and soil"),
+     never blue-gray: this is an outdoor trade, not a fintech.
+     ---------------------------------------------------------- */
+
+  /* Greens (primary ramp) */
+  --chq-green-950: #0b241a;  /* darkest ink-green, hero backgrounds */
+  --chq-green-900: #123324;  /* deep pine */
+  --chq-green-800: #17422e;
+  --chq-green-700: #1e5e3f;  /* BRAND PRIMARY — the mark, buttons */
+  --chq-green-600: #27754f;  /* hover on primary */
+  --chq-green-500: #349966;  /* active accents, focus rings */
+  --chq-green-400: #55b184;
+  --chq-green-300: #8fd4ae;  /* fresh-growth accent on dark */
+  --chq-green-200: #c2e8d3;
+  --chq-green-100: #e1f3e8;  /* tinted surfaces, badges */
+  --chq-green-050: #f2faf5;  /* faintest wash */
+
+  /* Warm neutrals ("paper") */
+  --chq-neutral-950: #191c1a;  /* body ink */
+  --chq-neutral-800: #333935;
+  --chq-neutral-600: #5b615d;  /* secondary text (AA on paper) */
+  --chq-neutral-400: #9aa19c;  /* disabled / hairline icons */
+  --chq-neutral-300: #c8cdc8;
+  --chq-neutral-200: #e3e5e0;  /* borders */
+  --chq-neutral-100: #f1f0ea;  /* recessed surfaces */
+  --chq-neutral-050: #fafaf7;  /* page background */
+  --chq-white:       #ffffff;
+
+  /* Semantic status (used sparingly; green is reserved
+     for BRAND, so "success" leans teal to stay distinct) */
+  --chq-success:      #1a7f5c;
+  --chq-success-bg:   #e2f5ec;
+  --chq-warning:      #92600a;  /* AA on its bg */
+  --chq-warning-bg:   #fdf3dd;
+  --chq-danger:       #b3362b;
+  --chq-danger-bg:    #fdeae7;
+  --chq-info:         #22607a;
+  --chq-info-bg:      #e6f2f7;
+
+  /* ----------------------------------------------------------
+     2. SEMANTIC COLOR — what components should actually use
+     ---------------------------------------------------------- */
+  --chq-bg:            var(--chq-neutral-050);
+  --chq-bg-recessed:   var(--chq-neutral-100);
+  --chq-surface:       var(--chq-white);
+  --chq-surface-tint:  var(--chq-green-050);
+  --chq-ink:           var(--chq-neutral-950);
+  --chq-ink-secondary: var(--chq-neutral-600);
+  --chq-border:        var(--chq-neutral-200);
+  --chq-border-strong: var(--chq-neutral-300);
+
+  --chq-brand:         var(--chq-green-700);
+  --chq-brand-hover:   var(--chq-green-600);
+  --chq-brand-ink:     var(--chq-green-900);   /* headings on light */
+  --chq-accent:        var(--chq-green-300);   /* highlights on dark */
+  --chq-focus:         var(--chq-green-500);
+
+  /* Dark sections (hero, footer) */
+  --chq-dark-bg:        var(--chq-green-950);
+  --chq-dark-surface:   #123024;
+  --chq-dark-ink:       #f2f7f3;
+  --chq-dark-ink-2:     #b9cfc2;               /* AA on green-950 */
+  --chq-dark-border:    #2a4a39;
+
+  /* ----------------------------------------------------------
+     3. TYPOGRAPHY
+     System stack only. The appliance renders everything
+     locally with zero downloaded assets; the brand does the
+     same. No webfonts, ever.
+     ---------------------------------------------------------- */
+  --chq-font-sans: system-ui, -apple-system, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+  --chq-font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo,
+                   Consolas, "Liberation Mono", monospace;
+
+  /* Weights */
+  --chq-weight-regular: 400;
+  --chq-weight-medium:  500;
+  --chq-weight-semibold: 600;
+  --chq-weight-bold:    700;
+  --chq-weight-display: 800;
+
+  /* Type scale — 1.250 (major third), rem-based */
+  --chq-text-xs:   0.75rem;    /* 12  fine print, table captions */
+  --chq-text-sm:   0.875rem;   /* 14  secondary UI text */
+  --chq-text-base: 1rem;       /* 16  body */
+  --chq-text-md:   1.125rem;   /* 18  lede paragraphs */
+  --chq-text-lg:   1.25rem;    /* 20  card titles */
+  --chq-text-xl:   1.5625rem;  /* 25  section kickers */
+  --chq-text-2xl:  1.953rem;   /* 31  H2 */
+  --chq-text-3xl:  2.441rem;   /* 39  H1 small screens */
+  --chq-text-4xl:  3.052rem;   /* 49  H1 */
+  --chq-text-5xl:  3.815rem;   /* 61  hero display */
+
+  /* Line heights + tracking */
+  --chq-leading-tight: 1.1;    /* display */
+  --chq-leading-snug:  1.25;   /* headings */
+  --chq-leading-body:  1.6;    /* body copy */
+  --chq-tracking-tight: -0.02em; /* display + H1/H2 */
+  --chq-tracking-wide:  0.08em;  /* uppercase kickers */
+
+  /* ----------------------------------------------------------
+     4. SPACING — 4px base grid
+     ---------------------------------------------------------- */
+  --chq-space-1:  0.25rem;   /*  4 */
+  --chq-space-2:  0.5rem;    /*  8 */
+  --chq-space-3:  0.75rem;   /* 12 */
+  --chq-space-4:  1rem;      /* 16 */
+  --chq-space-5:  1.5rem;    /* 24 */
+  --chq-space-6:  2rem;      /* 32 */
+  --chq-space-7:  3rem;      /* 48 */
+  --chq-space-8:  4rem;      /* 64 */
+  --chq-space-9:  6rem;      /* 96 */
+  --chq-space-10: 8rem;      /* 128 */
+
+  /* ----------------------------------------------------------
+     5. RADII — "appliance corners": soft but not bubbly
+     ---------------------------------------------------------- */
+  --chq-radius-xs:   4px;    /* badges, code chips */
+  --chq-radius-sm:   6px;    /* inputs, small buttons */
+  --chq-radius-md:   10px;   /* buttons, table cells */
+  --chq-radius-lg:   16px;   /* cards */
+  --chq-radius-xl:   24px;   /* feature panels, hero art frame */
+  --chq-radius-full: 999px;  /* pills */
+
+  /* ----------------------------------------------------------
+     6. SHADOWS — low, warm, never blue
+     ---------------------------------------------------------- */
+  --chq-shadow-sm: 0 1px 2px rgba(18, 33, 24, 0.06);
+  --chq-shadow-md: 0 2px 8px rgba(18, 33, 24, 0.08),
+                   0 1px 2px rgba(18, 33, 24, 0.05);
+  --chq-shadow-lg: 0 12px 32px rgba(18, 33, 24, 0.12),
+                   0 2px 8px rgba(18, 33, 24, 0.06);
+  --chq-shadow-glow: 0 0 0 4px rgba(52, 153, 102, 0.22); /* focus */
+
+  /* ----------------------------------------------------------
+     7. MOTION
+     ---------------------------------------------------------- */
+  --chq-ease:        cubic-bezier(0.22, 1, 0.36, 1);
+  --chq-duration-1:  120ms;   /* hovers */
+  --chq-duration-2:  240ms;   /* reveals, accordions */
+  --chq-duration-3:  480ms;   /* scroll-in */
+}

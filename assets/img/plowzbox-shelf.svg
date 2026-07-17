@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" role="img" aria-label="PlowzBox on a shop shelf, plugged into the router with one ethernet cable">
+  <!-- The box at work: a shop-wall scene. Self-contained panel (renders the
+       same on dark heroes and light sections), ids prefixed pbxs-, no
+       external resources. Key light upper-left, matching plowzbox-nuc.svg.
+       Labels use the system font stack per tokens.css (no webfonts). -->
+  <defs>
+    <linearGradient id="pbxs-wall" x1="0" y1="0" x2="0.25" y2="1">
+      <stop offset="0" stop-color="#f8f5ee"/>
+      <stop offset="1" stop-color="#eeeade"/>
+    </linearGradient>
+    <linearGradient id="pbxs-plank" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dcc9a4"/>
+      <stop offset="1" stop-color="#d0bb92"/>
+    </linearGradient>
+    <linearGradient id="pbxs-plank-edge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c2ab7f"/>
+      <stop offset="1" stop-color="#b39a6c"/>
+    </linearGradient>
+    <linearGradient id="pbxs-box" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#31352f"/>
+      <stop offset="0.5" stop-color="#1d201d"/>
+      <stop offset="1" stop-color="#121413"/>
+    </linearGradient>
+    <linearGradient id="pbxs-router" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#efede6"/>
+      <stop offset="1" stop-color="#d8d5ca"/>
+    </linearGradient>
+    <radialGradient id="pbxs-led-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#5ef0a4" stop-opacity="0.5"/>
+      <stop offset="0.5" stop-color="#43d187" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#349966" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pbxs-shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6b5b3d" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#6b5b3d" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- panel -->
+  <rect x="1" y="1" width="758" height="518" rx="26" fill="url(#pbxs-wall)" stroke="#e3e5e0" stroke-width="2"/>
+
+  <!-- pegboard field -->
+  <g fill="#d9d4c4">
+    <g>
+      <circle cx="80" cy="70" r="4"/><circle cx="140" cy="70" r="4"/><circle cx="200" cy="70" r="4"/><circle cx="260" cy="70" r="4"/><circle cx="320" cy="70" r="4"/><circle cx="380" cy="70" r="4"/><circle cx="440" cy="70" r="4"/><circle cx="500" cy="70" r="4"/><circle cx="560" cy="70" r="4"/><circle cx="620" cy="70" r="4"/><circle cx="680" cy="70" r="4"/>
+      <circle cx="80" cy="130" r="4"/><circle cx="140" cy="130" r="4"/><circle cx="200" cy="130" r="4"/><circle cx="260" cy="130" r="4"/><circle cx="320" cy="130" r="4"/><circle cx="380" cy="130" r="4"/><circle cx="440" cy="130" r="4"/><circle cx="500" cy="130" r="4"/><circle cx="560" cy="130" r="4"/><circle cx="620" cy="130" r="4"/><circle cx="680" cy="130" r="4"/>
+      <circle cx="80" cy="190" r="4"/><circle cx="140" cy="190" r="4"/><circle cx="200" cy="190" r="4"/><circle cx="260" cy="190" r="4"/><circle cx="320" cy="190" r="4"/><circle cx="380" cy="190" r="4"/><circle cx="440" cy="190" r="4"/><circle cx="500" cy="190" r="4"/><circle cx="560" cy="190" r="4"/><circle cx="620" cy="190" r="4"/><circle cx="680" cy="190" r="4"/>
+    </g>
+  </g>
+
+  <!-- hanging tools (quiet silhouettes) -->
+  <g fill="#c3bda9">
+    <!-- hand trowel on the left pegs: handle, ferrule, blade -->
+    <rect x="132.5" y="66" width="15" height="34" rx="7.5"/>
+    <rect x="136" y="100" width="8" height="10"/>
+    <path d="M128 110 h24 c0 16 -6 30 -12 40 c-6 -10 -12 -24 -12 -40 Z"/>
+  </g>
+  <!-- coiled trimmer line on the right pegs -->
+  <g fill="none" stroke="#c3bda9" stroke-width="7">
+    <circle cx="620" cy="118" r="30"/>
+    <circle cx="620" cy="118" r="17"/>
+  </g>
+
+  <!-- shelf plank + brackets -->
+  <rect x="60" y="316" width="640" height="18" fill="url(#pbxs-plank)"/>
+  <rect x="60" y="334" width="640" height="10" fill="url(#pbxs-plank-edge)"/>
+  <g stroke="#bda67c" stroke-width="1.4" stroke-opacity="0.55">
+    <path d="M84 322 H336 M366 328 H610 M470 320 H676"/>
+  </g>
+  <g fill="#9aa19c">
+    <path d="M120 344 h14 v46 l-14 -12 Z"/>
+    <path d="M626 344 h14 v46 l-14 -12 Z" transform="translate(-14,0) scale(1,1)"/>
+  </g>
+
+  <!-- contact shadows on the plank -->
+  <ellipse cx="270" cy="315" rx="130" ry="12" fill="url(#pbxs-shadow)"/>
+  <ellipse cx="540" cy="315" rx="95" ry="10" fill="url(#pbxs-shadow)"/>
+
+  <!-- ethernet cable: box -> router (one cable is the whole install) -->
+  <path d="M362 282 C400 300 436 302 470 292" fill="none" stroke="#3f453f" stroke-width="4.5" stroke-linecap="round"/>
+  <rect x="352" y="276" width="12" height="9" rx="2" fill="#2c302c"/>
+  <rect x="468" y="286" width="12" height="9" rx="2" fill="#2c302c"/>
+  <!-- power lead dropping off the shelf edge -->
+  <path d="M186 292 C160 300 148 318 150 352 C151 372 146 388 134 402" fill="none" stroke="#3f453f" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- ============ the PlowzBox ============ -->
+  <g>
+    <rect x="178" y="212" width="184" height="102" rx="14" fill="url(#pbxs-box)"/>
+    <!-- top edge catching the key light -->
+    <path d="M190 214.5 H350" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round"/>
+    <path d="M179.5 226 V300" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- chassis seam -->
+    <path d="M186 292 H354" stroke="#000000" stroke-opacity="0.5" stroke-width="1.2"/>
+    <!-- side vents -->
+    <g fill="#0b0d0c">
+      <rect x="322" y="230" width="4" height="46" rx="2"/>
+      <rect x="331" y="230" width="4" height="46" rx="2"/>
+      <rect x="340" y="230" width="4" height="46" rx="2"/>
+    </g>
+    <!-- lid brand: grass + wordmark, etched -->
+    <g transform="translate(200,238)">
+      <g fill="#46a878" transform="scale(0.62)">
+        <rect x="3" y="41" width="45.5" height="7.4" rx="3.7"/>
+        <path d="M25.7 0.6 C28.6 11.2 30.6 25 30.4 43.7 L20.9 43.7 C20.7 25 22.8 11.2 25.7 0.6 Z"/>
+        <path d="M-4.4 13.2 C3.4 20.4 8.6 30.4 9.7 43.7 L1.2 43.7 C0.1 32.2 -1.9 22 -4.4 13.2 Z"/>
+        <path d="M55.8 13.2 C48 20.4 42.8 30.4 41.7 43.7 L50.2 43.7 C51.3 32.2 53.3 22 55.8 13.2 Z"/>
+      </g>
+      <g transform="translate(44,3) scale(0.34)" fill="none" stroke-width="10.5"
+         stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+        <g stroke="#cdd4cf">
+          <path d="M5.25 50 L5.25 9.25"/>
+          <path d="M5.25 9.25 L17 9.25 A9.4 9.4 0 0 1 17 28.05 L5.25 28.05"/>
+          <path d="M43.4 9.25 L43.4 50"/>
+          <path d="M60.4 33 A11.75 11.75 0 1 0 83.9 33 A11.75 11.75 0 1 0 60.4 33"/>
+          <path d="M100.9 21.25 L107.3 44.75 L114.5 26.75 L121.7 44.75 L128.1 21.25"/>
+          <path d="M145.7 21.25 L166.5 21.25 L145.7 44.75 L167.1 44.75"/>
+        </g>
+        <g stroke="#5fbd8d">
+          <path d="M187.1 50 L187.1 9.25"/>
+          <path d="M187.1 9.25 L197.35 9.25 A8.7 8.7 0 0 1 197.35 26.65 L187.1 26.65"/>
+          <path d="M197.35 26.65 L199.35 26.65 A11.65 11.65 0 0 1 199.35 50 L187.1 50"/>
+          <path d="M228 33 A11.75 11.75 0 1 0 251.5 33 A11.75 11.75 0 1 0 228 33"/>
+          <path d="M268.5 21.25 L289.5 44.75"/>
+          <path d="M289.5 21.25 L268.5 44.75"/>
+        </g>
+      </g>
+    </g>
+    <!-- status LED -->
+    <circle cx="200" cy="300" r="16" fill="url(#pbxs-led-glow)"/>
+    <circle cx="200" cy="300" r="3.4" fill="#7df0b4"/>
+  </g>
+
+  <!-- ============ the router ============ -->
+  <g>
+    <!-- antennas -->
+    <g fill="#c9c6ba">
+      <rect x="486" y="216" width="9" height="52" rx="4.5" transform="rotate(-14 490 268)"/>
+      <rect x="588" y="216" width="9" height="52" rx="4.5" transform="rotate(14 592 268)"/>
+    </g>
+    <rect x="462" y="262" width="158" height="52" rx="10" fill="url(#pbxs-router)"/>
+    <path d="M472 264.5 H610" stroke="#ffffff" stroke-opacity="0.6" stroke-width="1.6" stroke-linecap="round"/>
+    <!-- router lights: one is the PlowzBox link -->
+    <circle cx="484" cy="288" r="3.2" fill="#8fd4ae"/>
+    <circle cx="498" cy="288" r="3.2" fill="#c2bfb2"/>
+    <circle cx="512" cy="288" r="3.2" fill="#c2bfb2"/>
+  </g>
+
+  <!-- labels -->
+  <g font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600">
+    <g>
+      <rect x="216" y="366" width="108" height="30" rx="15" fill="#123324"/>
+      <text x="270" y="386" text-anchor="middle" fill="#f2f7f3">PlowzBox</text>
+    </g>
+    <g>
+      <rect x="490" y="366" width="104" height="30" rx="15" fill="#ffffff" stroke="#e3e5e0"/>
+      <text x="542" y="386" text-anchor="middle" fill="#5b615d">Your router</text>
+    </g>
+  </g>
+</svg>

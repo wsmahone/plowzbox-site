@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About PlowzBox | Why We Built It</title>
+<meta name="description" content="PlowzBox is built by people who ran a landscaping-services business and lived the missed-call problem. Our story, what we believe, and where the product honestly is.">
+<link rel="canonical" href="https://plowzbox.com/pages/about.html">
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0b241a">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PlowzBox">
+<meta property="og:title" content="About PlowzBox | Why We Built It">
+<meta property="og:description" content="Built by people who ran a landscaping-services business and lived the missed-call problem. Our story, our principles, and where the product honestly is.">
+<meta property="og:url" content="https://plowzbox.com/pages/about.html">
+<meta property="og:image" content="https://plowzbox.com/assets/og-image.png">
+<link rel="stylesheet" href="../assets/tokens.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--chq-font-sans);
+  font-size: var(--chq-text-base);
+  line-height: var(--chq-leading-body);
+  color: var(--chq-ink);
+  background: var(--chq-bg);
+  text-rendering: optimizeLegibility;
+}
+img, svg { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { margin: 0; line-height: var(--chq-leading-snug); color: var(--chq-brand-ink); }
+p { margin: 0 0 var(--chq-space-4); }
+a { color: var(--chq-brand); }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: none;
+  box-shadow: var(--chq-shadow-glow);
+  border-radius: var(--chq-radius-sm);
+}
+
+/* ---- layout primitives ---- */
+.wrap { max-width: 72rem; margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 2.5rem); }
+.section { padding-block: clamp(var(--chq-space-8), 9vw, var(--chq-space-9)); }
+.section.recessed { background: var(--chq-bg-recessed); }
+.kicker {
+  display: inline-block;
+  font-size: var(--chq-text-sm);
+  font-weight: var(--chq-weight-bold);
+  letter-spacing: var(--chq-tracking-wide);
+  text-transform: uppercase;
+  color: var(--chq-green-600);
+  margin-bottom: var(--chq-space-3);
+}
+.h2 {
+  font-size: clamp(var(--chq-text-2xl), 3.4vw, var(--chq-text-3xl));
+  font-weight: var(--chq-weight-display);
+  letter-spacing: var(--chq-tracking-tight);
+  max-width: 26ch;
+}
+.lede {
+  font-size: var(--chq-text-md);
+  color: var(--chq-ink-secondary);
+  max-width: 56ch;
+  margin-top: var(--chq-space-4);
+}
+.section-head { margin-bottom: clamp(var(--chq-space-6), 5vw, var(--chq-space-8)); }
+.prose { max-width: 62ch; color: var(--chq-neutral-800); }
+.prose p { margin-bottom: var(--chq-space-4); }
+.prose strong { color: var(--chq-brand-ink); }
+
+/* ---- skip link ---- */
+.skip-link {
+  position: absolute; left: var(--chq-space-4); top: -100px;
+  z-index: 100; padding: var(--chq-space-2) var(--chq-space-4);
+  background: var(--chq-brand); color: var(--chq-white);
+  border-radius: var(--chq-radius-md); font-weight: var(--chq-weight-semibold);
+  text-decoration: none; transition: top var(--chq-duration-1) var(--chq-ease);
+}
+.skip-link:focus { top: var(--chq-space-4); }
+
+/* ---- buttons ---- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: var(--chq-space-2);
+  padding: 0.8rem 1.4rem;
+  border-radius: var(--chq-radius-md);
+  font-size: var(--chq-text-base);
+  font-weight: var(--chq-weight-semibold);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background var(--chq-duration-1) var(--chq-ease),
+              border-color var(--chq-duration-1) var(--chq-ease),
+              transform var(--chq-duration-1) var(--chq-ease);
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--chq-brand); color: var(--chq-white); }
+.btn-primary:hover { background: var(--chq-brand-hover); }
+.btn-ghost-dark { color: var(--chq-dark-ink); border-color: var(--chq-dark-border); }
+.btn-ghost-dark:hover { border-color: var(--chq-green-500); background: rgba(52,153,102,0.12); }
+.btn-ghost-light { color: var(--chq-brand-ink); border-color: var(--chq-border-strong); background: var(--chq-surface); }
+.btn-ghost-light:hover { border-color: var(--chq-green-500); }
+.btn-on-dark { background: var(--chq-green-300); color: var(--chq-green-950); }
+.btn-on-dark:hover { background: var(--chq-green-200); }
+
+/* ---- header / nav (shared with index.html) ---- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--chq-neutral-050) 88%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--chq-border);
+}
+.nav {
+  display: flex; align-items: center; gap: var(--chq-space-5);
+  min-height: 4.25rem;
+}
+.brand {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  text-decoration: none; margin-right: auto;
+}
+.brand img { width: 2rem; height: 2rem; }
+.brand-word {
+  font-size: 1.25rem; font-weight: var(--chq-weight-display);
+  letter-spacing: var(--chq-tracking-tight); color: var(--chq-green-900);
+}
+.brand-word b { color: var(--chq-green-700); font-weight: inherit; }
+.nav-links { display: flex; gap: var(--chq-space-5); list-style: none; margin: 0; padding: 0; }
+.nav-links a {
+  text-decoration: none; color: var(--chq-neutral-800);
+  font-size: var(--chq-text-sm); font-weight: var(--chq-weight-medium);
+}
+.nav-links a:hover { color: var(--chq-brand); }
+.nav-links a[aria-current="page"] {
+  color: var(--chq-brand);
+  font-weight: var(--chq-weight-bold);
+}
+.nav .btn { padding: 0.55rem 1rem; font-size: var(--chq-text-sm); }
+@media (max-width: 47.9rem) { .nav-links { display: none; } }
+
+/* ---- nav dropdown (shared pattern from index.html) ---- */
+.nav-drop { position: relative; }
+.nav-drop > a::after { content: " \25BE"; font-size: 0.7em; color: var(--chq-green-600); }
+.nav-drop::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 0.6rem;
+}
+.nav-sub {
+  position: absolute; top: calc(100% + 0.5rem); left: 50%; transform: translateX(-50%);
+  min-width: 14rem; margin: 0; padding: var(--chq-space-2); list-style: none;
+  background: var(--chq-surface); border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-md); box-shadow: var(--chq-shadow-lg);
+  display: none;
+}
+.nav-drop:hover .nav-sub, .nav-drop:focus-within .nav-sub { display: block; }
+.nav-sub a { display: block; padding: 0.45rem 0.75rem; border-radius: var(--chq-radius-sm); }
+.nav-sub a:hover { background: var(--chq-green-050); color: var(--chq-brand); }
+
+/* ---- page hero (dark, single column) ---- */
+.hero {
+  background:
+    radial-gradient(52rem 30rem at 82% -12%, rgba(52,153,102,0.22), transparent 60%),
+    radial-gradient(40rem 26rem at -10% 110%, rgba(30,94,63,0.45), transparent 60%),
+    var(--chq-dark-bg);
+  color: var(--chq-dark-ink);
+  overflow: hidden;
+}
+.hero .wrap { padding-block: clamp(var(--chq-space-8), 9vw, var(--chq-space-9)); }
+.hero-eyebrow {
+  display: inline-flex; align-items: flex-start; gap: 0.5rem;
+  font-size: var(--chq-text-sm); font-weight: var(--chq-weight-semibold);
+  letter-spacing: var(--chq-tracking-wide); text-transform: uppercase;
+  color: var(--chq-accent); margin-bottom: var(--chq-space-4);
+}
+.hero-eyebrow::before {
+  content: ""; width: 0.5rem; height: 0.5rem; border-radius: 50%;
+  background: var(--chq-green-400);
+  flex: none; margin-top: 0.45em;
+}
+.hero h1 {
+  font-size: clamp(var(--chq-text-3xl), 5.4vw, var(--chq-text-4xl));
+  font-weight: var(--chq-weight-display);
+  letter-spacing: var(--chq-tracking-tight);
+  line-height: var(--chq-leading-tight);
+  color: var(--chq-dark-ink);
+  max-width: 20ch;
+}
+.hero-sub {
+  font-size: clamp(var(--chq-text-md), 2vw, var(--chq-text-lg));
+  color: var(--chq-dark-ink-2);
+  max-width: 52ch;
+  margin-top: var(--chq-space-5);
+}
+.hero-ctas { display: flex; flex-wrap: wrap; gap: var(--chq-space-3); margin-top: var(--chq-space-6); }
+.hero-fine { font-size: var(--chq-text-xs); color: var(--chq-dark-ink-2); margin-top: var(--chq-space-4); max-width: 52ch; }
+.hero-fine strong { color: var(--chq-dark-ink); }
+
+/* ---- cards ---- */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--chq-space-4); }
+.cards.two { grid-template-columns: repeat(2, 1fr); }
+.card {
+  background: var(--chq-surface);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-lg);
+  padding: var(--chq-space-5);
+  box-shadow: var(--chq-shadow-sm);
+}
+.card h3 { font-size: var(--chq-text-lg); font-weight: var(--chq-weight-bold); margin-bottom: var(--chq-space-2); }
+.card p { margin: 0; color: var(--chq-ink-secondary); font-size: var(--chq-text-sm); line-height: 1.55; }
+.card .tag {
+  display: inline-block;
+  font-family: var(--chq-font-mono); font-size: var(--chq-text-xs);
+  letter-spacing: var(--chq-tracking-wide); text-transform: uppercase;
+  color: var(--chq-green-700); background: var(--chq-green-100);
+  border-radius: var(--chq-radius-full); padding: 0.15rem 0.65rem;
+  margin-bottom: var(--chq-space-3);
+}
+@media (max-width: 60rem) { .cards { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 34rem) { .cards, .cards.two { grid-template-columns: 1fr; } }
+
+/* ---- checklist ---- */
+.why-points { list-style: none; margin: var(--chq-space-5) 0 0; padding: 0; display: grid; gap: var(--chq-space-3); max-width: 50ch; }
+.why-points li { display: flex; gap: var(--chq-space-3); align-items: baseline; color: var(--chq-neutral-800); }
+.why-points li::before {
+  content: "\2713"; flex: none;
+  font-weight: var(--chq-weight-bold); color: var(--chq-green-600);
+}
+
+/* ---- pull quote ---- */
+.pull {
+  margin: clamp(var(--chq-space-6), 6vw, var(--chq-space-8)) 0 0;
+  padding: clamp(var(--chq-space-5), 4vw, var(--chq-space-7));
+  background: var(--chq-surface-tint);
+  border: 1px solid var(--chq-green-200);
+  border-radius: var(--chq-radius-xl);
+}
+.pull blockquote {
+  margin: 0;
+  font-size: clamp(var(--chq-text-lg), 2.6vw, var(--chq-text-xl));
+  font-weight: var(--chq-weight-bold);
+  letter-spacing: var(--chq-tracking-tight);
+  color: var(--chq-green-900);
+  max-width: 34ch;
+}
+.pull figcaption {
+  margin-top: var(--chq-space-3);
+  font-size: var(--chq-text-sm); color: var(--chq-ink-secondary);
+}
+
+/* ---- dark beliefs band (honesty pattern) ---- */
+.honesty { background: var(--chq-dark-bg); color: var(--chq-dark-ink); }
+.honesty .kicker { color: var(--chq-accent); }
+.honesty .h2 { color: var(--chq-dark-ink); }
+.honesty .lede { color: var(--chq-dark-ink-2); }
+.rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--chq-space-4); }
+.rules.two { grid-template-columns: repeat(2, 1fr); }
+.rule {
+  background: var(--chq-dark-surface);
+  border: 1px solid var(--chq-dark-border);
+  border-radius: var(--chq-radius-lg);
+  padding: var(--chq-space-5);
+}
+.rule-no {
+  font-family: var(--chq-font-mono); font-size: var(--chq-text-xs);
+  color: var(--chq-accent); letter-spacing: var(--chq-tracking-wide);
+  text-transform: uppercase;
+}
+.rule h3 { color: var(--chq-dark-ink); font-size: var(--chq-text-lg); margin: var(--chq-space-2) 0; }
+.rule p { margin: 0; color: var(--chq-dark-ink-2); font-size: var(--chq-text-sm); line-height: 1.55; }
+.honesty-foot {
+  margin: var(--chq-space-6) 0 0; max-width: 56ch;
+  color: var(--chq-dark-ink-2); font-size: var(--chq-text-md);
+}
+.honesty-foot strong { color: var(--chq-dark-ink); }
+@media (max-width: 55rem) { .rules, .rules.two { grid-template-columns: 1fr; } }
+
+/* ---- fine-print / stack note ---- */
+.stack-note {
+  margin-top: var(--chq-space-5);
+  font-family: var(--chq-font-mono); font-size: var(--chq-text-xs);
+  color: var(--chq-ink-secondary);
+  background: var(--chq-neutral-100);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-md);
+  padding: var(--chq-space-3) var(--chq-space-4);
+  line-height: 1.7;
+  max-width: 60rem;
+}
+
+/* ---- final CTA ---- */
+.cta-final {
+  background:
+    radial-gradient(46rem 24rem at 50% 130%, rgba(52,153,102,0.30), transparent 65%),
+    var(--chq-dark-bg);
+  color: var(--chq-dark-ink);
+  text-align: center;
+}
+.cta-final .h2 { color: var(--chq-dark-ink); margin-inline: auto; }
+.cta-final .lede { color: var(--chq-dark-ink-2); margin-inline: auto; }
+.cta-final .hero-ctas { justify-content: center; }
+.cta-final .hero-fine { margin-inline: auto; }
+
+/* ---- explore the rest ---- */
+.explore { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--chq-space-4); }
+.explore-card {
+  display: flex; flex-direction: column;
+  background: var(--chq-surface);
+  border: 1px solid var(--chq-border);
+  border-radius: var(--chq-radius-lg);
+  padding: var(--chq-space-5);
+  box-shadow: var(--chq-shadow-sm);
+  text-decoration: none;
+  transition: box-shadow var(--chq-duration-2) var(--chq-ease),
+              transform var(--chq-duration-2) var(--chq-ease),
+              border-color var(--chq-duration-2) var(--chq-ease);
+}
+.explore-card:hover { box-shadow: var(--chq-shadow-md); transform: translateY(-2px); border-color: var(--chq-green-300); }
+.explore-card h3 { font-size: var(--chq-text-base); font-weight: var(--chq-weight-bold); margin-bottom: var(--chq-space-2); }
+.explore-card p { margin: 0; color: var(--chq-ink-secondary); font-size: var(--chq-text-sm); line-height: 1.55; }
+.explore-card .go {
+  margin-top: auto; padding-top: var(--chq-space-3);
+  color: var(--chq-brand); font-weight: var(--chq-weight-semibold);
+  font-size: var(--chq-text-sm);
+}
+@media (max-width: 60rem) { .explore { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 34rem) { .explore { grid-template-columns: 1fr; } }
+
+/* ---- footer ---- */
+.site-footer {
+  background: var(--chq-green-950);
+  color: var(--chq-dark-ink-2);
+  border-top: 1px solid var(--chq-dark-border);
+  padding-block: var(--chq-space-7);
+  font-size: var(--chq-text-sm);
+}
+.footer-grid {
+  display: flex; flex-wrap: wrap; gap: var(--chq-space-6);
+  justify-content: space-between; align-items: flex-start;
+}
+.site-footer .brand-word { color: var(--chq-dark-ink); }
+.site-footer .brand-word b { color: var(--chq-accent); }
+.site-footer a { color: var(--chq-accent); }
+.footer-note { max-width: 44ch; margin: var(--chq-space-3) 0 0; }
+.footer-legal { margin-top: var(--chq-space-6); padding-top: var(--chq-space-5); border-top: 1px solid var(--chq-dark-border); font-size: var(--chq-text-xs); display: flex; flex-wrap: wrap; gap: var(--chq-space-4); justify-content: space-between; }
+.footer-legal p { margin: 0; }
+
+/* ---- motion safety ---- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="../index.html" aria-label="PlowzBox home">
+      <img src="../assets/brand/logo-mark.svg" alt="" width="32" height="32">
+      <span class="brand-word">Plowz<b>Box</b></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="pain-points.html">The problem</a></li>
+      <li class="nav-drop">
+        <a href="../index.html#what">What it does</a>
+        <ul class="nav-sub" aria-label="Feature deep dives">
+          <li><a href="phone.html">Phone &amp; missed calls</a></li>
+          <li><a href="sms.html">Texts &amp; email AI</a></li>
+          <li><a href="scheduling.html">Scheduling &amp; crews</a></li>
+          <li><a href="billing.html">Quotes &amp; billing</a></li>
+          <li><a href="ai.html">Local AI</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html" aria-current="page">About</a></li>
+      <li><a href="early-access.html">Early access</a></li>
+    </ul>
+    <a class="btn btn-primary" href="demo.html">Request a demo</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- 1 · HERO -->
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <div>
+        <p class="hero-eyebrow">PlowzBox &middot; About</p>
+        <h1 id="hero-h">We ran the crews. We missed the calls.</h1>
+        <p class="hero-sub">PlowzBox is built by people who ran a landscaping-services
+        business and lived the missed-call, unanswered-text problem from the driver's
+        seat. This page is our story, what we believe, and where the product honestly
+        is today.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-on-dark" href="demo.html">Request a demo</a>
+          <a class="btn btn-ghost-dark" href="early-access.html">What early access means</a>
+        </div>
+        <p class="hero-fine"><strong>Fair warning:</strong> no wall of logos ahead, no
+        inflated numbers. We're early, and this page says so.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · WHERE THIS STARTED -->
+  <section class="section" aria-labelledby="story-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Where this started</p>
+        <h2 class="h2" id="story-h">The office was the front seat of the truck.</h2>
+      </div>
+      <div class="prose">
+        <p>Before PlowzBox was a product, it was our problem. We ran a landscaping-services
+        business: crews out on lawns, a schedule that lived partly on a whiteboard and
+        partly in someone's head, and a phone that rang hardest at exactly the moments
+        nobody could answer it.</p>
+        <p>We know what a missed call at two in the afternoon costs, because we missed
+        them. We know what it's like to answer the day's texts at nine-thirty at night,
+        to send a quote three days late and hear the job already went to someone faster,
+        and to lose a good customer who never complained about the mowing once. They just
+        got tired of the silence.</p>
+        <p>Here's the part that stuck with us: <strong>the business knew all the
+        answers.</strong> The pricing, the schedule, when the crew could fit one more
+        cleanup, what to say to a customer worried about grubs. None of it was a mystery.
+        It just all lived in one overloaded person's head, and that person was on a mower
+        eight hours a day.</p>
+      </div>
+      <figure class="pull">
+        <blockquote>We didn't lose customers to better landscapers. We lost them to faster answers.</blockquote>
+        <figcaption>The lesson we kept relearning, season after season.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 3 · THE IDEA -->
+  <section class="section recessed" aria-labelledby="idea-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">The idea</p>
+        <h2 class="h2" id="idea-h">The knowledge already exists. It just needed somewhere to live.</h2>
+        <p class="lede">Big companies solve the front-office problem with staff and
+        software. A three-person crew can't, and shouldn't have to choose between
+        missing calls and renting a stack of subscriptions that holds their customer
+        list hostage.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <span class="tag">The knowledge</span>
+          <h3>Your business already knows the answers</h3>
+          <p>Your price book, your calendar, your customer history, and the turf
+          knowledge every experienced operator carries. That's what a good front office
+          runs on, and you already have it.</p>
+        </div>
+        <div class="card">
+          <span class="tag">The shift</span>
+          <h3>AI got good enough to run on a cheap box</h3>
+          <p>Open-weight AI models can now do real front-office work on a small computer
+          that sits on a shelf. No data center required, no per-token meter, no cloud
+          account between you and your own customers.</p>
+        </div>
+        <div class="card">
+          <span class="tag">The product</span>
+          <h3>Big-company tooling, owned by a small operator</h3>
+          <p>Put the knowledge and the discipline on hardware you own. Every text
+          answered, every missed call texted back, every quote sent the same evening,
+          and you holding the approve button.</p>
+        </div>
+      </div>
+      <p class="stack-note">That's the whole thesis. Not AI magic, not a platform play.
+      A box that does the office work you already know how to do, so you don't have to
+      do it at 9:30 at night.</p>
+    </div>
+  </section>
+
+  <!-- 4 · WHAT WE BELIEVE -->
+  <section class="section honesty" aria-labelledby="believe-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">What we believe</p>
+        <h2 class="h2" id="believe-h">Four things we won't bend on.</h2>
+        <p class="lede">These aren't marketing lines. They're the design constraints the
+        product is built inside, and you can check every one of them at a demo.</p>
+      </div>
+      <div class="rules two">
+        <div class="rule">
+          <span class="rule-no">Belief 01</span>
+          <h3>Own your tools, don't rent them</h3>
+          <p>A landscaper's business should thrive on tools they own. The box is yours,
+          the software on it works for you, and nobody can raise the rent on your own
+          front office.</p>
+        </div>
+        <div class="rule">
+          <span class="rule-no">Belief 02</span>
+          <h3>Your customer list is yours</h3>
+          <p>Your book of business lives on the box, encrypted, in your building, and
+          exports to plain CSV whenever you want. It is not our asset, and we never see it.</p>
+        </div>
+        <div class="rule">
+          <span class="rule-no">Belief 03</span>
+          <h3>Honesty by design</h3>
+          <p>The assistant never invents a price, never claims a job is booked unless it
+          is, and never handles a dispute without you. Hard rules in the software, not
+          settings someone can flip off.</p>
+        </div>
+        <div class="rule">
+          <span class="rule-no">Belief 04</span>
+          <h3>Works in the real world, no per-seat tax</h3>
+          <p>Shops have flaky internet and no IT department. The schedule, the notes, and
+          the AI keep working offline, and adding a crew member never adds a monthly fee.</p>
+        </div>
+      </div>
+      <p class="honesty-foot"><strong>And one more, about us:</strong> AI should work for
+      the small operator too, not just for companies big enough to negotiate with the
+      cloud. That's the reason this is a box and not another subscription.</p>
+    </div>
+  </section>
+
+  <!-- 5 · WHERE WE ARE -->
+  <section class="section" aria-labelledby="stage-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Where we are</p>
+        <h2 class="h2" id="stage-h">Early. On purpose, and out loud.</h2>
+        <p class="lede">PlowzBox is in early access: a working product, first installs,
+        being shaped week by week with our first partner businesses. We'd rather tell
+        you that plainly than decorate this page with milestones we haven't earned.</p>
+      </div>
+      <ul class="why-points">
+        <li>The product works today: answering, booking, quoting, and the approval queue are real.</li>
+        <li>We're installing with a small first group of landscaping businesses and building around what they hit.</li>
+        <li>Pricing, warranty, and support terms are being set with those early partners, in plain English, before anyone pays.</li>
+        <li>No customer counts, funding announcements, or testimonials on this site, because we won't publish what we can't back.</li>
+      </ul>
+      <p style="margin-top: var(--chq-space-6);">If being one of those first partners
+      sounds interesting, <a href="early-access.html">here's exactly what early access
+      involves</a>, including what you get and what we ask.</p>
+    </div>
+  </section>
+
+  <!-- 6 · FINAL CTA -->
+  <section class="section cta-final" aria-labelledby="cta-h">
+    <div class="wrap">
+      <p class="kicker" style="color: var(--chq-accent);">Early access</p>
+      <h2 class="h2" id="cta-h" style="max-width: 24ch;">Help us build the thing we wished we'd had.</h2>
+      <p class="lede">If you run crews and live the missed-call problem, we want to show
+      you the box and hear what you'd change.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-on-dark" href="demo.html">Request a demo</a>
+        <a class="btn btn-ghost-dark" href="early-access.html">About early access</a>
+      </div>
+      <p class="hero-fine">You own the box. Your data stays on it. Pricing announced at demo.</p>
+    </div>
+  </section>
+
+  <!-- 7 · EXPLORE -->
+  <section class="section" id="explore" aria-labelledby="explore-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Keep exploring</p>
+        <h2 class="h2" id="explore-h">See what the box actually does.</h2>
+      </div>
+      <div class="explore">
+        <a class="explore-card" href="phone.html">
+          <h3>Never miss a call</h3>
+          <p>Missed-call text-back and voicemail transcribed on the box, with a drafted reply waiting for you.</p>
+          <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="explore-card" href="sms.html">
+          <h3>Answer every text</h3>
+          <p>The AI receptionist for texts and email. Grounded answers, your one-tap approval, English and Spanish.</p>
+          <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="explore-card" href="ai.html">
+          <h3>Local AI</h3>
+          <p>Open-weight models running on the box itself. No cloud, no meter, and your customer list stays home.</p>
+          <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="explore-card" href="early-access.html">
+          <h3>Early access</h3>
+          <p>What the stage really is, what partners get, what we ask, and how to apply. In plain English.</p>
+          <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <span class="brand" aria-hidden="true" style="pointer-events:none;">
+          <img src="../assets/brand/logo-mark.svg" alt="" width="28" height="28">
+          <span class="brand-word">Plowz<b>Box</b></span>
+        </span>
+        <p class="footer-note">The AI office manager for landscaping businesses, in a box
+        you own. Early access, pricing, warranty, and support tiers to be announced.</p>
+      </div>
+      <div>
+        <p style="margin:0;">Talk to a human:
+        <a href="mailto:hello@plowzbox.com">hello@plowzbox.com</a></p>
+        <p class="footer-note">No trackers, no analytics, no cookies on this site. Nothing
+        on this page claims more than the product, or the company, does today.</p>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>&copy; 2026 PlowzBox, early access.</p>
+      <p><a href="../index.html">Home</a> &middot; <a href="early-access.html">Early access</a> &middot; <a href="../index.html#faq">FAQ</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

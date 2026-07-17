@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CrewHQ mark">
+  <!-- CrewHQ mark: the appliance (rounded square) holding the lawn
+       (three grass blades, negative space). Works at 16px. -->
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="#1e5e3f"/>
+  <g fill="#fafaf7">
+    <!-- ground -->
+    <rect x="15" y="45" width="34" height="5.5" rx="2.75"/>
+    <!-- center blade -->
+    <path d="M32 12.5 C34 21 35.3 32 35.1 47 L28.9 47 C28.7 32 30 21 32 12.5 Z"/>
+    <!-- left blade -->
+    <path d="M16.5 23 C22 28.5 25.8 36.5 26.5 47 L21 47 C20.2 38 18.6 30 16.5 23 Z"/>
+    <!-- right blade -->
+    <path d="M47.5 23 C42 28.5 38.2 36.5 37.5 47 L43 47 C43.8 38 45.4 30 47.5 23 Z"/>
+  </g>
+</svg>

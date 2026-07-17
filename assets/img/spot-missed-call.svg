@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="A missed call answered by text">
+  <!-- Spot set: 120 grid, ink #123324 strokes 4.5/3.5 round, fills green-100,
+       one green accent per piece. Missed call -> the text-back goes out. -->
+  <!-- phone, at rest -->
+  <g>
+    <rect x="18" y="34" width="44" height="74" rx="10" fill="#e1f3e8" stroke="#123324" stroke-width="4.5"/>
+    <path d="M33 42 h14" stroke="#123324" stroke-width="4" stroke-linecap="round"/>
+    <!-- missed call row -->
+    <g>
+      <circle cx="32" cy="60" r="6.5" fill="none" stroke="#123324" stroke-width="3.5"/>
+      <path d="M27.5 55.5 l9 9" stroke="#123324" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M45 60 h9" stroke="#9aa19c" stroke-width="3.5" stroke-linecap="round"/>
+    </g>
+    <!-- text-back row, done -->
+    <g>
+      <circle cx="32" cy="80" r="6.5" fill="#8fd4ae"/>
+      <path d="M29.2 80 l2.2 2.4 3.8 -4.6" fill="none" stroke="#123324" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M45 80 h9" stroke="#9aa19c" stroke-width="3.5" stroke-linecap="round"/>
+    </g>
+  </g>
+  <!-- the reply bubble going out -->
+  <g>
+    <path d="M62 26 h32 a8 8 0 0 1 8 8 v16 a8 8 0 0 1 -8 8 h-18 l-9 9 v-9 h-5 a8 8 0 0 1 -8 -8 v-16 a8 8 0 0 1 8 -8 Z" fill="#1e5e3f"/>
+    <g stroke="#c2e8d3" stroke-width="3.5" stroke-linecap="round">
+      <path d="M65 38 h34"/>
+      <path d="M65 47 h22"/>
+    </g>
+  </g>
+  <!-- sent tick -->
+  <circle cx="94" cy="84" r="12" fill="#8fd4ae"/>
+  <path d="M88.5 84 l4 4.2 7 -8.4" fill="none" stroke="#123324" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
