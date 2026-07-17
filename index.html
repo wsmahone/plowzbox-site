@@ -196,7 +196,12 @@ section[id], [data-clock] { scroll-margin-top: 5.5rem; }
   display: inline-flex; align-items: center; gap: 0.6rem;
   text-decoration: none; margin-right: auto;
 }
-.brand img.brand-lockup { width: auto; height: 1.9rem; }
+.brand img { width: 2rem; height: 2rem; }
+.brand-word {
+  font-size: 1.25rem; font-weight: var(--chq-weight-display);
+  letter-spacing: var(--chq-tracking-tight); color: var(--chq-green-900);
+}
+.brand-word b { color: var(--chq-green-700); font-weight: inherit; }
 .nav-links { display: flex; gap: var(--chq-space-5); list-style: none; margin: 0; padding: 0; }
 .nav-links a {
   text-decoration: none; color: var(--chq-neutral-800);
@@ -778,7 +783,8 @@ section[id], [data-clock] { scroll-margin-top: 5.5rem; }
 <header class="site-header">
   <nav class="wrap nav" aria-label="Main">
     <a class="brand" href="#top" aria-label="PlowzBox home">
-      <img class="brand-lockup" src="assets/brand/logo.svg" alt="PlowzBox" width="178" height="32">
+      <img src="assets/brand/logo-mark.svg" alt="" width="32" height="32">
+      <span class="brand-word">Plowz<b>Box</b></span>
     </a>
     <ul class="nav-links" id="nav-links">
       <li><a href="pages/pain-points.html">The problem</a></li>
@@ -2516,7 +2522,8 @@ section[id], [data-clock] { scroll-margin-top: 5.5rem; }
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <img src="assets/brand/logo-light.svg" alt="PlowzBox" width="178" height="32" style="width:auto; height:2rem;">
+        <img src="assets/brand/logo-mark.svg" alt="" width="32" height="32">
+        <span class="brand-word" style="color: var(--chq-dark-ink);">Plowz<b>Box</b></span>
         <p class="footer-note">The AI office manager for landscaping businesses, in a box
         you own. Early access, pricing, warranty, and support tiers to be announced.</p>
         <p class="footer-note">No trackers, no analytics, no cookies on this site. That's
