@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- PlowzBox favicon: logo-mark geometry with heavier blades and a
-       bigger LED so it survives 16px rasterization. -->
-  <rect x="1" y="1" width="62" height="62" rx="16" fill="#1e5e3f"/>
-  <g fill="#ffffff">
-    <rect x="13" y="44.5" width="34" height="6.5" rx="3.25"/>
-    <path d="M30.5 11.5 C32.9 20.5 34.3 32 34.1 47 L26.9 47 C26.7 32 28.1 20.5 30.5 11.5 Z"/>
-    <path d="M14 22.5 C20 28 24.1 36.5 24.9 47 L18.5 47 C17.7 38 16.3 29.5 14 22.5 Z"/>
-    <path d="M47 22.5 C41 28 36.9 36.5 36.1 47 L42.5 47 C43.3 38 44.7 29.5 47 22.5 Z"/>
+  <!-- PlowzBox favicon v2: same box-grows-lawn geometry, bolded for 16px
+       rasterization - wider box, chunkier three-blade tuft, bigger LED
+       (the LED survives at 16px: ~2.5px of green-300). -->
+  <g fill="#1e5e3f">
+    <rect x="4.5" y="36" width="55" height="23.5" rx="8"/>
+    <path d="M29 6 C32.7 14.5 35.3 26 35 42 L22.5 42 C22.7 26 25.4 14.5 29 6 Z"/>
+    <path d="M9.5 20 C14.8 25 18.8 32 20 42 L12.5 42 C12.3 34 11.4 26.5 9.5 20 Z"/>
+    <path d="M49 18 C44.9 23.5 41.6 31 41 42 L47.5 42 C48.3 33.5 48.9 25.5 49 18 Z"/>
   </g>
-  <circle cx="51.4" cy="54.6" r="3.4" fill="#8fd4ae"/>
+  <circle cx="48.5" cy="47.75" r="5" fill="#8fd4ae"/>
 </svg>

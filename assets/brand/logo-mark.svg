@@ -1,21 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PlowzBox mark">
-  <!-- PlowzBox mark: the appliance (rounded square, "appliance corners")
-       growing the lawn (three grass blades in negative space) with the
-       box's single signature: a fresh-growth status LED, bottom right.
-       Crisp at 24px; detailed enough at 240px. Colors from tokens.css:
-       green-700 body, neutral-050 blades, green-300 LED. -->
-  <rect x="2" y="2" width="60" height="60" rx="15" fill="#1e5e3f"/>
-  <g fill="#fafaf7">
-    <!-- ground / vent bar -->
-    <rect x="15" y="45" width="34" height="5.5" rx="2.75"/>
-    <!-- center blade -->
-    <path d="M32 12.5 C34 21 35.3 32 35.1 47 L28.9 47 C28.7 32 30 21 32 12.5 Z"/>
-    <!-- left blade -->
-    <path d="M16.5 23 C22 28.5 25.8 36.5 26.5 47 L21 47 C20.2 38 18.6 30 16.5 23 Z"/>
-    <!-- right blade -->
-    <path d="M47.5 23 C42 28.5 38.2 36.5 37.5 47 L43 47 C43.8 38 45.4 30 47.5 23 Z"/>
+  <!-- PlowzBox mark v2 - "the box that grows the lawn".
+       One fused silhouette: the appliance in profile (low, wide, appliance
+       corners, rx harmonized with the site radius language) with three
+       grass blades growing straight out of its top. The breathing status
+       LED on the front face is the single point of light. Grid-drawn on
+       64; blades overlap the box to y42 so the union is seamless and the
+       whole mark works as a one-color silhouette. Colors from tokens.css:
+       green-700 body, green-300 LED. -->
+  <g fill="#1e5e3f">
+    <rect x="7" y="37.5" width="50" height="20.5" rx="7.25"/>
+    <path d="M30.5 5.5 C33.7 14 36.1 25.5 35.8 42 L25.4 42 C25.4 25.5 27.6 14 30.5 5.5 Z"/>
+    <path d="M12.5 18.5 C17.8 24 21.8 31.5 23.1 42 L16.6 42 C16.2 33.5 14.8 25.5 12.5 18.5 Z"/>
+    <path d="M47.5 16.5 C43.4 22.5 40.3 30.5 39.6 42 L45.9 42 C46.4 33.5 47.3 24.5 47.5 16.5 Z"/>
   </g>
   <!-- status LED: soft glow + core -->
-  <circle cx="46.4" cy="55.4" r="4.6" fill="#8fd4ae" opacity="0.28"/>
-  <circle cx="46.4" cy="55.4" r="2.6" fill="#8fd4ae"/>
+  <circle cx="45.5" cy="47.75" r="6.2" fill="#8fd4ae" opacity="0.20"/>
+  <circle cx="45.5" cy="47.75" r="3.8" fill="#8fd4ae"/>
 </svg>
