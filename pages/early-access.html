@@ -14,7 +14,9 @@
 <meta property="og:title" content="PlowzBox Early Access | What It Is and How to Apply">
 <meta property="og:description" content="A working product in its first installs. What early-access partners get, what we ask in return, and how to request a demo. In plain English.">
 <meta property="og:url" content="https://plowzbox.com/pages/early-access.html">
-<meta property="og:image" content="https://plowzbox.com/assets/og-image.png">
+<meta property="og:image" content="https://plowzbox.com/assets/img/plowzbox-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://plowzbox.com/assets/img/plowzbox-og.png">
 <link rel="stylesheet" href="../assets/tokens.css">
 <style>
 *, *::before, *::after { box-sizing: border-box; }
@@ -385,6 +387,14 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   }
 }
 </style>
+<style>
+/* Imagery pass v2 (additive): atmospheric photo band under the hero. */
+.art-band { position: relative; height: clamp(13rem, 30vw, 22rem); overflow: hidden; margin: 0; background: var(--chq-green-950); }
+.art-band img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.88) contrast(1.05) brightness(0.97); }
+.art-band::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(155deg, rgba(18,51,36,0.6) 0%, rgba(11,36,26,0.22) 45%, rgba(201,123,63,0.3) 100%); mix-blend-mode: soft-light; pointer-events: none; }
+.art-band::after { content: ""; position: absolute; inset: 0; z-index: 1; background: radial-gradient(120% 90% at 50% 42%, transparent 55%, rgba(4,12,9,0.4) 100%); pointer-events: none; }
+.art-band figcaption { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 0.6rem clamp(1.25rem, 4vw, 2.5rem); text-align: left; font-size: var(--chq-text-xs); color: rgba(242,247,243,0.92); background: linear-gradient(180deg, transparent 0%, rgba(4,12,9,0.42) 35%, rgba(4,12,9,0.78) 100%); text-shadow: 0 1px 2px rgba(4,12,9,0.8); }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -436,6 +446,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
       </div>
     </div>
   </section>
+
+  <figure class="art-band">
+    <img src="../assets/img/photo/photo-mower-evening.jpg" alt="A walk-behind mower parked on a lawn in low evening light" width="1200" height="570" loading="lazy">
+    <figcaption>Early access is small on purpose: real yards, real phones, honest feedback.</figcaption>
+  </figure>
 
   <!-- 2 · THE STAGE WE'RE AT -->
   <section class="section" aria-labelledby="stage-h">

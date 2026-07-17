@@ -14,7 +14,9 @@
 <meta property="og:title" content="Use Cases: Six Moments PlowzBox Handles | PlowzBox">
 <meta property="og:description" content="The 7pm quote request, the rained-out Tuesday, the 9pm invoice pile. Six real landscaper moments and how the PlowzBox handles each one, with your one-tap approval.">
 <meta property="og:url" content="https://plowzbox.com/pages/use-cases.html">
-<meta property="og:image" content="https://plowzbox.com/assets/og-image.png">
+<meta property="og:image" content="https://plowzbox.com/assets/img/plowzbox-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://plowzbox.com/assets/img/plowzbox-og.png">
 <link rel="stylesheet" href="../assets/tokens.css">
 <style>
 *, *::before, *::after { box-sizing: border-box; }
@@ -436,6 +438,20 @@ figcaption, .chat-caption {
   }
 }
 </style>
+<style>
+/* Imagery pass v2 (additive): atmospheric photo band under the hero. */
+.art-band { position: relative; height: clamp(13rem, 30vw, 22rem); overflow: hidden; margin: 0; background: var(--chq-green-950); }
+.art-band img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.88) contrast(1.05) brightness(0.97); }
+.art-band::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(155deg, rgba(18,51,36,0.6) 0%, rgba(11,36,26,0.22) 45%, rgba(201,123,63,0.3) 100%); mix-blend-mode: soft-light; pointer-events: none; }
+.art-band::after { content: ""; position: absolute; inset: 0; z-index: 1; background: radial-gradient(120% 90% at 50% 42%, transparent 55%, rgba(4,12,9,0.4) 100%); pointer-events: none; }
+.art-band figcaption { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 0.6rem clamp(1.25rem, 4vw, 2.5rem); text-align: left; font-size: var(--chq-text-xs); color: rgba(242,247,243,0.92); background: linear-gradient(180deg, transparent 0%, rgba(4,12,9,0.42) 35%, rgba(4,12,9,0.78) 100%); text-shadow: 0 1px 2px rgba(4,12,9,0.8); }
+</style>
+<style>
+/* Cleanup pass (additive): the 10-item nav fits one row; labels never break mid-word. */
+.nav-links { flex-wrap: wrap; gap: var(--chq-space-3); }
+.nav-links a { white-space: nowrap; }
+.nav .btn { white-space: nowrap; }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -454,6 +470,9 @@ figcaption, .chat-caption {
       <li><a href="billing.html">Billing</a></li>
       <li><a href="ai.html">Local AI</a></li>
       <li><a href="use-cases.html" aria-current="page">Use cases</a></li>
+      <li><a href="compare.html">Compare</a></li>
+      <li><a href="roi.html">The math</a></li>
+      <li><a href="guides/">Guides</a></li>
     </ul>
     <a class="btn btn-primary" href="demo.html">Request a demo</a>
   </nav>
@@ -480,6 +499,11 @@ figcaption, .chat-caption {
       </div>
     </div>
   </section>
+
+  <figure class="art-band">
+    <img src="../assets/img/photo/photo-mow-path.jpg" alt="Looking down a freshly cut mower path across an overgrown yard toward the street" width="1200" height="570" loading="lazy">
+    <figcaption>Six moments, one pattern: the box drafts, you approve, the day moves on.</figcaption>
+  </figure>
 
   <!-- ============ Scenario 1: the 7pm quote request ============ -->
   <section class="section" id="quote" aria-labelledby="quote-h">
@@ -518,7 +542,7 @@ figcaption, .chat-caption {
     <div class="wrap">
       <div class="duo flip">
         <figure>
-          <img src="../assets/img/uc-weather-reflow.svg" alt="Diagram: rain flagged over Tuesday's three jobs on a week calendar, with the jobs sliding to Wednesday. A single Approve new plan button texts every affected customer." width="760" height="440">
+          <img src="../assets/img/uc-weather-reflow.svg" alt="Diagram: rain flagged over Tuesday's three jobs on a week calendar, with the jobs sliding to Wednesday. A single Approve new plan button texts every affected customer." width="760" height="440" loading="lazy">
           <figcaption>Nothing moves and nobody gets texted until you approve the new plan.</figcaption>
         </figure>
         <div>
@@ -696,11 +720,11 @@ figcaption, .chat-caption {
       </div>
       <div class="pattern-grid">
         <figure>
-          <img src="../assets/img/uc-approve-tap.svg" alt="Illustration: a phone showing a drafted reply with an Approve button. Nothing sends without you." width="420" height="440">
+          <img src="../assets/img/uc-approve-tap.svg" alt="Illustration: a phone showing a drafted reply with an Approve button. Nothing sends without you." width="420" height="440" loading="lazy">
           <figcaption><strong>You approve, then it sends.</strong> Every reply, quote, invoice, and reminder can wait for your one-tap approval. The AI drafts; you decide.</figcaption>
         </figure>
         <figure>
-          <img src="../assets/img/uc-data-shield.svg" alt="Illustration: the PlowzBox inside a shield with a crossed-out cloud. Customer data stays on the box, encrypted." width="420" height="440">
+          <img src="../assets/img/uc-data-shield.svg" alt="Illustration: the PlowzBox inside a shield with a crossed-out cloud. Customer data stays on the box, encrypted." width="420" height="440" loading="lazy">
           <figcaption><strong>Your data stays on the box.</strong> Customer list, schedule, and the AI itself live on hardware you own, encrypted, with no vendor cloud copy.</figcaption>
         </figure>
       </div>

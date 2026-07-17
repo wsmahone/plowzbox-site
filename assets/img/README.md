@@ -1,16 +1,19 @@
 # PlowzBox product image assets
 
 > 2026-07-17 brand/imagery pass: `plowzbox-nuc.svg` regenerated (outlined lid
-> wordmark + brushed texture), `plowzbox-nuc.png` + `plowzbox-og.png`
-> re-rasterized, and NEW assets added: `plowzbox-shelf.svg`, 11 framed real
-> product screenshots (`shot-*.png`), 8 spot illustrations (`spot-*.svg`),
-> plus the brand set in `../brand/`. Placement instructions, alt text, and
-> drop-in snippets for ALL of it: see **/IMAGERY.md** (repo root).
+> wordmark + brushed texture), `plowzbox-og.png` re-rasterized, and NEW assets
+> added: `plowzbox-shelf.svg`, 11 framed real product screenshots
+> (`shot-*.png`), 8 spot illustrations (`spot-*.svg`), plus the brand set in
+> `../brand/`. Placement instructions, alt text, and drop-in snippets for ALL
+> of it: see **/IMAGERY.md** (repo root).
+>
+> 2026-07-17 cleanup pass: `plowzbox-nuc.png` DELETED (it was a stale v1-lid
+> raster; nothing on the site referenced it). If a raster fallback is ever
+> needed again, re-rasterize from the current `plowzbox-nuc.svg`.
 
 | File | Size | Use |
 |---|---|---|
 | `plowzbox-nuc.svg` | ~11 KB, viewBox `195 330 745 480` (~1.55:1) | **THE hero asset.** Inline it into the hero (or `<img>`). Vector, crisp at any size. Transparent background; includes its own contact shadow + floor reflection. Tuned for dark backgrounds (`--chq-green-900` #123324 / `--chq-green-950` #0b241a); verified legible on light #fafaf7 too. |
-| `plowzbox-nuc.png` | 1600x1031, RGBA transparent | Raster fallback / places that can't take SVG (email, some CMS crops). Rasterized from the SVG itself (pixel-identical). |
 | `plowzbox-og.png` | 1200x630, opaque | Social share card (`og:image` / `twitter:image`, `summary_large_image`). Supersedes `assets/og-image.png`. Copy on card: H1 "Never miss another job." + approved caption "One box. Your whole front office." (no em-dashes, per COPY.md rule). |
 
 ## Recommended hero usage

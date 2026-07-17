@@ -1,17 +1,13 @@
 <!-- ============================================================
-     PlowzBox — SEO <head> block v1 (owner: Copy + SEO)
+     PlowzBox SEO <head> block v1 (owner: Copy + SEO)
      Paste inside <head> of index.html. Self-contained: no external
      requests, no trackers, no third-party scripts.
 
-     OPEN ITEMS for lead/deploy:
-       1. assets/img/plowzbox-og.png does NOT exist yet — must be produced.
-          Required: 1200x630 px PNG (og:image), under ~300KB.
-          Optional nice-to-have: 1200x600 variant for X/Twitter
-          large card (same tag works; 1200x630 is fine for both).
-          Content suggestion: appliance illustration on green-950
-          (#0b241a) with logo + "Never miss another job."
-       2. Confirm canonical host (https://plowzbox.com, no www)
-          matches the deploy plan's redirect rules.
+     STATUS (2026-07-17 cleanup pass):
+       1. assets/img/plowzbox-og.png EXISTS (1200x630) and is the
+          canonical og:image / twitter:image on every page.
+       2. Canonical host https://plowzbox.com (no www) is live with
+          HTTPS via GitHub Pages + CNAME.
      ============================================================ -->
 
 <meta charset="utf-8">
@@ -24,7 +20,7 @@
 <meta name="description" content="PlowzBox answers every text, email, and missed call, books jobs, sends quotes and invoices. Local AI on a box you own. No cloud fees. Request a demo.">
 
 <link rel="canonical" href="https://plowzbox.com/">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
 
 <!-- Theme color: brand green-950 (dark hero) with light fallback -->
 <meta name="theme-color" content="#0b241a">
@@ -60,7 +56,7 @@
       "@id": "https://plowzbox.com/#org",
       "name": "PlowzBox",
       "url": "https://plowzbox.com/",
-      "logo": "https://plowzbox.com/assets/logo.svg",
+      "logo": "https://plowzbox.com/assets/brand/logo.svg",
       "description": "Maker of PlowzBox, an on-premises AI office-manager appliance for landscaping businesses."
     },
     {
