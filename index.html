@@ -2560,5 +2560,58 @@ section[id], [data-clock] { scroll-margin-top: 5.5rem; }
     </div>
   </div>
 </footer>
+<!-- Sticky mobile CTA: appears after the first scene, thumb-reach, dismissible -->
+<div id="pbx-sticky-cta" hidden aria-hidden="true">
+  <a class="pbx-sc-btn" href="pages/demo.html">Request a demo</a>
+  <button class="pbx-sc-x" type="button" aria-label="Dismiss">&#215;</button>
+</div>
+<style>
+#pbx-sticky-cta {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+  display: none; align-items: center; gap: 0.5rem;
+  padding: 0.6rem calc(0.9rem + env(safe-area-inset-right)) calc(0.6rem + env(safe-area-inset-bottom)) calc(0.9rem + env(safe-area-inset-left));
+  background: color-mix(in srgb, var(--chq-green-950) 92%, transparent);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  transform: translateY(100%); transition: transform 0.28s ease;
+}
+#pbx-sticky-cta.pbx-sc-show { transform: translateY(0); }
+@media (max-width: 47.9rem) { #pbx-sticky-cta:not([hidden]) { display: flex; } }
+.pbx-sc-btn {
+  flex: 1; display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0.65rem 1rem;
+  background: var(--chq-green-300); color: var(--chq-green-950);
+  font-weight: var(--chq-weight-semibold); font-size: var(--chq-text-base);
+  border-radius: var(--chq-radius-md); text-decoration: none;
+}
+.pbx-sc-x {
+  min-width: 44px; min-height: 44px; border: 0; background: transparent;
+  color: rgba(255,255,255,0.75); font-size: 1.4rem; line-height: 1; cursor: pointer;
+  border-radius: var(--chq-radius-sm);
+}
+@media (prefers-reduced-motion: reduce) { #pbx-sticky-cta { transition: none; } }
+</style>
+<script>
+(function () {
+  var bar = document.getElementById('pbx-sticky-cta');
+  if (!bar || sessionStorage.getItem('pbxScDismissed')) return;
+  var hero = document.querySelector('.hero') || document.body.firstElementChild;
+  bar.hidden = false;
+  var seen = false;
+  if ('IntersectionObserver' in window && hero) {
+    new IntersectionObserver(function (entries) {
+      var past = !entries[0].isIntersecting && entries[0].boundingClientRect.top < 0;
+      if (past && !seen) { seen = true; }
+      bar.classList.toggle('pbx-sc-show', past);
+      bar.setAttribute('aria-hidden', past ? 'false' : 'true');
+    }, { threshold: 0 }).observe(hero);
+  } else {
+    bar.classList.add('pbx-sc-show'); bar.setAttribute('aria-hidden', 'false');
+  }
+  bar.querySelector('.pbx-sc-x').addEventListener('click', function () {
+    bar.remove(); sessionStorage.setItem('pbxScDismissed', '1');
+  });
+})();
+</script>
 </body>
 </html>
