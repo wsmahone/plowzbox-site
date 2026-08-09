@@ -4,8 +4,8 @@
 
    DELIVERY CHAIN (honest, in order):
    1. PRIMARY — POST the lead as JSON to a form backend
-      (Formspree) which emails it to wills@plowz.com. This
-      needs ONE owner setup step; see pages/DEMO-FUNNEL-SETUP.md.
+      (Formsubmit) which emails it to hello@plowzbox.com. One
+      owner step: click the activation email on the first submit.
       Until the endpoint below is configured, no network request
       is attempted at all (keeps the console clean and never
       sends data to a made-up URL).
@@ -28,8 +28,8 @@
        https://formspree.io/f/abcdwxyz
      Full instructions: pages/DEMO-FUNNEL-SETUP.md
      ------------------------------------------------------------ */
-  var FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'; // <-- paste real Formspree endpoint
-  var FALLBACK_EMAIL = 'wills@plowz.com';
+  var FORM_ENDPOINT = 'https://formsubmit.co/ajax/hello@plowzbox.com'; // relays to hello@plowzbox.com (M365). First submit triggers a one-time activation email to that inbox; click it once and the button is live.
+  var FALLBACK_EMAIL = 'hello@plowzbox.com';
   var FETCH_TIMEOUT_MS = 8000;
 
   var form = document.getElementById('demo-funnel');
