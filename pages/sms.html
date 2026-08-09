@@ -18,6 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://plowzbox.com/assets/img/plowzbox-og.png">
 <link rel="stylesheet" href="../assets/tokens.css">
+<script defer src="../assets/site-nav.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
@@ -214,7 +215,7 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ---- numbered steps ---- */
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--chq-space-4); counter-reset: step; list-style: none; margin: 0; padding: 0; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--chq-space-4); counter-reset: step; list-style: none; margin: 0; padding: 0; }
 .steps.stack { grid-template-columns: 1fr; max-width: 34rem; }
 .step {
   background: var(--chq-surface);
@@ -238,7 +239,8 @@ a:focus-visible, button:focus-visible {
 }
 .step h3 { font-size: var(--chq-text-lg); margin-bottom: var(--chq-space-2); }
 .step p { margin: 0; color: var(--chq-ink-secondary); font-size: var(--chq-text-sm); line-height: 1.55; }
-@media (max-width: 55rem) { .steps { grid-template-columns: 1fr; } }
+@media (max-width: 64rem) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 40rem) { .steps { grid-template-columns: 1fr; } }
 
 /* ---- attributed stat callout ---- */
 .stat {
@@ -595,6 +597,12 @@ a:focus-visible, button:focus-visible {
           <h3>You set the rules</h3>
           <p>Routine confirmations can go out on their own if you allow it. Quotes,
           money talk, and anything sensitive always wait for you.</p>
+        </li>
+        <li class="step">
+          <h3>It respects a no</h3>
+          <p>The box answers the people who text or call you first, and it stops the
+          moment someone replies STOP. Opt-outs are honored automatically, so every
+          conversation stays on the right side of the rules.</p>
         </li>
       </ol>
       <div class="duo" style="margin-top: clamp(var(--chq-space-6), 5vw, var(--chq-space-7)); align-items: center;">

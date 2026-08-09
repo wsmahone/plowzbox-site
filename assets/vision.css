@@ -392,6 +392,14 @@ button { font-family: inherit; }
 .v-nav-open .v-navtoggle .v-bars { display: none; }
 @media (max-width: 63.9rem) {
   .v-js .v-navtoggle { display: inline-flex; }
+  /* Header fits one clean row on phones: tighter gap, CTA never wraps.
+     Prevents the "Request a demo" button breaking to three lines at 375px. */
+  .site-header .nav { gap: var(--chq-space-3); }
+  .site-header .nav > .btn-primary {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 0.6rem 0.95rem;
+  }
   .v-js .v-nav-open .nav-links {
     display: flex; flex-direction: column; align-items: stretch;
     gap: 0;
@@ -425,6 +433,10 @@ button { font-family: inherit; }
   .v-act-time { flex-basis: 100%; }
   .v-figure--phone { max-width: 13rem; }
   .v-phones { gap: var(--chq-space-4); }
+  /* Narrowest phones (360px): shave the header gap so logo, CTA and menu
+     button all clear without crowding. */
+  .site-header .nav { gap: var(--chq-space-2); }
+  .site-header .nav > .btn-primary { padding: 0.6rem 0.85rem; }
 }
 
 /* ------------------------------------------------------------
